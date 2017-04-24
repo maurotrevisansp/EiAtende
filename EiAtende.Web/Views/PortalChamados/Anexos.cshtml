@@ -1,0 +1,132 @@
+﻿
+@model EiAtende.ViewModels.VwImagens
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+@using (Html.BeginForm("Anexos", "PortalChamados", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <body class="no-skin">
+
+        <div class="main-container" id="main-container">
+
+            <div class="panel-collapse collapse in" id="collapseOne">
+                <div class="panel-body">
+                    <div class="widget-box">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                @Html.HiddenFor(model => model.ChamadoID)
+                                @Html.HiddenFor(model => model.ChamadoTitulo)
+                                <!-- PAGE CONTENT BEGINS -->
+                                <div class="alert alert-info" style="width:100%">
+                                    <i class="ace-icon fa fa-hand-o-right"></i>
+                                    Selecione aqui novos Anexos para Enviar &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a data-toggle="modal" data-target="#meuUpload">
+                                        <i class="upload-ace-icon ace-icon fa fa-cloud-upload black fa-2x"></i>
+                                    </a>
+                                </div>
+
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+
+                    </div>
+                </div>
+            </div>
+
+            <section class="widget">
+                <div class="widget-body">
+                    <div class="mt">
+                        <table id="datatable-table" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Data do Anexo</th>
+                                    <th>Nome</th>
+                                    <th>Link</th>
+                                    <th>Miniatura</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @for (int i = 0; i < Model.Imagens.Count(); i++)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Model.DataUpload[i].ToString()
+                                        </td>
+                                        <td>
+                                            @Model.NomeArquivo[i].ToString()
+                                        </td>
+                                        <td>
+                                            <a href="../Anexos/@Model.Imagens[i]">../Anexos/@Model.Imagens[i]</a>
+                                        </td>
+
+                                        <td>
+                                            @if (Model.Imagens[i].ToUpper().Contains("JPG") || Model.Imagens[i].ToUpper().Contains("GIF") || Model.Imagens[i].ToUpper().Contains("PNG"))
+                                            {
+                                                <a href="..\Anexos\@Model.Imagens[i]" title="@Model.Imagens[i].Replace(Model.ChamadoTitulo, "").Replace("/", "")" target="_blank"><img class="figure-img" src="..\Anexos\@Model.Imagens[i]" width="150" height="150" alt="..."></a>
+                                            }
+                                            else if (Model.Imagens[i].ToUpper().Contains("PDF"))
+                                            {
+                                                <a href="..\Anexos\@Model.Imagens[i]" title="@Model.Imagens[i].Replace(Model.ChamadoTitulo, "").Replace("/", "")" target="_blank"><img class="figure-img" src="..\Anexos\defaultPDF.jpg" alt="..."></a>
+                                            }
+                                            else if (Model.Imagens[i].ToUpper().Contains("DOC"))
+                                            {
+                                                <a href="..\Anexos\@Model.Imagens[i]" title="@Model.Imagens[i].Replace(Model.ChamadoTitulo, "").Replace("/", "")" target="_blank"><img class="figure-img" src="..\Anexos\defaultDOC.jpg" alt="..."></a>
+                                            }
+                                            else if (Model.Imagens[i].ToUpper().Contains("XLS"))
+                                            {
+                                                <a href="..\Anexos\@Model.Imagens[i]" title="@Model.Imagens[i].Replace(Model.ChamadoTitulo, "").Replace("/", "")" target="_blank"><img class="figure-img" src="..\Anexos\defaultXLS.jpg" alt="..."></a>
+                                            }
+                                            else
+                                            {
+                                                <a href="..\Anexos\@Model.Imagens[i]" title="@Model.Imagens[i].Replace(Model.ChamadoTitulo, "").Replace("/", "")" target="_blank"><img class="figure-img" src="..\Anexos\defaultGEN.jpg" alt="..."></a>
+                                            }
+                                        </td>
+                                    </tr>     
+                                }
+
+
+                            </tbody>
+                        </table>
+
+                        <button type="submit" name="submit" value="Excell" title="Gerar Planilha Excell" class="btn btn-white btn-info btn-bold">
+                            <i class="ace-icon fa fa-floppy-o bigger-120 blue"></i>
+                        </button>
+                        <button title="Imprimir Pagina" onclick="javascript:window.print()" class="btn btn-white btn-info btn-bold">
+                            <i class="ace-icon fa fa-print bigger-120 blue"></i>
+                        </button>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modal -->
+            <div class="modal fade" id="meuUpload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <br />
+                        </div>
+                        <div class="modal-body">
+                            <input name="submitFile" id="submitFile" type="file" class="btn btn-info btn-xs" />
+                        </div>
+                        <div class="modal-footer">
+                            <input name="submit" type="submit" id="process" value="ENVIAR A IMAGEM" class="btn btn-info btn-xs" />
+                        </div>
+
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+
+
+        </div><!-- /.main-container -->
+
+
+    </body>
+}
+
+</html>

@@ -1,0 +1,206 @@
+﻿
+@model  EiAtende.PortalConhecimentos
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Novo Conhecimento</title>
+    <meta name="description" content="Manutenção de Conhecimento" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="../Scripts/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Scripts/assets/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="../Scripts/assets/css/jquery-ui.min.css" />
+    <!-- text fonts -->
+    <link rel="stylesheet" href="../Scripts/assets/fonts/fonts.googleapis.com.css" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="../Scripts/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="../Scripts/assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+    <!--[if lte IE 9]>
+      <link rel="stylesheet" href="../Scripts/assets/css/ace-ie.min.css" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+    <script src="../Scripts/assets/js/ace-extra.min.js"></script>
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+    <!--[if lte IE 8]>
+    <script src="../Scripts/assets/js/html5shiv.min.js"></script>
+    <script src="../Scripts/assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="../CkEdit/ckeditor.js"></script>
+    <script src="../CkEdit/js/sample.js"></script>
+    <link rel="stylesheet" href="../CkEdit/css/samples.css">
+    <link rel="stylesheet" href="../CkEdit/toolbarconfigurator/lib/codemirror/neo.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
+</head>
+@using (Html.BeginForm())
+{
+    <body class="no-skin">
+        <div class="main-container" id="main-container">
+            <div class="row mb-lg">
+                <div class="col-lg-12">
+                    <div class="clearfix">
+                        <ul class="nav nav-tabs pull-xs-left" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-expanded="true">Principal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#assumtion" role="tab" aria-controls="assumtion" aria-expanded="false">Passo a Passo</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content mb-lg" id="myTabContent">
+                        <div role="tabpanel" class="tab-pane active in clearfix" id="basic" aria-labelledby="basic-tab" aria-expanded="true">
+                            <div class="row well welltrans">
+                                <div class="row">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.CnhID)
+                                    <div class="col-md-6">
+                                        <small>Título</small><br />
+                                        <input id="titulo" name="titulo" value="@Model.CnhTitulo" class="form-control" placeholder="Informe um título para o conhecimento" maxlength="100" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <small>Link Externo</small><br />
+                                        <input type="button" id="urlParcial" onclick="window.location.href='@Model.CnhUrlParcial'" name="urlParcial" value="@Model.CnhUrlParcial" class="form-control" placeholder="Informe um link para compartilhamento do conhecimento" maxlength="100">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <small> Descrição </small>
+                                        <input id="descricao" name="descricao" class="form-control" placeholder="Informe uma descrição para o conhecimento" required value="@Model.CnhDescricao">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <small> Tags de Busca</small>
+                                        <input id="tags_busca" name="tags_busca" class="form-control" placeholder="Informe palavras relacionadas com o conhecimento" required value="@Model.CnhTagsBusca">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <small> Fonte </small>
+                                        <input id="fonte" name="fonte" class="form-control" placeholder="Informe as fontes de referência do conhecimento" value="@Model.CnhFonte" required >
+                                    </div>
+                                    <div class="col-md-6">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="assumtion" role="tabpanel" aria-labelledby="assumtion-tab" aria-expanded="false">
+                            <div class="col-md-12" style="background-color:lightgray">
+                                <textarea id="texto" name="texto" style="text-align:justify">
+                                            @Html.DisplayFor(model => model.CnhTexto, new { htmlAttributes = new { @class = "form-control" } })
+                                </textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button class="btn btn-info" type="submit" name="submit" value="@TempData["Acao"].ToString()">
+                                <i class="ace-icon fa fa-check"></i>
+                                Salvar
+                            </button>
+                            &nbsp; &nbsp; &nbsp;
+                            <a href="~/PortalConhecimentos/ListaDeConhecimentos" class="btn btn-default" value="VoltarLista">
+                                <i class="ace-icon fa fa-undo"></i>
+                                Cancelar
+                            </a>
+                        </div>
+                    </div>
+                </div><!-- ./col -->
+            </div><!-- ./row -->
+        </div><!-- /.main-container -->
+        <!-- basic scripts -->
+        <!--[if !IE]> -->
+
+    </body>
+}
+
+
+
+</html>
+
+<!-- The Loader. Is shown when pjax happens -->
+<div class="loader-wrap hiding hide">
+    <i class="fa fa-circle-o-notch fa-spin-fast"></i>
+</div>
+
+<!-- common libraries. required for every page-->
+<script src="../Scripts/vendor/jquery/dist/jquery.min.js"></script>
+<script src="../Scripts/vendor/jquery-pjax/jquery.pjax.js"></script>
+<script src="../Scripts/vendor/tether/dist/js/tether.js"></script>
+<script src="../Scripts/vendor/bootstrap/js/dist/util.js"></script>
+<script src="../Scripts/vendor/bootstrap/js/dist/dropdown.js"></script>
+<script src="../Scripts/vendor/bootstrap/js/dist/button.js"></script>
+<script src="../Scripts/vendor/bootstrap/js/dist/tooltip.js"></script>
+<script src="../Scripts/vendor/bootstrap/js/dist/alert.js"></script>
+<script src="../Scripts/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../Scripts/vendor/widgster/widgster.js"></script>
+<script src="../Scripts/vendor/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
+<script src="../Scripts/vendor/jquery-touchswipe/jquery.touchSwipe.js"></script>
+<script src="../Scripts/js/bootstrap-fix/button.js"></script>
+
+<!-- common app js -->
+<script src="../Scripts/js/settings.js"></script>
+<script src="../Scripts/js/app.js"></script>
+<script src="../Scripts/js/bootstrap-fix/collapse.js"></script>
+<script src="../Scripts/js/ui-tabs-accordion.js"></script>
+
+<!-- page specific libs -->
+<script src="../Scripts/vendor/bootstrap/js/dist/tab.js"></script>
+<!-- page specific js -->
+
+<script src="../CkEdit/ckeditor.js"></script>
+<script src="../CkEdit/js/sample.js"></script>
+<link rel="stylesheet" href="../CkEdit/css/samples.css">
+<link rel="stylesheet" href="../CkEdit/toolbarconfigurator/lib/codemirror/neo.css">
+
+<script>
+
+            CKEDITOR.replace('texto', {
+                width: 1110,
+                height: 500
+            });
+            $('.date-picker').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            })
+
+</script>
+<script>
+            CKEDITOR.replace('texto1', {
+                width: 1024,
+                height: 400
+            });
+            $('.date-picker').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            })
+
+</script>
+<script>
+            CKEDITOR.replace('texto2', {
+                width: 1024,
+                height: 400
+            });
+            $('.date-picker').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            })
+
+</script>

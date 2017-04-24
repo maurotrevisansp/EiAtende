@@ -1,0 +1,222 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EI - Advanced</title>
+
+    <link href="~/Scripts/css/application.css" rel="stylesheet">
+    <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
+    <!--[if IE 9]>
+        <link href="css/application-ie9-part2.css" rel="stylesheet">
+    <![endif]-->
+    <link rel="shortcut icon" href="~/Scripts/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="https://www.receitaws.com.br" />
+    <meta http-equiv="Access-Control-Allow-Headers" content="Content-Type" />
+    <meta http-equiv="Access-Control-Allow-Methods" content="GET, POST, PUT, DELETE, OPTIONS" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script src="~/Scripts/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="~/Scripts/vendor/datatables/media/js/jquery.dataTables.js"></script>
+
+    <script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.2.1/js/dataTables.select.min.js"></script>
+
+    <script src="~/Scripts/jquery.tabletojson.js"></script>
+    <script>
+
+        /* yeah we need this empty stylesheet here. It's cool chrome & chromium fix
+         chrome fix https://code.google.com/p/chromium/issues/detail?id=167083
+         https://code.google.com/p/chromium/issues/detail?id=332189
+         */
+    </script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.5/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.5/js/bootstrap-dialog.min.js"></script>
+    @*<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>*@
+    <style>
+        .content {
+            padding: 20px;
+        }
+
+        .btn:hover, .btn:active, .btn:focus {
+            box-shadow: none;
+            color: white !important;
+        }
+
+        body {
+            background-image: url(../Scripts/img/1.jpg);
+            background-repeat: no-repeat;
+            -moz-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+        }
+    </style>
+
+</head>
+
+@using (Html.BeginForm())
+{
+    <body class="login-page">
+
+        <div id="loading" style="display: block">
+
+            <br>
+            <br>
+            <center><div class="loader"></div></center>
+        </div>
+
+
+        <div id="conteudo" style="display: none">
+
+
+
+            <div class="container">
+
+
+                <p class="widget-login-info">
+                    .
+                </p>
+                <p class="widget-login-info">
+                    .
+                </p>
+
+                <main id="content" class="widget-login-container" role="main">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6 col-xs-10 col-lg-offset-4 col-sm-offset-3 col-xs-offset-1">
+                            <br>
+                            <section class="widget widget-login animated fadeInUp">
+                                <header>
+                                    <h4 class="widget-login-logo animated fadeInUp">
+                                        <!--<i class="fa fa-circle text-info"></i>-->
+                                        <!--<i class="fa fa-circle text-warning"></i>-->
+                                        @if (TempData["msg"] != null)
+                                        {
+                                            <label style="color:red">@TempData["msg"]</label>
+                                        }
+                                    </h4>
+                                </header>
+                                <div class="widget-body">
+                                    <form class="login-form mt-lg">
+                                        <div class="form-group">
+                                            <div class="input-group input-group-lg">
+                                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                <input class="form-control" name="UsuarioLogin" size="16" type="text" placeholder="Usuário" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group input-group-lg">
+                                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                <input id="prepended-input" name="PortalUsuarioenha" class="form-control" size="20" type="password" placeholder="Senha" disabled >
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                            <div class="btn-toolbar pull-xs-left">
+                                                <button type="submit" name="submit" value="Visitante" class="btn btn-default">
+                                                    <span>
+                                                        <i class="fa fa-user text-info ml-xs"></i>
+                                                    </span>
+                                                    Visitante&nbsp;
+                                                </button>
+                                            </div>
+                                            <div class="btn-toolbar pull-xs-right">
+                                                <button type="submit" name="submit" value="Login" class="btn btn-inverse">
+                                                    <span>
+                                                        <i class="fa fa-arrow-right text-info ml-xs"></i>
+                                                    </span>
+                                                    Entrar&nbsp;
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-push-6">
+                                                <div class="clearfix">
+                                                    <div class="checkbox widget-login-info pull-right ml-n-lg">
+                                                        <!--<input type="checkbox" id="checkbox1" value="1">
+                                                        <label for="checkbox1">Manter conectado </label>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <hr />
+                                                </div>
+                                                <div class="widget-footer-bottom">
+                                                    <div class="col-md-6">
+                                                        <a href="#">Esqueci minha senha? &nbsp;</a>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <a class="pull-lg-right" href="~/Login/Registrar">Registrar Novo? &nbsp;</a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </main>
+
+
+
+                <footer class="page-footer">
+                    <span class="label label-pill label-default fw-normal">2016 &copy; Ei Advanced | eiWEB</span>
+                </footer>
+            </div>
+        </div>
+        <!-- The Loader. Is shown when pjax happens -->
+        <div class="loader-wrap hiding hide">
+            <i class="fa fa-circle-o-notch fa-spin-fast"></i>
+        </div>
+
+        <!-- common libraries. required for every page-->
+        <script src="~/Scripts/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="~/Scripts/vendor/jquery-pjax/jquery.pjax.js"></script>
+        <script src="~/Scripts/vendor/tether/dist/js/tether.js"></script>
+        <script src="~/Scripts/vendor/bootstrap/js/dist/util.js"></script>
+        <script src="~/Scripts/vendor/bootstrap/js/dist/collapse.js"></script>
+        <script src="~/Scripts/vendor/bootstrap/js/dist/dropdown.js"></script>
+        <script src="~/Scripts/vendor/bootstrap/js/dist/button.js"></script>
+        <script src="~/Scripts/vendor/bootstrap/js/dist/tooltip.js"></script>
+        <script src="~/Scripts/vendor/bootstrap/js/dist/alert.js"></script>
+        <script src="~/Scripts/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="~/Scripts/vendor/widgster/widgster.js"></script>
+
+        <!-- common app js -->
+        <script src="~/Scripts/js/settings.js"></script>
+        <script src="~/Scripts/js/app.js"></script>
+
+        <!-- page specific libs -->
+        <!-- page specific js -->
+
+        <script type="text/javascript">
+            var i = setInterval(function () {
+
+                clearInterval(i);
+
+                // O código desejado é apenas isto:
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("conteudo").style.display = "inline";
+
+            }, 4000);
+        </script>
+
+
+    </body>
+}
+
+
+</html>

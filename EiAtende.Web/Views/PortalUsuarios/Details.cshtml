@@ -1,0 +1,130 @@
+﻿@model EiAtende.PortalUsuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PortalUsuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalUsuarioGrupo.UsrGrpNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalUsuarioGrupo.UsrGrpNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrEmpID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrEmpID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrSenha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrSenha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrAdminSistema)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrAdminSistema)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrAtivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrAtivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrInclusao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrInclusao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrInclusaoUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrInclusaoUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrAlteracao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrAlteracao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrAlteracaoUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrAlteracaoUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrExclusao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrExclusao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrExclusaoUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrExclusaoUsuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UsrID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,66 @@
+﻿@model EiAtende.PortalChamadosHistorico
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PortalChamadosHistorico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalChamados.ChamadoTitulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalChamados.ChamadoTitulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DtIncl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DtIncl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParaStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParaStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DtAdiar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DtAdiar)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ChamadoHistID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

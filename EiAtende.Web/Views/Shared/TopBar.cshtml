@@ -1,0 +1,28 @@
+﻿@{
+    var NomeUsuario = "Efetuar Login";
+    if (Session["NomeUsuario"] != null)
+    {
+        NomeUsuario = Session["NomeUsuario"].ToString();
+    }
+}
+<div class="top-menu">
+    <ul class="nav navbar-nav pull-right">
+
+        <!-- END TODO DROPDOWN -->
+        <!-- BEGIN USER LOGIN DROPDOWN -->
+        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+        <li class="dropdown dropdown-user">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                <img alt="" class="img-circle" src="../assets/layouts/layout/img/avatar.png" />
+                <span class="username username-hide-on-mobile"> @NomeUsuario </span>
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-default">
+                <li><a class="dropdown-item" href="@Url.Action("ContaUsuario","Home")"><i class="fa fa-user fa-lg"></i> &nbsp; Conta</a></li>
+                <li class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="@Url.Action("Index","Login")"><i class="fa fa-sign-out"></i> &nbsp; Logout</a></li>
+            </ul>
+        </li>
+        <!-- END USER LOGIN DROPDOWN -->
+    </ul>
+</div>

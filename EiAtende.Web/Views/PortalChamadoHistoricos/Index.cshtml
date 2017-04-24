@@ -1,0 +1,100 @@
+﻿@model EiAtende.ViewModels.VwChamadosHistorico
+
+@{
+    ViewBag.Title = "Lista de Históricos";
+    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("pt-BR");
+}
+
+@if (@TempData["msg"] != null)
+{
+    <div class="alert alert-danger">
+        <span>
+            <i class="glyphicon glyphicon-ban-circle"></i> @TempData["msg"]
+        </span>
+    </div>
+}
+
+
+@using (Html.BeginForm())
+{
+    <div class="main-container" id="main-container">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="table-header" style="background-color:lightgray">
+                                    <div class="form-group">
+                                        @if (@Model.PortalChamadosHistoricos.Count() > 0)
+                                        {
+                                            <h3>Lista de Históricos do Chamado @Model.PortalChamadosHistoricos.First().ChamadoID</h3>
+
+                                        }
+                                        else
+                                        {
+                                            <h3>Nenhum Histórico cadastrado para o Chamado</h3>
+
+                                        }
+                                    </div>
+                                </div>
+                                <!-- div.table-responsive -->
+                                <!-- div.dataTables_borderWrap -->
+
+                            </div>
+                        </div>
+
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+                <div class="table-responsive">
+
+                    <table class="table table-hover">
+
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Data Inclusão</th>
+                                <th>Data Prevista</th>
+                                <th>Data Adiada</th>
+                                <th>De Status</th>
+                                <th>Para Status</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.PortalChamadosHistoricos)
+                            {
+                                <tr>
+                                    <td>@item.ChamadoHistID</td>
+                                    <td>@item.DtIncl</td>
+                                    <td>@item.PortalChamados.ChamadoDtPrevista</td>
+                                    <td>@item.DtAdiar</td>
+                                    <td>@item.DeStatus</td>
+                                    <td>@item.ParaStatus</td>
+                                    <td>@item.Descricao</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <button type="submit" name="submit" value="Excell" title="Gerar Planilha Excell" class="btn btn-white btn-info btn-bold">
+                        <i class="ace-icon fa fa-floppy-o bigger-120 blue"></i>
+                    </button>
+                    <button title="Imprimir Pagina" onclick="javascript:window.print()" class="btn btn-white btn-info btn-bold">
+                        <i class="ace-icon fa fa-print bigger-120 blue"></i>
+                    </button>
+                    <br />
+                    <br />
+
+                    <a href="~/Home/Index">Voltar a Lista de Chamados</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+}
+
+

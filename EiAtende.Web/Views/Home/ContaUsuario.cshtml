@@ -1,0 +1,295 @@
+﻿@model EiAtende.ViewModels.VwUsuarioUsuarios
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Manutenção de Usuários</title>
+
+    <meta name="description" content="Draggabble Widget Boxes &amp; Containers" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+</head>
+@using (Html.BeginForm())
+{
+
+    <body class="no-skin">
+        <div class="main-container" id="main-container">
+            <div class="row mb-lg">
+                <div class="col-lg-12">
+                    <div class="clearfix">
+                        <ul class="nav nav-tabs pull-xs-left" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-expanded="true">Principal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#assumtion" role="tab" aria-controls="assumtion" aria-expanded="false">Segurança</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content mb-lg" id="myTabContent">
+                        <div role="tabpanel" class="tab-pane active in clearfix" id="basic" aria-labelledby="basic-tab" aria-expanded="true">
+                            <div class="row well welltrans">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="ace-icon glyphicon glyphicon-ok"></i>
+                                    </span>
+                                    <div class="col-sm-12">
+                                        @Html.EditorFor(model => model._Usuario.UsrID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "display:none" } })
+                                        <small>Nome do Usuário Conectado</small><br />
+
+                                        @if (TempData["Acao"].ToString() == "Visualizar")
+                                        {
+                                            @Html.EditorFor(model => model._Usuario.UsrNome, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        }
+                                        else
+                                        {
+                                            @Html.EditorFor(model => model._Usuario.UsrNome, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome do Usuário" } })
+                                        }
+                                    </div>
+
+                                    <span class="input-group-addon">
+                                        <i class="ace-icon glyphicon glyphicon-ok"></i>
+                                    </span>
+                                    <div class="col-sm-12">
+                                        <small>Grupo (Alterar em Permissões)</small><br />
+
+                                        @if (TempData["Acao"].ToString() == "Visualizar")
+                                        {
+                                            @Html.EditorFor(model => model._Usuario.PortalUsuarioGrupo.UsrGrpNome, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        }
+                                        else
+                                        {
+                                            @Html.EditorFor(model => model._Usuario.PortalUsuarioGrupo.UsrGrpNome, new { htmlAttributes = new { @class = "form-control", @placeholder = "Grupo do Usuário", @readonly = "readonly" } })
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="space-4"></div>
+
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="ace-icon glyphicon glyphicon-ok"></i>
+                                    </span>
+                                    <div class="col-sm-12">
+                                        <small>Login do Usuário</small><br />
+                                        @Html.EditorFor(model => model._Usuario.UsrEmail, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+
+                                    <span class="input-group-addon">
+                                        <i class="ace-icon glyphicon glyphicon-ok"></i>
+                                    </span>
+                                    <div class="col-sm-12">
+                                        <small>Empresa do Usuário</small><br />
+                                        @Html.EditorFor(model => model._PortalEmpresa.EmpRazao, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="tab-pane" id="assumtion" role="tabpanel" aria-labelledby="assumtion-tab" aria-expanded="false">
+
+                            <div class="input-group">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-4">
+                                        <span style="color:dodgerblue;font-size:large">Alteração de Senha</span>
+                                    </div>
+                                    <hr />
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-4">
+                                        <input type="password" id="senha_atual" name="senha_atual" placeholder="Senha Atual" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="password" id="senha_nova" name="senha_nova" placeholder="Senha Nova" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="password" id="senha_nova2" name="senha_nova2" placeholder="Repetir Senha Nova" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="row">
+                                        <hr />
+                                        <button class="btn btn-info btn-xs" type="submit" title="Salvar / Atualizar Nova Senha" name="submit" value="SalvarNovaSenha">
+                                            <i class="ace-icon fa fa-check"></i>
+                                            Atualizar Senha
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="col-sm-6">
+                            <small>Informe o Usuário </small><br />
+                            <select id="selecUsuarios" name="selecUsuarios" style="width:80%" title="Informe o Usuáro" data-action="reload" onchange="reloadPageUsuario.click()">
+                                @foreach (var item in Model._Usuarios)
+                                {
+                                    if (item.UsrID == Model._Usuario.UsrID)
+                                    {
+                                        <option selected value="@item.UsrID">@item.UsrNome</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.UsrID">@item.UsrNome</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <small>Informe o Grupo do Usuário </small><br />
+                            <select id="selecGrupoUsuario" name="selecGrupoUsuario" style="width:80%" title="Informe o Grupo do Usuáro" >
+                                @foreach (var item in Model._UsuarioGrupo)
+                                {
+                                    if (item.UsrGrpID == Model._Usuario.UsrGrpID)
+                                    {
+                                        <option selected value="@item.UsrGrpID">@item.UsrGrpNome</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.UsrGrpID">@item.UsrGrpNome</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+
+                        <div class="col-sm-12">
+                            <div class="col-sm-2">
+                                <small>Abrir Chamados</small><br />
+                                <label>
+                                    @if (Model._Usuario.PortalUsuarioGrupo.UsrGrpAbrirChamado)
+                                    {
+                                        <input checked="checked" id="UsrGrpAbrirChamado" name="UsrGrpAbrirChamado"  type="checkbox" />
+                                    }
+                                    else
+                                    {
+                                        <input id="UsrGrpAbrirChamado" name="UsrGrpAbrirChamado"  type="checkbox" />
+                                    }
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-2">
+                                <small>Adiar Chamados</small><br />
+                                <label>
+                                    @if (Model._Usuario.PortalUsuarioGrupo.UsrGrpAdiarChamado)
+                                    {
+                                        <input checked="checked" id="UsrGrpAdiarChamado" name="UsrGrpAdiarChamado"  type="checkbox" />
+                                    }
+                                    else
+                                    {
+                                        <input id="UsrGrpAdiarChamado" name="UsrGrpAdiarChamado"  type="checkbox" />
+                                    }
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-2">
+                                <small>Ativo</small><br />
+                                <label>
+                                    @if (Model._Usuario.PortalUsuarioGrupo.UsrGrpAtivo)
+                                    {
+                                        <input checked="checked" id="UsrGrpAtivo" name="UsrGrpAtivo"  type="checkbox" />
+                                    }
+                                    else
+                                    {
+                                        <input id="UsrGrpAtivo" name="UsrGrpAtivo"  type="checkbox" />
+                                    }
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-2">
+                                <small>Fechar Chamado</small><br />
+                                <label>
+                                    @if (Model._Usuario.PortalUsuarioGrupo.UsrGrpFecharChamado)
+                                    {
+                                        <input checked="checked" id="UsrGrpFecharChamado" name="UsrGrpFecharChamado"  type="checkbox" />
+                                    }
+                                    else
+                                    {
+                                        <input id="UsrGrpFecharChamado" name="UsrGrpFecharChamado"  type="checkbox" />
+                                    }
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-2">
+                                <small>Gestor</small><br />
+                                <label>
+                                    @if (Model._Usuario.PortalUsuarioGrupo.UsrGrpTotalAcessoChamado)
+                                    {
+                                        <input checked="checked" id="UsrGrpTotalAcessoChamado" name="UsrGrpTotalAcessoChamado"  type="checkbox" />
+                                    }
+                                    else
+                                    {
+                                        <input id="UsrGrpTotalAcessoChamado" name="UsrGrpTotalAcessoChamado"  type="checkbox" />
+                                    }
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-2">
+                                <small>Alterar Status</small><br />
+                                <label>
+                                    @if (Model._Usuario.PortalUsuarioGrupo.UsrGrpTratarChamado)
+                                    {
+                                        <input checked="checked" id="UsrGrpTratarChamado" name="UsrGrpTratarChamado"  type="checkbox" />
+                                    }
+                                    else
+                                    {
+                                        <input id="UsrGrpTratarChamado" name="UsrGrpTratarChamado"  type="checkbox" />
+                                    }
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" name="submit" id="reloadPageUsuario" value="submitPageUsuario" hidden="hidden"></button>
+                        <button type="submit" name="submit" id="reloadPageGrupo" value="submitPageGrupo" hidden="hidden"></button>
+
+                        <div class="col-sm-12">
+                            <div class="hr hr-double hr-dotted hr18"></div>
+
+                            @if (@System.Web.HttpContext.Current.Session["UsuarioAdmin"].ToString() == "True")
+                            {
+                                <button class="btn btn-xs btn-info" type="submit" title="Inserir Novo Usuário" name="submit" value="NovoUsuario">
+                                    <i class="ace-icon fa fa-user"></i>
+                                    Novo Usuário
+                                </button>
+                                <button class="btn btn-xs btn-primary pull-right" style="margin-right:10px" type="submit" name="submit" title="Atualizar / Salvar Alterações no Perfil" value="AtualizarPerfil">
+                                    <i class="ace-icon fa fa-user"></i>
+                                    Atualizar Perfil
+                                </button>
+                                <br />
+                            }
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div><!-- /.main-container -->
+        <!-- basic scripts -->
+        <!--[if !IE]> -->
+
+    </body>
+
+
+}
+</html>

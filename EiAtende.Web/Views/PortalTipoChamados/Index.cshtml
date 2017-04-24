@@ -1,0 +1,92 @@
+﻿@model EiAtende.ViewModels.VwTiposChamados
+
+@using (Html.BeginForm())
+{
+    <div class="main-container" id="main-container">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="table-header" style="background-color:lightgray">
+                                    <div class="form-group">
+                                        <select id="empresa" name="empresa" style="width:200px;height:25px;margin-left:5px">
+                                            <option selected>Todas Empresas</option>
+                                            @foreach (var item in Model.PortalEmpresa)
+                                            {
+                                                <option value="@item.EmpID">@item.EmpRazao</option>
+                                            }
+                                        </select>
+
+                                        <input type="text" name="txtNome" id="txtNome" style="width:300px;height:25px" placeholder="Nome do Tipo ..." />
+                                        <button type="submit" name="submit" id="submit" value="PesquisarGeral" class="btn btn-mini btn-info2">
+                                            <i class="ace-icon fa fa-search icon-only bigger-110"></i>
+                                        </button>
+                                        &nbsp;&nbsp; Encontrados @Model.PortalTipoChamados.Count() registros &emsp;&emsp;&emsp;&emsp;&emsp;
+                                        <button type="button" class="btn btn-xs btn-gray pull-right" style="margin-top:5px;margin-right:5px;" onclick="location.href='@Url.Action("Create", "PortalTipoChamados")'">
+                                            <span class="bigger-110">Novo Tipo</span>
+                                            <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- div.table-responsive -->
+                                <!-- div.dataTables_borderWrap -->
+
+                            </div>
+                        </div>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+                <div class="table-responsive">
+
+                    <table class="table table-hover">
+
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Empresa</th>
+                                <th>Nome do Tipo</th>
+                                <th>Ativo</th>
+                                <th width="10%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.PortalTipoChamados)
+                            {
+                                <tr>
+                                    <td>@item.TipoChamadoID</td>
+                                    <td>@item.PortalEmpresa.EmpNomeFantasia</td>
+                                    <td>@item.TipoChamadoNome</td>
+
+                                    <td>S</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button data-toggle="dropdown" class="btn btn-warning btn-xs dropdown-toggle">
+                                                Ação
+                                                <span class="ace-icon fa fa-caret-down icon-on-right"></span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-inverse">
+                                                <li>
+                                                    <a href="~/PortalTipoChamados/TipoEditar?Id=@item.TipoChamadoID&Acao=Editar">Editar</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/PortalTipoChamados/TipoEditar?Id=@item.TipoChamadoID&Acao=Desativar">Desativar</a>
+                                                </li>
+                                            </ul>
+                                        </div><!-- /.btn-group -->
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+}
+
+

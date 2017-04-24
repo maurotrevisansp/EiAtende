@@ -1,0 +1,72 @@
+﻿@model EiAtende.PortalChamadosHistorico
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PortalChamadosHistorico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PortalChamados.ChamadoTitulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortalChamados.ChamadoTitulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DtIncl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DtIncl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParaStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParaStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DtAdiar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DtAdiar)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

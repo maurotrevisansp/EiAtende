@@ -1,0 +1,111 @@
+﻿@model IEnumerable<EiAtende.PortalUsuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PortalUsuarioGrupo.UsrGrpNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrEmpID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrSenha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrAdminSistema)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrAtivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrInclusao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrInclusaoUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrAlteracao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrAlteracaoUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrExclusao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrExclusaoUsuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortalUsuarioGrupo.UsrGrpNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrEmpID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrSenha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrAdminSistema)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrAtivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrInclusao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrInclusaoUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrAlteracao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrAlteracaoUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrExclusao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrExclusaoUsuario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UsrID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UsrID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UsrID })
+        </td>
+    </tr>
+}
+
+</table>

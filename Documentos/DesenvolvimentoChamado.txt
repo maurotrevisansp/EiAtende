@@ -1,0 +1,77 @@
+Desenvolvimento Sistema de Chamados
+
+Estrutura
+	Ei Advanced -> Escritório -> Cliente Final
+
+Cadastros
+	- Usuario (Já existe uma base com Ei Advanced, Escritório e Cliente Final cadastrados);
+	- Tipo de chamado a ser aberto (Associado a Ei Advanced e outro ao Escritório, quando for abrir chamado para Ei Advanced, aparecem apenas os tipos da Ei Advanced; Quando for abrir um chamado para um determinado escritório, aparece apenas os tipos deste Escritório)
+		Exemplos (Extra, CTB, Fiscal, Suporte, Conversão)
+		
+	- Atividades (Mesmo caso do Tipo)
+		Exemplos (ISSQN, Inventário, Desenvolvimento, Novo Serviço)
+		No cadastro de Atividades, ter a opção de pré-determinar um tempo (em horas ou dias) para a resolução do chamado;
+
+	- Grupos
+		Usuários - Podem abrir chamado e verificar os chamados resolvidos
+		Analistas - Recebem os chamados e tratam os mesmos
+		Gestores - Acesso total e podem postergar as datas de entrega do chamado
+		O Gestor e Analista da empresa tem acesso como usuário na Ei Advanced
+		O Analista da Ei Advanced tem acesso como usuário nas Empresas e Cliente Final
+		O Gestor da Ei Advanced tem acesso completo
+
+Funcionalidade
+	- Abrir chamado
+		Cliente Final -> Escritório
+		Cliente Final Abre chamado apenas para o escritório pertinente ao seu cadastro
+		
+		Escritório -> Cliente Final
+		Escritório administra chamados abertos para ele, cadastros de Tipo, apontamento de gestores e grupos (Por escritório)
+		
+		Escritório -> Ei Advanced
+		Escritório abre chamado para Ei Advanced
+		
+		Ei Advanced - > Todos
+		Ei Advanced acesso administrador geral
+
+	- Na abertura do chamado:
+		Numero do chamado
+		Tipo
+		Responsável
+		Cliente
+		Atividades
+		Anexar Arquivo
+		Prazo Inicial (Carregar com tempo definido no cadastro da atividade (** Descontando finais de semana) ou data definida por um gestor)
+
+	- Controle de Prazo
+		Caso tenha solicitado ou postergado um prazo:
+			Na tela de chamados, a data de Prazo inicial aparece de outra cor, ao passar com o mouse por cima apresentar "Prazo postergado" ou "Aguardando Aprovação" (Dependendo do status)
+			Em um botão, mostrar um histórico com Data e Motivo de ter sido postergado
+		Responsável pode solicitar postergação do prazo, neste caso o mesmo solicita e inclui um motivo e fica aguardando aprovação;
+			Quando avaliado pelo gestor, o mesmo aprova ou não e inclui comentário;
+			Caso seja negado, fica apenas o registro da solicitação e a data inicial volta ao normal;
+			Caso aprovado, a data de Prazo inicial aparece de outra cor, ao passar com o mouse por cima apresentar "Prazo postergado"
+		Gestor pode registrar data e motivo de postergação;
+			A data de Prazo inicial aparece de outra cor, ao passar com o mouse por cima apresentar "Prazo postergado"
+		Caso tenha postergado um prazo:
+			A data de Prazo inicial aparece de outra cor, ao passar com o mouse por cima apresentar "Prazo postergado"
+			Em um botão (Modal), mostrar um histórico com Data e Motivo de ter sido postergado
+
+	- Ao Acessar o sistema de chamados
+		Apresentar opção de carregar uma grid com chamados de acordo com os filtros abaixo:
+			Status
+				Cancelado
+				Postado
+				Em Analise
+				Em Desenvolvimento
+				Desenvolvido
+				Pré-Finalizado
+				Finalizado
+			Por Tipo
+			Por Responsável
+			Por cliente
+			Por atividade
+			Por datas (Abertura, Prazo Inicial e Finalizado)
+			Por postergados
+			Finalizados no Prazo
+		Opção de exportar como relatório os dados selecionados

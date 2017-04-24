@@ -1,0 +1,5 @@
+﻿Para Ativar Migrations
+PM> Enable-Migrations -ProjectName EiAtende.Entity -StartUpProjectName EiAtende.Web -Verbose (somente uma vez)
+PM> Add-Migration NomeMigration -ProjectName EiAtende.Entity -StartUpProjectName EiAtende.Web -Verbose
+PM> Update-Database -ProjectName EiAtende.Entity
+PM> Update-Database -TargetMigration NomeDaMigration

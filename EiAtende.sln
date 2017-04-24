@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EiAtende.Model", "EiAtende.Model\EiAtende.Model.csproj", "{3BF227B2-F82C-470C-B400-6FEB1B23A84D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EiAtende.Entity", "EiAtende.Entity\EiAtende.Entity.csproj", "{362BC938-087F-49DD-B760-4EAEAF3EA93D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EiAtende.Web", "EiAtende.Web\EiAtende.Web.csproj", "{FFA159E7-4345-4E5E-9CB1-107243E820D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BF227B2-F82C-470C-B400-6FEB1B23A84D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF227B2-F82C-470C-B400-6FEB1B23A84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF227B2-F82C-470C-B400-6FEB1B23A84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF227B2-F82C-470C-B400-6FEB1B23A84D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{362BC938-087F-49DD-B760-4EAEAF3EA93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{362BC938-087F-49DD-B760-4EAEAF3EA93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{362BC938-087F-49DD-B760-4EAEAF3EA93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{362BC938-087F-49DD-B760-4EAEAF3EA93D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA159E7-4345-4E5E-9CB1-107243E820D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA159E7-4345-4E5E-9CB1-107243E820D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA159E7-4345-4E5E-9CB1-107243E820D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA159E7-4345-4E5E-9CB1-107243E820D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
