@@ -11,7 +11,6 @@ namespace EiAtende.ViewModels
         public PortalChamados PortalChamado { get; set; }
         public PortalChamadosHistorico PortalChamadoHistorico { get; set; }
         public ICollection<PortalChamadosHistorico> PortalChamadosHistorico { get; set; }
-        public ICollection<ChamadoAnexos> ChamadoAnexos { get; set; }
         public ICollection<PortalTipoChamados> PortalTipoChamados { get; set; }
         public ICollection<PortalAtividadeChamados> PortalAtividadeChamados { get; set; }
         public ICollection<PortalEmpresa> PortalEmpresa { get; set; }

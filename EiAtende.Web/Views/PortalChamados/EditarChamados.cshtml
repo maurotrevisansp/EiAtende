@@ -94,6 +94,12 @@
                                     @if (Model.Status == "Desenvolvido"){<option selected>Desenvolvido</option>}else{<option>Desenvolvido</option>}
                                     @if (Model.Status == "Pré Finalizado"){<option selected>Pré Finalizado</option>}else{<option>Pré Finalizado</option>}
                                     @if (Model.Status == "Finalizado"){<option selected>Finalizado</option>}else{<option>Finalizado</option>}
+                                    @if (Model.Status == "Pendente Aprovar")
+                                    {
+                                    <option selected>Pendente Aprovar</option>}
+                                    else
+                                    {
+                                    <option>Pendente Aprovar</option>}
                                 </select>
                             </div>
 

@@ -56,6 +56,14 @@
     <Compile Include="Migrations\201704191958418_AtividadesPrevisaoDias.Designer.cs">
       <DependentUpon>201704191958418_AtividadesPrevisaoDias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704261808491_ParaStatus.cs" />
+    <Compile Include="Migrations\201704261808491_ParaStatus.Designer.cs">
+      <DependentUpon>201704261808491_ParaStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704262123253_PrevisaoHoras.cs" />
+    <Compile Include="Migrations\201704262123253_PrevisaoHoras.Designer.cs">
+      <DependentUpon>201704262123253_PrevisaoHoras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +86,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704191958418_AtividadesPrevisaoDias.resx">
       <DependentUpon>201704191958418_AtividadesPrevisaoDias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704261808491_ParaStatus.resx">
+      <DependentUpon>201704261808491_ParaStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704262123253_PrevisaoHoras.resx">
+      <DependentUpon>201704262123253_PrevisaoHoras.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

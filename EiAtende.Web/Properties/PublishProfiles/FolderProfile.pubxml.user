@@ -11,46 +11,46 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
   </PropertyGroup>
   <ItemGroup>
     <File Include="Anexos/Atender parametrização de Sistema/17499015_1513083022069908_2505901092339562417_n.jpg">
-      <publishTime>02/04/2017 15:28:08</publishTime>
+      <publishTime>04/24/2017 13:00:49</publishTime>
     </File>
     <File Include="Anexos/defaultDOC.jpg">
-      <publishTime>02/04/2017 16:46:19</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="Anexos/defaultGEN.jpg">
-      <publishTime>02/04/2017 17:02:23</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="Anexos/defaultPDF.jpg">
-      <publishTime>02/04/2017 15:48:24</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="Anexos/defaultXLS.jpg">
-      <publishTime>02/04/2017 16:39:28</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="Anexos/Manutenção de Rede/10906097_840288962696592_1017077418250833028_n.jpg">
-      <publishTime>02/04/2017 16:46:52</publishTime>
+      <publishTime>04/24/2017 13:00:49</publishTime>
     </File>
     <File Include="Anexos/Manutenção de Rede/5sjma0s.jpg">
-      <publishTime>02/04/2017 15:18:12</publishTime>
+      <publishTime>04/24/2017 13:00:49</publishTime>
     </File>
     <File Include="Anexos/Manutenção de Rede/apostila_uml.pdf">
-      <publishTime>02/04/2017 15:45:03</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="Anexos/Manutenção de Rede/Contatos Iphone.xls">
-      <publishTime>02/04/2017 16:45:14</publishTime>
+      <publishTime>04/24/2017 13:00:49</publishTime>
     </File>
     <File Include="Anexos/Manutenção de Rede/CV Mauro Trevisan Curitiba.doc">
-      <publishTime>02/04/2017 16:44:48</publishTime>
+      <publishTime>04/24/2017 13:00:49</publishTime>
     </File>
     <File Include="Anexos/Manutenção de Rede/DellI7_2.jpg">
-      <publishTime>02/04/2017 16:17:59</publishTime>
+      <publishTime>04/24/2017 13:00:49</publishTime>
     </File>
     <File Include="Anexos/Manutenção de Rede/dellXT3.jpg">
-      <publishTime>02/04/2017 16:18:15</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="Anexos/Manutenção de Rede/Mauro.jpg">
-      <publishTime>02/04/2017 15:03:22</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="ApplicationInsights.config">
-      <publishTime>04/14/2017 14:56:33</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="assets/apps/css/inbox.css">
       <publishTime>03/30/2017 15:29:10</publishTime>
@@ -17195,49 +17195,49 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>02/22/2013 08:43:40</publishTime>
     </File>
     <File Include="bin/ApplicationInsights.config">
-      <publishTime>04/14/2017 14:56:33</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="bin/EiAtende.Entity.dll">
-      <publishTime>04/19/2017 18:33:54</publishTime>
+      <publishTime>04/26/2017 19:05:28</publishTime>
     </File>
     <File Include="bin/EiAtende.Entity.dll.config">
-      <publishTime>04/14/2017 15:56:26</publishTime>
+      <publishTime>04/24/2017 13:00:48</publishTime>
     </File>
     <File Include="bin/EiAtende.Model.dll">
-      <publishTime>04/19/2017 18:33:53</publishTime>
+      <publishTime>04/26/2017 19:05:27</publishTime>
     </File>
     <File Include="bin/EiAtende.Model.dll.config">
-      <publishTime>04/14/2017 15:56:30</publishTime>
+      <publishTime>04/24/2017 13:00:49</publishTime>
     </File>
     <File Include="bin/EiAtende.Web.dll">
-      <publishTime>04/24/2017 00:02:45</publishTime>
+      <publishTime>04/26/2017 20:25:22</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>02/03/2015 09:32:26</publishTime>
+      <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>02/03/2015 09:32:26</publishTime>
+      <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>11/30/2016 16:07:42</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>07/12/2016 11:45:42</publishTime>
+      <publishTime>12/07/2016 11:45:42</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>07/12/2016 11:50:34</publishTime>
+      <publishTime>12/07/2016 11:50:34</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>06/12/2016 15:15:48</publishTime>
+      <publishTime>12/06/2016 15:15:48</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>07/12/2016 11:49:10</publishTime>
+      <publishTime>12/07/2016 11:49:10</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>07/12/2016 11:50:34</publishTime>
+      <publishTime>12/07/2016 11:50:34</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>06/12/2016 15:09:52</publishTime>
+      <publishTime>12/06/2016 15:09:52</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>12/13/2016 03:10:32</publishTime>
@@ -17246,7 +17246,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>03/08/2014 20:33:56</publishTime>
+      <publishTime>08/03/2014 20:33:56</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Helpers.resources.dll">
       <publishTime>01/28/2015 04:04:40</publishTime>
@@ -17255,7 +17255,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>01/28/2015 04:02:28</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Optimization.resources.dll">
-      <publishTime>11/02/2014 15:28:42</publishTime>
+      <publishTime>02/11/2014 15:28:42</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Razor.resources.dll">
       <publishTime>01/28/2015 04:02:40</publishTime>
@@ -17354,7 +17354,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>01/28/2015 04:02:18</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>11/02/2014 15:26:04</publishTime>
+      <publishTime>02/11/2014 15:26:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
       <publishTime>01/28/2015 04:02:32</publishTime>
@@ -17372,1660 +17372,1660 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>07/17/2013 17:03:52</publishTime>
     </File>
     <File Include="CkEdit/adapters/jquery.js">
-      <publishTime>03/29/2017 08:55:30</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="CkEdit/build-config.js">
-      <publishTime>03/29/2017 08:55:30</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/CHANGES.md">
-      <publishTime>03/29/2017 08:55:30</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="CkEdit/ckeditor.js">
-      <publishTime>03/29/2017 08:55:30</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/config.js">
-      <publishTime>03/29/2017 08:55:30</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/contents.css">
-      <publishTime>03/29/2017 08:55:30</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/css/samples.css">
-      <publishTime>03/29/2017 08:55:30</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/img/github-top.png">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/img/header-bg.png">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/img/header-separator.png">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/img/logo.png">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/img/navigation-tip.png">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/js/sample.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/js/sf.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:51</publishTime>
     </File>
     <File Include="CkEdit/lang/af.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:53</publishTime>
     </File>
     <File Include="CkEdit/lang/ar.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:53</publishTime>
     </File>
     <File Include="CkEdit/lang/bg.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/bn.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/bs.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/ca.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/cs.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/cy.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/da.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/de-ch.js">
-      <publishTime>03/29/2017 08:55:31</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/de.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/el.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/en-au.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/en-ca.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/en-gb.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/en.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/eo.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/es.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/et.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/eu.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/fa.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/fi.js">
-      <publishTime>03/29/2017 08:55:32</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/fo.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/fr-ca.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/fr.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/gl.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/gu.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/he.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/hi.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/hr.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/hu.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/id.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/is.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:54</publishTime>
     </File>
     <File Include="CkEdit/lang/it.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/ja.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/ka.js">
-      <publishTime>03/29/2017 08:55:33</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/km.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/ko.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/ku.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/lt.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/lv.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/mk.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/mn.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/ms.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/nb.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/nl.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/no.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/oc.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/pl.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/pt-br.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/pt.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/ro.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/ru.js">
-      <publishTime>03/29/2017 08:55:34</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/si.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/sk.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/sl.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/sq.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/sr-latn.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/sr.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/sv.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/th.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/tr.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:55</publishTime>
     </File>
     <File Include="CkEdit/lang/tt.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/lang/ug.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/lang/uk.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/lang/vi.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/lang/zh-cn.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/lang/zh.js">
-      <publishTime>03/29/2017 08:55:35</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/LICENSE.md">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="CkEdit/old/ajax.html">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/old/api.html">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/old/appendto.html">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/old/assets/inlineall/logo.png">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/old/assets/outputxhtml/outputxhtml.css">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/old/assets/posteddata.php">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/old/assets/sample.jpg">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/old/assets/uilanguages/languages.js">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:56</publishTime>
     </File>
     <File Include="CkEdit/old/datafiltering.html">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:57</publishTime>
     </File>
     <File Include="CkEdit/old/dialog/assets/my_dialog.js">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:57</publishTime>
     </File>
     <File Include="CkEdit/old/dialog/dialog.html">
-      <publishTime>03/29/2017 08:55:36</publishTime>
+      <publishTime>04/24/2017 13:00:57</publishTime>
     </File>
     <File Include="CkEdit/old/divreplace.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:57</publishTime>
     </File>
     <File Include="CkEdit/old/enterkey/enterkey.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:57</publishTime>
     </File>
     <File Include="CkEdit/old/htmlwriter/assets/outputforflash/outputforflash.fla">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:57</publishTime>
     </File>
     <File Include="CkEdit/old/htmlwriter/assets/outputforflash/outputforflash.swf">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:57</publishTime>
     </File>
     <File Include="CkEdit/old/htmlwriter/assets/outputforflash/swfobject.js">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:57</publishTime>
     </File>
     <File Include="CkEdit/old/htmlwriter/outputforflash.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:57</publishTime>
     </File>
     <File Include="CkEdit/old/htmlwriter/outputhtml.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:57</publishTime>
     </File>
     <File Include="CkEdit/old/index.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/inlineall.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/inlinebycode.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/inlinetextarea.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/jquery.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/magicline/magicline.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/readonly.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/replacebyclass.html">
-      <publishTime>03/29/2017 08:55:37</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/replacebycode.html">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/sample.css">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/sample.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/sample_posteddata.php">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/tabindex.html">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/toolbar/toolbar.html">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:00:58</publishTime>
     </File>
     <File Include="CkEdit/old/uicolor.html">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:00:59</publishTime>
     </File>
     <File Include="CkEdit/old/uilanguages.html">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:00:59</publishTime>
     </File>
     <File Include="CkEdit/old/wysiwygarea/fullpage.html">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:00:59</publishTime>
     </File>
     <File Include="CkEdit/old/xhtmlstyle.html">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:00:59</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/a11yhelp.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/af.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/ar.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/bg.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/ca.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/cs.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/cy.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/da.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/de-ch.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/de.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/el.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/en-gb.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/en.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/eo.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/es.js">
-      <publishTime>03/29/2017 08:55:38</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/et.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/eu.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/fa.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/fi.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/fo.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/fr-ca.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/fr.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/gl.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/gu.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/he.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/hi.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/hr.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/hu.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/id.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/it.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/ja.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/km.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/ko.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/ku.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/lt.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/lv.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/mk.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/mn.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/nb.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/nl.js">
-      <publishTime>03/29/2017 08:55:39</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/no.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/oc.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/pl.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/pt-br.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/pt.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/ro.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/ru.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/si.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/sk.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/sl.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/sq.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/sr-latn.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/sr.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/sv.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/th.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/tr.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/tt.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/ug.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/uk.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/vi.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/zh-cn.js">
-      <publishTime>03/29/2017 08:55:40</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/zh.js">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/a11yhelp/dialogs/lang/_translationstatus.txt">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:01</publishTime>
     </File>
     <File Include="CkEdit/plugins/about/dialogs/about.js">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/about/dialogs/hidpi/logo_ckeditor.png">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/about/dialogs/logo_ckeditor.png">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/clipboard/dialogs/paste.js">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/colordialog/dialogs/colordialog.css">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/colordialog/dialogs/colordialog.js">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/copyformatting/cursors/cursor-disabled.svg">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/copyformatting/cursors/cursor.svg">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/copyformatting/styles/copyformatting.css">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/dialog/dialogDefinition.js">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/div/dialogs/div.js">
-      <publishTime>03/29/2017 08:55:41</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/find/dialogs/find.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/flash/dialogs/flash.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/flash/images/placeholder.png">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:02</publishTime>
     </File>
     <File Include="CkEdit/plugins/forms/dialogs/button.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/forms/dialogs/checkbox.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/forms/dialogs/form.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/forms/dialogs/hiddenfield.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/forms/dialogs/radio.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/forms/dialogs/select.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/forms/dialogs/textarea.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/forms/dialogs/textfield.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/forms/images/hiddenfield.gif">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/icons.png">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/icons_hidpi.png">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/iframe/dialogs/iframe.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/iframe/images/placeholder.png">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/image/dialogs/image.js">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/image/images/noimage.png">
-      <publishTime>03/29/2017 08:55:42</publishTime>
+      <publishTime>04/24/2017 13:01:03</publishTime>
     </File>
     <File Include="CkEdit/plugins/link/dialogs/anchor.js">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/link/dialogs/link.js">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/link/images/anchor.png">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/link/images/hidpi/anchor.png">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/liststyle/dialogs/liststyle.js">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/magicline/images/hidpi/icon-rtl.png">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/magicline/images/hidpi/icon.png">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/magicline/images/icon-rtl.png">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/magicline/images/icon.png">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/pagebreak/images/pagebreak.gif">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/pastefromword/filter/default.js">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/preview/preview.html">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:04</publishTime>
     </File>
     <File Include="CkEdit/plugins/scayt/CHANGELOG.md">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/scayt/dialogs/options.js">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/scayt/dialogs/toolbar.css">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/scayt/LICENSE.md">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/scayt/README.md">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/scayt/skins/moono-lisa/scayt.css">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_address.png">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_blockquote.png">
-      <publishTime>03/29/2017 08:55:43</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_div.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_h1.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_h2.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_h3.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_h4.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_h5.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_h6.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_p.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/showblocks/images/block_pre.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/dialogs/smiley.js">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:05</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/angel_smile.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/angel_smile.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/angry_smile.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/angry_smile.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/broken_heart.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/broken_heart.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/confused_smile.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/confused_smile.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/cry_smile.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/cry_smile.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/devil_smile.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/devil_smile.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/embaressed_smile.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/embarrassed_smile.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/embarrassed_smile.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/envelope.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/envelope.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/heart.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/heart.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/kiss.gif">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/kiss.png">
-      <publishTime>03/29/2017 08:55:44</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/lightbulb.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/lightbulb.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/omg_smile.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/omg_smile.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/regular_smile.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/regular_smile.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/sad_smile.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/sad_smile.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:06</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/shades_smile.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/shades_smile.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/teeth_smile.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/teeth_smile.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/thumbs_down.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/thumbs_down.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/thumbs_up.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/thumbs_up.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/tongue_smile.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/tongue_smile.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/tounge_smile.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/whatchutalkingabout_smile.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/whatchutalkingabout_smile.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/wink_smile.gif">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/smiley/images/wink_smile.png">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:07</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/af.js">
-      <publishTime>03/29/2017 08:55:45</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/ar.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/bg.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/ca.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/cs.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/cy.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/da.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/de-ch.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/de.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/el.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/en-gb.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/en.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/eo.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/es.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/et.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/eu.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/fa.js">
-      <publishTime>03/29/2017 08:55:46</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/fi.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/fr-ca.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/fr.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/gl.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/he.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/hr.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/hu.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/id.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/it.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/ja.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/km.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/ko.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/ku.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/lt.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/lv.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/nb.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/nl.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/no.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/oc.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/pl.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/pt-br.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/pt.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/ru.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/si.js">
-      <publishTime>03/29/2017 08:55:47</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/sk.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/sl.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/sq.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/sv.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/th.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/tr.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/tt.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/ug.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/uk.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/vi.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/zh-cn.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/zh.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/lang/_translationstatus.txt">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:08</publishTime>
     </File>
     <File Include="CkEdit/plugins/specialchar/dialogs/specialchar.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/table/dialogs/table.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/tabletools/dialogs/tableCell.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/templates/dialogs/templates.css">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/templates/dialogs/templates.js">
-      <publishTime>03/29/2017 08:55:48</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/templates/templates/default.js">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/templates/templates/images/template1.gif">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/templates/templates/images/template2.gif">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/templates/templates/images/template3.gif">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/wsc/dialogs/ciframe.html">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/wsc/dialogs/tmpFrameset.html">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/wsc/dialogs/wsc.css">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/wsc/dialogs/wsc.js">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/plugins/wsc/dialogs/wsc_ie.js">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/plugins/wsc/LICENSE.md">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/wsc/README.md">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:09</publishTime>
     </File>
     <File Include="CkEdit/plugins/wsc/skins/moono-lisa/wsc.css">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/README.md">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="CkEdit/samples/css/samples.css">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/img/github-top.png">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/img/header-bg.png">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/img/header-separator.png">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/img/logo.png">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/img/navigation-tip.png">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/index.html">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/js/sample.js">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/js/sf.js">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/old/ajax.html">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/old/api.html">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/old/appendto.html">
-      <publishTime>03/29/2017 08:55:49</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/old/assets/inlineall/logo.png">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/old/assets/outputxhtml/outputxhtml.css">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/old/assets/posteddata.php">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/old/assets/sample.jpg">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/old/assets/uilanguages/languages.js">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:10</publishTime>
     </File>
     <File Include="CkEdit/samples/old/datafiltering.html">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/dialog/assets/my_dialog.js">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/dialog/dialog.html">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/divreplace.html">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/enterkey/enterkey.html">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/htmlwriter/assets/outputforflash/outputforflash.fla">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/htmlwriter/assets/outputforflash/outputforflash.swf">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/htmlwriter/assets/outputforflash/swfobject.js">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/htmlwriter/outputforflash.html">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/htmlwriter/outputhtml.html">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/index.html">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/inlineall.html">
-      <publishTime>03/29/2017 08:55:50</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/inlinebycode.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/inlinetextarea.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/jquery.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/magicline/magicline.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/readonly.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/replacebyclass.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/replacebycode.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/sample.css">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:11</publishTime>
     </File>
     <File Include="CkEdit/samples/old/sample.js">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/old/sample_posteddata.php">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/old/tabindex.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/old/toolbar/toolbar.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/old/uicolor.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/old/uilanguages.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/old/wysiwygarea/fullpage.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/old/xhtmlstyle.html">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/css/fontello.css">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/font/config.json">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/font/fontello.eot">
-      <publishTime>03/29/2017 08:55:51</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/font/fontello.svg">
-      <publishTime>03/29/2017 08:55:52</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/font/fontello.ttf">
-      <publishTime>03/29/2017 08:55:52</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/font/fontello.woff">
-      <publishTime>03/29/2017 08:55:52</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/font/LICENSE.txt">
-      <publishTime>03/29/2017 08:55:52</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/index.html">
-      <publishTime>03/29/2017 08:55:52</publishTime>
+      <publishTime>04/24/2017 13:01:12</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js">
-      <publishTime>03/29/2017 08:55:52</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/js/fulltoolbareditor.js">
-      <publishTime>03/29/2017 08:55:52</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/js/toolbarmodifier.js">
-      <publishTime>03/29/2017 08:55:52</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/js/toolbartextmodifier.js">
-      <publishTime>03/29/2017 08:55:52</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/lib/codemirror/codemirror.css">
-      <publishTime>03/29/2017 08:55:52</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/lib/codemirror/codemirror.js">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/lib/codemirror/javascript.js">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/lib/codemirror/LICENSE">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/lib/codemirror/neo.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/lib/codemirror/show-hint.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/samples/toolbarconfigurator/lib/codemirror/show-hint.js">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:13</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/dialog.css">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/dialog_ie.css">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/dialog_ie8.css">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/dialog_iequirks.css">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/editor.css">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/editor_gecko.css">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/editor_ie.css">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/editor_ie8.css">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/editor_iequirks.css">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/icons.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/icons_hidpi.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/images/arrow.png">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/images/close.png">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/images/hidpi/close.png">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/images/hidpi/lock-open.png">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/images/hidpi/lock.png">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/images/hidpi/refresh.png">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/images/lock-open.png">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/images/lock.png">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/images/refresh.png">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/images/spinner.gif">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono-lisa/readme.md">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/dialog.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/dialog_ie.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/dialog_ie7.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/dialog_ie8.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/dialog_iequirks.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/editor.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:14</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/editor_gecko.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/editor_ie.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/editor_ie7.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/editor_ie8.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/editor_iequirks.css">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/icons.png">
-      <publishTime>03/29/2017 08:55:53</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/icons_hidpi.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/images/arrow.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/images/close.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/images/hidpi/close.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/images/hidpi/lock-open.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/images/hidpi/lock.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/images/hidpi/refresh.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/images/lock-open.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/images/lock.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/images/refresh.png">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/images/spinner.gif">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/skins/moono/readme.md">
-      <publishTime>03/29/2017 08:55:54</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/styles.js">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/css/fontello.css">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/font/config.json">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/font/fontello.eot">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/font/fontello.svg">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/font/fontello.ttf">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/font/fontello.woff">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/font/LICENSE.txt">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/index.html">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/js/abstracttoolbarmodifier.js">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/js/fulltoolbareditor.js">
-      <publishTime>03/29/2017 08:55:55</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/js/toolbarmodifier.js">
-      <publishTime>03/29/2017 08:55:56</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/js/toolbartextmodifier.js">
-      <publishTime>03/29/2017 08:55:56</publishTime>
+      <publishTime>04/24/2017 13:01:15</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/lib/codemirror/codemirror.css">
-      <publishTime>03/29/2017 08:55:56</publishTime>
+      <publishTime>04/24/2017 13:01:16</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/lib/codemirror/codemirror.js">
-      <publishTime>03/29/2017 08:55:56</publishTime>
+      <publishTime>04/24/2017 13:01:16</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/lib/codemirror/javascript.js">
-      <publishTime>03/29/2017 08:55:56</publishTime>
+      <publishTime>04/24/2017 13:01:16</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/lib/codemirror/LICENSE">
-      <publishTime>03/29/2017 08:55:56</publishTime>
+      <publishTime>04/24/2017 13:01:16</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/lib/codemirror/neo.css">
-      <publishTime>03/29/2017 08:55:56</publishTime>
+      <publishTime>04/24/2017 13:01:16</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/lib/codemirror/show-hint.css">
-      <publishTime>03/29/2017 08:55:56</publishTime>
+      <publishTime>04/24/2017 13:01:16</publishTime>
     </File>
     <File Include="CkEdit/toolbarconfigurator/lib/codemirror/show-hint.js">
-      <publishTime>03/29/2017 08:55:56</publishTime>
+      <publishTime>04/24/2017 13:01:16</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>04/14/2017 14:55:58</publishTime>
+      <publishTime>04/24/2017 13:01:16</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>04/14/2017 14:55:58</publishTime>
+      <publishTime>04/24/2017 13:01:16</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>04/14/2017 14:55:33</publishTime>
+      <publishTime>04/24/2017 13:01:16</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>04/14/2017 14:55:34</publishTime>
+      <publishTime>04/24/2017 13:05:06</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
-      <publishTime>04/14/2017 14:55:58</publishTime>
+      <publishTime>04/24/2017 13:05:06</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.svg">
-      <publishTime>04/14/2017 14:55:58</publishTime>
+      <publishTime>04/24/2017 13:05:06</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>04/14/2017 14:55:57</publishTime>
+      <publishTime>04/24/2017 13:05:06</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff">
-      <publishTime>04/14/2017 14:55:57</publishTime>
+      <publishTime>04/24/2017 13:05:06</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>04/14/2017 14:55:34</publishTime>
+      <publishTime>04/24/2017 13:01:17</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>04/14/2017 15:56:19</publishTime>
+      <publishTime>04/24/2017 13:05:06</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
-      <publishTime>04/14/2017 14:55:57</publishTime>
+      <publishTime>04/24/2017 13:01:18</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
-      <publishTime>04/14/2017 14:55:57</publishTime>
+      <publishTime>04/24/2017 13:01:18</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
-      <publishTime>04/14/2017 14:55:59</publishTime>
+      <publishTime>04/24/2017 13:01:18</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.min.js">
-      <publishTime>04/14/2017 14:55:59</publishTime>
+      <publishTime>04/24/2017 13:01:18</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.min.map">
-      <publishTime>04/14/2017 14:55:59</publishTime>
+      <publishTime>04/24/2017 13:01:18</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.js">
-      <publishTime>04/14/2017 14:56:19</publishTime>
+      <publishTime>04/24/2017 13:01:18</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.min.js">
-      <publishTime>04/14/2017 14:56:19</publishTime>
+      <publishTime>04/24/2017 13:01:18</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.js">
-      <publishTime>04/14/2017 14:56:19</publishTime>
+      <publishTime>04/24/2017 13:01:18</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.min.js">
-      <publishTime>04/14/2017 14:56:19</publishTime>
+      <publishTime>04/24/2017 13:01:18</publishTime>
     </File>
     <File Include="Scripts/js/historico.js">
-      <publishTime>04/23/2017 10:16:56</publishTime>
+      <publishTime>04/26/2017 17:49:35</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.6.2.js">
-      <publishTime>04/14/2017 14:56:15</publishTime>
+      <publishTime>04/24/2017 13:01:19</publishTime>
     </File>
     <File Include="Scripts/respond.js">
-      <publishTime>04/14/2017 14:56:18</publishTime>
+      <publishTime>04/24/2017 13:01:19</publishTime>
     </File>
     <File Include="Scripts/respond.min.js">
-      <publishTime>04/14/2017 14:56:17</publishTime>
+      <publishTime>04/24/2017 13:01:19</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>04/14/2017 14:55:33</publishTime>
+      <publishTime>04/24/2017 13:01:19</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
-      <publishTime>04/14/2017 14:55:33</publishTime>
+      <publishTime>04/24/2017 13:01:19</publishTime>
     </File>
     <File Include="Views/Home/ContaUsuario.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/24/2017 13:01:19</publishTime>
     </File>
     <File Include="Views/Home/Galeria.cshtml">
-      <publishTime>04/05/2017 20:26:52</publishTime>
+      <publishTime>04/24/2017 13:01:19</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>04/23/2017 23:37:40</publishTime>
+      <publishTime>04/26/2017 20:16:31</publishTime>
     </File>
     <File Include="Views/Login/Index - Copia.cshtml">
-      <publishTime>04/06/2017 17:59:48</publishTime>
+      <publishTime>04/24/2017 13:01:19</publishTime>
     </File>
     <File Include="Views/Login/Index.cshtml">
-      <publishTime>04/14/2017 20:58:54</publishTime>
+      <publishTime>04/24/2017 13:01:19</publishTime>
     </File>
     <File Include="Views/Login/Registrar.cshtml">
-      <publishTime>04/14/2017 16:25:56</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalAtividadeChamados/Create.cshtml">
-      <publishTime>04/19/2017 17:47:57</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalAtividadeChamados/Delete.cshtml">
-      <publishTime>04/14/2017 16:25:56</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalAtividadeChamados/Details.cshtml">
-      <publishTime>04/14/2017 16:25:56</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalAtividadeChamados/Edit.cshtml">
-      <publishTime>04/19/2017 18:08:34</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalAtividadeChamados/Index.cshtml">
-      <publishTime>04/19/2017 18:07:12</publishTime>
+      <publishTime>04/26/2017 18:21:39</publishTime>
     </File>
     <File Include="Views/PortalChamadoHistoricos/Create.cshtml">
-      <publishTime>04/14/2017 16:25:57</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalChamadoHistoricos/Delete.cshtml">
-      <publishTime>04/14/2017 16:25:57</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalChamadoHistoricos/Details.cshtml">
-      <publishTime>04/14/2017 16:25:57</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalChamadoHistoricos/Edit.cshtml">
-      <publishTime>04/14/2017 16:25:57</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalChamadoHistoricos/Index.cshtml">
-      <publishTime>04/23/2017 10:53:22</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalChamados/Anexos.cshtml">
-      <publishTime>04/15/2017 00:29:21</publishTime>
+      <publishTime>04/26/2017 15:31:30</publishTime>
     </File>
     <File Include="Views/PortalChamados/EditarChamados.cshtml">
-      <publishTime>04/19/2017 17:29:02</publishTime>
+      <publishTime>04/26/2017 16:34:22</publishTime>
     </File>
     <File Include="Views/PortalChamados/Index.cshtml">
-      <publishTime>04/14/2017 14:07:41</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalConhecimentos/Index.cshtml">
-      <publishTime>04/14/2017 16:25:57</publishTime>
+      <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalConhecimentos/ListaDeConhecimentos.cshtml">
-      <publishTime>04/14/2017 16:25:57</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalConhecimentos/NovoConhecimento.cshtml">
-      <publishTime>04/14/2017 16:25:57</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalConhecimentos/VisualizarConhecimento.cshtml">
-      <publishTime>04/14/2017 16:25:57</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalTipoChamados/Create.cshtml">
-      <publishTime>04/14/2017 16:25:58</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalTipoChamados/Delete.cshtml">
-      <publishTime>04/14/2017 16:25:58</publishTime>
+      <publishTime>04/26/2017 18:19:40</publishTime>
     </File>
     <File Include="Views/PortalTipoChamados/Details.cshtml">
-      <publishTime>04/14/2017 16:25:58</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalTipoChamados/Edit.cshtml">
-      <publishTime>04/14/2017 16:25:58</publishTime>
+      <publishTime>04/26/2017 18:14:40</publishTime>
     </File>
     <File Include="Views/PortalTipoChamados/Index.cshtml">
-      <publishTime>04/14/2017 16:25:58</publishTime>
+      <publishTime>04/26/2017 18:16:55</publishTime>
     </File>
     <File Include="Views/PortalUsuarios/Create.cshtml">
-      <publishTime>04/14/2017 15:24:11</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalUsuarios/Delete.cshtml">
-      <publishTime>04/14/2017 15:24:12</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalUsuarios/Details.cshtml">
-      <publishTime>04/14/2017 15:24:14</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalUsuarios/Edit.cshtml">
-      <publishTime>04/14/2017 15:24:15</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalUsuarios/Index.cshtml">
-      <publishTime>04/14/2017 15:24:16</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>04/14/2017 14:55:34</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/Shared/SideBarMenu.cshtml">
-      <publishTime>04/23/2017 19:39:30</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/Shared/TopBar.cshtml">
-      <publishTime>04/15/2017 16:57:14</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>04/23/2017 17:13:14</publishTime>
+      <publishTime>04/26/2017 19:34:55</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>04/14/2017 14:55:34</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>04/14/2017 14:55:34</publishTime>
+      <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/23/2017 18:10:32</publishTime>
+      <publishTime>04/26/2017 19:16:20</publishTime>
     </File>
   </ItemGroup>
 </Project>

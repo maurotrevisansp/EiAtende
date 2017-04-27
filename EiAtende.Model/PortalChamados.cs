@@ -40,6 +40,7 @@ namespace EiAtende
         public string ChamadoConhecimento { get; set; }
 
         public string Status { get; set; }
+        public string paraStatus { get; set; }
         public string Avaliacao { get; set; }
         
         public virtual PortalTipoChamados PortalTipoChamados { get; set; }

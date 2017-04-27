@@ -46,7 +46,6 @@
                                 <th>#</th>
                                 <th>Empresa</th>
                                 <th>Nome do Tipo</th>
-                                <th>Ativo</th>
                                 <th width="10%"></th>
                             </tr>
                         </thead>
@@ -58,7 +57,6 @@
                                     <td>@item.PortalEmpresa.EmpNomeFantasia</td>
                                     <td>@item.TipoChamadoNome</td>
 
-                                    <td>S</td>
                                     <td>
                                         <div class="btn-group">
                                             <button data-toggle="dropdown" class="btn btn-warning btn-xs dropdown-toggle">
@@ -67,10 +65,10 @@
                                             </button>
                                             <ul class="dropdown-menu dropdown-inverse">
                                                 <li>
-                                                    <a href="~/PortalTipoChamados/TipoEditar?Id=@item.TipoChamadoID&Acao=Editar">Editar</a>
+                                                    <a href="~/PortalTipoChamados/Edit?Id=@item.TipoChamadoID&Acao=Editar">Editar</a>
                                                 </li>
                                                 <li>
-                                                    <a href="~/PortalTipoChamados/TipoEditar?Id=@item.TipoChamadoID&Acao=Desativar">Desativar</a>
+                                                    <a href="~/PortalTipoChamados/Delete?Id=@item.TipoChamadoID&Acao=Desativar">Desativar</a>
                                                 </li>
                                             </ul>
                                         </div><!-- /.btn-group -->

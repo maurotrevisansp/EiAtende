@@ -25,11 +25,15 @@ namespace EiAtende.Web.Controllers
         public ActionResult Index(PortalUsuario portalUsuario, string submit, ViewModels.VwChamados model, string AtenderEmpID, string DeUsrID, 
             string ParaUsrID, string TipoChamadoID, string AtividadeChamadoID, string Status, string atenderEmpresa,
             string idChamadoHist, string empresa, string tipochamado, string atividadechamado, string Historico,
-            string idchamado, string StatusPesq, string StatusHist, string deStatus, string Descricao, string dtAdiar,
+            string idchamado, string StatusPesq, string StatusHist, string deStatus, string Descricao, string dtAdiar, string paraStatus,
             string filtroempresa, string filtrotipochamado, string filtroatividadechamado, string filtroidchamado, string filtroStatusPesq, 
             string filtroempresa1, string filtrotipochamado1, string filtroatividadechamado1, string filtroidchamado1, string filtroStatusPesq1)
         {
-
+            if (Request.QueryString["idDoChamado"] != null)
+            {
+                idchamado = Request.QueryString["idDoChamado"];
+                submit = "PesquisarGeral";
+            }
             TempData["msg"] = "Lista de Chamados";
 
             var portalChamados = db.PortalChamados.Include(p => p.PortalAtividadeChamados).Include(p => p.PortalTipoChamados);
@@ -43,7 +47,8 @@ namespace EiAtende.Web.Controllers
 
             if (submit == "Excell")
             {
-                this.ExportChamadosToExcel(empresa, tipochamado, atividadechamado, submit, idchamado, StatusPesq);
+                _vwChamados = PesquisaGeral(empresa, tipochamado, atividadechamado, idchamado, StatusPesq);
+                this.ExportChamadosToExcel(_vwChamados);
                 TempData["msg"] = "Arquivo Excell Gerado com Sucesso";
                 _vwChamados = PesquisaGeral(empresa, tipochamado, atividadechamado, idchamado, StatusPesq);
                 return View(_vwChamados);
@@ -74,6 +79,7 @@ namespace EiAtende.Web.Controllers
                 _PortalChamados.ChamadoConhecimento = string.Empty;
                 _PortalChamados.ChamadoDtAbertura = DateTime.Now;
                 _PortalChamados.ChamadoDtPrevista = DateTime.Now.AddDays(_Atividades.PrevisaoDias);
+                _PortalChamados.ChamadoDtPrevista = _PortalChamados.ChamadoDtPrevista.AddHours(_Atividades.PrevisaoHoras);
                 _PortalChamados.ChamadoHistorico = model.PortalChamado.ChamadoHistorico;
                 if (model.PortalChamado.ChamadoTitulo == string.Empty)
                 {
@@ -108,7 +114,7 @@ namespace EiAtende.Web.Controllers
                 _PortalChamadosHistorico.ChamadoID = Convert.ToInt32(idChamadoHist);
                 _PortalChamadosHistorico.Descricao = Descricao;
                 _PortalChamadosHistorico.DeStatus = deStatus;
-                _PortalChamadosHistorico.ParaStatus = StatusHist;
+                _PortalChamadosHistorico.ParaStatus = paraStatus;
                 _PortalChamadosHistorico.DtIncl = DateTime.Now;
                 if (dtAdiar != string.Empty)
                 {
@@ -117,7 +123,7 @@ namespace EiAtende.Web.Controllers
                 db.PortalChamadosHistorico.Add(_PortalChamadosHistorico);
                 db.SaveChanges();
                 PortalChamados _portalChamados = db.PortalChamados.Find(Convert.ToInt32(idChamadoHist));
-                _portalChamados.Status = StatusHist;
+                _portalChamados.Status = paraStatus;
                 if (StatusHist == "Finalizado")
                 {
                     _portalChamados.ChamadoDtTermino = DateTime.Now;
@@ -171,7 +177,10 @@ namespace EiAtende.Web.Controllers
                 empresa = "99999";
                 tipochamado = "0";
                 atividadechamado = "0";
-                idchamado = "0";
+                if (idchamado == null)
+                {
+                    idchamado = "0";
+                }
                 StatusPesq = "Todos Status";
             }
             var IdUsuario = Convert.ToInt32((Session["IdUsuario"]));
@@ -203,6 +212,7 @@ namespace EiAtende.Web.Controllers
             foreach (var item in _vwChamados.PortalChamados)
             {
                 item.PortalChamadosHistorico = db.PortalChamadosHistorico.ToList().Where(e => e.ChamadoID.Equals(item.ChamadoID)).ToList();
+                item.ChamadoAnexos = db.ChamadoAnexos.ToList().Where(e => e.ChamadoID.Equals(item.ChamadoID)).ToList();
             }
             if (Convert.ToInt32(idchamado) != 0)
             {
@@ -220,11 +230,32 @@ namespace EiAtende.Web.Controllers
             {
                 _vwChamados.PortalChamados = _vwChamados.PortalChamados.Where(e => e.AtividadeChamadoID.Equals(Convert.ToInt32(atividadechamado))).ToList();
             }
+
             if (StatusPesq != "Todos Status")
             {
-                _vwChamados.PortalChamados = _vwChamados.PortalChamados.Where(e => e.Status.Equals(StatusPesq)).ToList();
+                List<PortalChamados> novalista = new List<PortalChamados>();
+                foreach (var item in _vwChamados.PortalChamados)
+                {
+                    if (item.Status == StatusPesq)
+                    {
+                        novalista.Add(item);
+                    }
+                }
+                _vwChamados.PortalChamados = novalista;
             }
+            else
+            {
+                List<PortalChamados> novalista = new List<PortalChamados>();
+                foreach (var item in _vwChamados.PortalChamados)
+                {
+                    if (item.Status != "Finalizado")
+                    {
+                        novalista.Add(item);
+                    }
+                }
+                _vwChamados.PortalChamados = novalista;
 
+            }
             var usrdasempresas = db.PortalUsuario.ToList();
             bool pertence = false;
             foreach (var item in usrdasempresas)
@@ -242,7 +273,7 @@ namespace EiAtende.Web.Controllers
                 }
                 pertence = false;
             }
-
+           
             _vwChamados.PortalTipoChamados = db.PortalTipoChamados.ToList();
 
             _vwChamados.PortalEmpresa = _PortalEmpresas;
@@ -374,33 +405,8 @@ namespace EiAtende.Web.Controllers
         }
 
 
-        public void ExportChamadosToExcel(string empresa, string tipochamado, string atividadechamado, string submit, string idchamado, string StatusPesq)
+        public void ExportChamadosToExcel(ViewModels.VwChamados _vwChamados)
         {
-
-            var portalChamados = db.PortalChamados.Include(p => p.PortalAtividadeChamados).Include(p => p.PortalTipoChamados);
-
-            ViewModels.VwChamados _vwChamados = new ViewModels.VwChamados();
-            _vwChamados.PortalChamados = portalChamados.ToList();
-            if (idchamado.Length > 0)
-            {
-                _vwChamados.PortalChamados = _vwChamados.PortalChamados.Where(e => e.ChamadoID.Equals(Convert.ToInt32(idchamado))).ToList();
-            }
-            if (empresa != "Todas Empresas")
-            {
-                _vwChamados.PortalChamados = _vwChamados.PortalChamados.Where(e => e.AtenderEmpID.Equals(Convert.ToInt32(empresa))).ToList();
-            }
-            if (tipochamado != "Todos Tipos")
-            {
-                _vwChamados.PortalChamados = _vwChamados.PortalChamados.Where(e => e.TipoChamadoID.Equals(Convert.ToInt32(tipochamado))).ToList();
-            }
-            if (atividadechamado != "Todas Atividades")
-            {
-                _vwChamados.PortalChamados = _vwChamados.PortalChamados.Where(e => e.AtividadeChamadoID.Equals(Convert.ToInt32(atividadechamado))).ToList();
-            }
-            if (StatusPesq != "Todos Status")
-            {
-                _vwChamados.PortalChamados = _vwChamados.PortalChamados.Where(e => e.Status.Equals(StatusPesq)).ToList();
-            }
 
 
             _vwChamados.PortalTipoChamados = db.PortalTipoChamados.ToList();
@@ -447,6 +453,15 @@ namespace EiAtende.Web.Controllers
                 linha += item.Status;
 
                 sw.WriteLine(linha);
+                linha = ";Descrição;Status;Dt.Inclusão;Dt.Adiada";
+                sw.WriteLine(linha);
+                foreach (var item2 in item.PortalChamadosHistorico)
+                {
+                    linha = ";" + item2.Descricao + ";" + item2.ParaStatus + ";" + item2.DtIncl + ";" + item2.DtAdiar + ";";
+
+                    sw.WriteLine(linha);
+
+                }
             }
             sw.Close();
 

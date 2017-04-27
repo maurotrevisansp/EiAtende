@@ -19,6 +19,7 @@
                             <div class="col-xs-12">
                                 @Html.HiddenFor(model => model.ChamadoID)
                                 @Html.HiddenFor(model => model.ChamadoTitulo)
+                                <input id="idChamado" name="idChamado" value="@Model.ChamadoID" hidden />
                                 <!-- PAGE CONTENT BEGINS -->
                                 <div class="alert alert-info" style="width:100%">
                                     <i class="ace-icon fa fa-hand-o-right"></i>
@@ -26,6 +27,10 @@
                                     <a data-toggle="modal" data-target="#meuUpload">
                                         <i class="upload-ace-icon ace-icon fa fa-cloud-upload black fa-2x"></i>
                                     </a>
+                                    <br />
+                                    <br />
+                                    <small>Descrição do Anexo</small><br />
+                                    <textarea id="dsAnexo" style="width:100%;resize:none" name="dsAnexo" rows="5"></textarea>
                                 </div>
 
                             </div><!-- /.col -->

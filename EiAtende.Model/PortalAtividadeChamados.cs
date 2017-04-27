@@ -21,6 +21,9 @@ namespace EiAtende
         [Required]
         public int PrevisaoDias { get; set; }
 
+        [Required]
+        public int PrevisaoHoras { get; set; }
+
         public virtual PortalEmpresa PortalEmpresa { get; set; }
 
     }

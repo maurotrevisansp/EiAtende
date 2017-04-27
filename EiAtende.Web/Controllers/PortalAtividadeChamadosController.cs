@@ -49,7 +49,7 @@ namespace EiAtende.Controllers
         // GET: PortalAtividadeChamados/Create
         public ActionResult Create()
         {
-            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpCNPJ");
+            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpRazao");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace EiAtende.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AtividadeChamadoID,AtividadeChamadoNome,EmpID,PrevisaoDias")] PortalAtividadeChamados portalAtividadeChamados)
+        public ActionResult Create([Bind(Include = "AtividadeChamadoID,AtividadeChamadoNome,EmpID,PrevisaoDias,PrevisaoHoras")] PortalAtividadeChamados portalAtividadeChamados)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace EiAtende.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AtividadeChamadoID,AtividadeChamadoNome,EmpID,PrevisaoDias")] PortalAtividadeChamados portalAtividadeChamados)
+        public ActionResult Edit([Bind(Include = "AtividadeChamadoID,AtividadeChamadoNome,EmpID,PrevisaoDias,PrevisaoHoras")] PortalAtividadeChamados portalAtividadeChamados)
         {
             if (ModelState.IsValid)
             {

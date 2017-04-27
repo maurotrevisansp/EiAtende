@@ -1,6 +1,7 @@
-﻿function CarregaIdChamado(idChamado, deStatus) {
-    //window.alert(idChamado + " " + deStatus);
+﻿function CarregaIdChamado(idChamado, deStatus, paraStatus) {
+    //window.alert(idChamado + " " + deStatus + " " + paraStatus);
     document.getElementById("deStatus").setAttribute('value', deStatus);
+    document.getElementById("paraStatus").setAttribute('value', paraStatus);
     document.getElementById("idChamadoHist").setAttribute('value', idChamado);
     document.getElementById("filtroempresa1").setAttribute('value', document.getElementById("empresa").value);
     document.getElementById("filtrotipochamado1").setAttribute('value', document.getElementById("tipochamado").value);
@@ -16,3 +17,4 @@ function CarregaFiltros() {
     document.getElementById("filtroStatusPesq").setAttribute('value', document.getElementById("StatusPesq").value);
 
 }
+

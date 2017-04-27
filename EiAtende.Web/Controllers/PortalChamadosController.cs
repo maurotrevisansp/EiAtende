@@ -75,6 +75,7 @@ namespace EiAtende.Controllers
             foreach (var item in _vwChamados.PortalChamados)
             {
                 item.PortalChamadosHistorico = db.PortalChamadosHistorico.ToList().Where(e => e.ChamadoID.Equals(item.ChamadoID)).ToList();
+                item.ChamadoAnexos = db.ChamadoAnexos.ToList().Where(e => e.ChamadoID.Equals(item.ChamadoID)).ToList();
             }
             _vwChamados.PortalTipoChamados = db.PortalTipoChamados.ToList();
             _vwChamados.PortalEmpresa = db.PortalEmpresa.ToList();
@@ -185,7 +186,16 @@ namespace EiAtende.Controllers
             {
                 if (Session["UsrGrpTratarChamado"].ToString() == "True")
                 {
-                    if (Acao == "Editar" || Acao == "Adiar" || Acao == "Finalizar")
+                    if (Acao == "Adiar")
+                    {
+                        var Chamado = db.PortalChamados.Find(Convert.ToInt32(id));
+                        Chamado.Status = "Pendente Aprovar";
+                        db.Entry(Chamado).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("Index", "Home", new { idDoChamado = Chamado.ChamadoID });
+
+                    }
+                    if (Acao == "Editar" || Acao == "Finalizar")
                     {
                         var _PortalUsuario = db.PortalUsuario.Find(Convert.ToInt32(Session["IdUsuario"]));
 
@@ -398,7 +408,7 @@ namespace EiAtende.Controllers
                 default:
                     break;
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home", new { idDoChamado = formCollection["idChamado"] });
         }
 
         public void ImportarImagens(FormCollection formCollection)
@@ -418,6 +428,18 @@ namespace EiAtende.Controllers
                     file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
                     caminhoArquivo = Server.MapPath("/Anexos/" + formCollection["ChamadoTitulo"] + "/" + file.FileName);
                     file.SaveAs(caminhoArquivo);
+
+                    ChamadoAnexos Anexos = new ChamadoAnexos();
+                    Anexos.Ds_Anexo = formCollection["dsAnexo"];
+                    Anexos.Dt_Incl_Anexo = DateTime.Now;
+                    Anexos.ChamadoID = Convert.ToInt32(formCollection["idChamado"]);
+                    Anexos.Nome_Arquivo_Anexo = fileName;
+                    Anexos.Patch_Anexo = formCollection["ChamadoTitulo"] + "/" + file.FileName;
+                    var chamado = db.PortalChamados.Find(Anexos.ChamadoID);
+                    Anexos.PortalChamados = chamado;
+                    db.ChamadoAnexos.Add(Anexos);
+                    db.SaveChanges();
+
                 }
             }
         }

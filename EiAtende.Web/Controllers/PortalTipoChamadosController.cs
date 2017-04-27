@@ -67,7 +67,7 @@ namespace EiAtende.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpCNPJ", portalTipoChamados.EmpID);
+            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpRazao", portalTipoChamados.EmpID);
             return View(portalTipoChamados);
         }
 
@@ -83,7 +83,7 @@ namespace EiAtende.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpCNPJ", portalTipoChamados.EmpID);
+            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpRazao", portalTipoChamados.EmpID);
             return View(portalTipoChamados);
         }
 
@@ -100,7 +100,7 @@ namespace EiAtende.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpCNPJ", portalTipoChamados.EmpID);
+            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpRazao", portalTipoChamados.EmpID);
             return View(portalTipoChamados);
         }
 
