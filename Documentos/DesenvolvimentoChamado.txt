@@ -1,4 +1,4 @@
-Desenvolvimento Sistema de Chamados
+﻿Desenvolvimento Sistema de Chamados
 
 Estrutura
 	Ei Advanced -> Escritório -> Cliente Final
@@ -7,7 +7,10 @@ Cadastros
 	- Usuario (Já existe uma base com Ei Advanced, Escritório e Cliente Final cadastrados);
 	- Tipo de chamado a ser aberto (Associado a Ei Advanced e outro ao Escritório, quando for abrir chamado para Ei Advanced, aparecem apenas os tipos da Ei Advanced; Quando for abrir um chamado para um determinado escritório, aparece apenas os tipos deste Escritório)
 		Exemplos (Extra, CTB, Fiscal, Suporte, Conversão)
-		
+		EmpID = 0 (Ei Advanced) 
+		EmpEmpID = 0 && EmpID <> 0 (Escritório)
+		EmpEmpID <> 0 && EmpID <> 0 (Cliente)
+
 	- Atividades (Mesmo caso do Tipo)
 		Exemplos (ISSQN, Inventário, Desenvolvimento, Novo Serviço)
 		No cadastro de Atividades, ter a opção de pré-determinar um tempo (em horas ou dias) para a resolução do chamado;
