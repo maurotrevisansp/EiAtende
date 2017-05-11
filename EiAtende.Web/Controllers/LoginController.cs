@@ -47,16 +47,21 @@ namespace EiAtende.Web.Controllers
                         if (!_PortalUsuario.First().UsrAtivo)
                         {
                             TempData["msg"] = "Erro: Usuário não esta Ativo";
-                            return RedirectToAction("Index", "Home", _PortalUsuario.First());
+                            return RedirectToAction("", "Login");
                         }
-                        //if (_FormColletion["PortalUsuarioenha"].Length > 0)
-                        //{
-                        //    if (Helpers.StringChiper.Decrypt(_PortalUsuario.First().UsrSenha, string.Empty) != _FormColletion["PortalUsuarioenha"])
-                        //    {
-                        //        TempData["msg"] = "Erro: Senhas não Conferem";
-                        //        return RedirectToAction("Login", "Home");
-                        //    }
-                        //}
+                        if (_FormColletion["UsuarioLogin"].Length > 0)
+                        {
+                            if (Helpers.StringChiper.Decrypt(_PortalUsuario.First().UsrSenha, string.Empty) != _FormColletion["UsuarioSenha"])
+                            {
+                                TempData["msg"] = "Erro: Senhas não Conferem";
+                                return RedirectToAction("", "Login");
+                            }
+                        }
+                        else
+                        {
+                            TempData["msg"] = "Erro: Senha Invalida";
+                            return RedirectToAction("", "Login");
+                        }
                         this.CarregarSessao(_PortalUsuario.First());
                         ViewBag.Menu = "CONVERSOR";
                         portalUsuario = _PortalUsuario.First();
@@ -66,20 +71,20 @@ namespace EiAtende.Web.Controllers
                     TempData["msg"] = "Erro: Usuário não Encontrado";
                     return RedirectToAction("", "Login");
 
-                case "Visitante":
+                //case "Visitante":
 
-                    _PortalUsuario = db.PortalUsuario.ToList().Where(e => e.UsrEmail.Equals("visitante@eiadvanced.com"));
-                    if (_PortalUsuario.Count() > 0)
-                    {
-                        this.CarregarSessao(_PortalUsuario.First());
-                        ViewBag.Menu = "CONVERSOR";
-                        return RedirectToAction("Index", "Home", _PortalUsuario.First());
-                    }
-                    else
-                    {
-                        TempData["msg"] = "Erro: Usuário não encontrado !";
-                        return RedirectToAction("Login", "Home");
-                    }
+                //    _PortalUsuario = db.PortalUsuario.ToList().Where(e => e.UsrEmail.Equals("visitante@eiadvanced.com"));
+                //    if (_PortalUsuario.Count() > 0)
+                //    {
+                //        this.CarregarSessao(_PortalUsuario.First());
+                //        ViewBag.Menu = "CONVERSOR";
+                //        return RedirectToAction("Index", "Home", _PortalUsuario.First());
+                //    }
+                //    else
+                //    {
+                //        TempData["msg"] = "Erro: Usuário não encontrado !";
+                //        return RedirectToAction("Login", "Home");
+                //    }
                     
 
                 default:

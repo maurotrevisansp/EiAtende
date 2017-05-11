@@ -47,6 +47,9 @@
                                 <th>Empresa</th>
                                 <th>Nome da Atividade</th>
                                 <th>Dias Previsão</th>
+                                <th>Horas Previsão</th>
+                                <th>Minutos Previsão</th>
+                                <th>Ativo</th>
                                 <th width="10%"></th>
                             </tr>
                         </thead>
@@ -58,6 +61,9 @@
                                     <td>@item.PortalEmpresa.EmpNomeFantasia</td>
                                     <td>@item.AtividadeChamadoNome</td>
                                     <td>@item.PrevisaoDias</td>
+                                    <td>@item.PrevisaoHoras</td>
+                                    <td>@item.PrevisaoMinutos</td>
+                                    <td>@item.Ativo.ToString().Replace("False","Nâo").Replace("True","Sim")</td>
                                     <td>
                                         <a class="btn btn-gray fa fa-edit" href="~/PortalAtividadeChamados/Edit?Id=@item.AtividadeChamadoID"></a>
                                     </td>

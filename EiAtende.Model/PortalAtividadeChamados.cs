@@ -24,6 +24,12 @@ namespace EiAtende
         [Required]
         public int PrevisaoHoras { get; set; }
 
+        [Required]
+        public int PrevisaoMinutos { get; set; }
+
+        [Required]
+        public bool Ativo { get; set; }
+
         public virtual PortalEmpresa PortalEmpresa { get; set; }
 
     }

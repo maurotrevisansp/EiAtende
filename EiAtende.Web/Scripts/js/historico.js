@@ -8,6 +8,8 @@
     document.getElementById("filtroatividadechamado1").setAttribute('value', document.getElementById("atividadechamado").value);
     document.getElementById("filtroidchamado1").setAttribute('value', document.getElementById("idchamado").value);
     document.getElementById("filtroStatusPesq1").setAttribute('value', document.getElementById("StatusPesq").value);
+    document.getElementById("idChamadoAdiar").setAttribute('value', idChamado);
+
 };
 function CarregaFiltros() {
     document.getElementById("filtroempresa").setAttribute('value', document.getElementById("empresa").value);
@@ -16,5 +18,5 @@ function CarregaFiltros() {
     document.getElementById("filtroidchamado").setAttribute('value', document.getElementById("idchamado").value);
     document.getElementById("filtroStatusPesq").setAttribute('value', document.getElementById("StatusPesq").value);
 
-}
+};
 

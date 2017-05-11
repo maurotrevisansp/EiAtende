@@ -30,7 +30,7 @@
                                     @Html.EditorFor(model => model.ChamadoTitulo, new { htmlAttributes = new { @class = "form-control", @placeholder = "Titulo" } })
                                 }
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 hidden">
                                 <small>Data Abertura</small><br />
                                 @if (TempData["Acao"].ToString() == "Visualizar")
                                 {
@@ -42,7 +42,7 @@
                                 }
                             </div>
 
-                            <div class="col-md-2">
+                            <div class="col-md-2 hidden">
                                 <small>Data Prevista</small><br />
                                 @if (TempData["Acao"].ToString() == "Visualizar")
                                 {
@@ -66,7 +66,7 @@
                                 }
                             </div>*@
 
-                            <div class="col-md-4">
+                            <div class="col-md-4 hidden">
                                 <small>De Usuário</small><br />
                                 @Html.DropDownList("DeUsrID", null, htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.DeUsrID, "", new { @class = "text-danger" })
@@ -78,7 +78,7 @@
                                 @Html.ValidationMessageFor(model => model.ParaUsrID, "", new { @class = "text-danger" })
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-4 hidden">
                                 <small>Atender Empresa</small><br />
                                 @Html.DropDownList("AtenderEmpID", null, htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.AtenderEmpID, "", new { @class = "text-danger" })
@@ -134,9 +134,12 @@
                 </div><!-- /.col -->
             </div>
             <div class="panel-footer form-actions">
-                <button class="btn btn-success" type="submit" name="submit" value="SalvarChamado">
-                    Salvar
-                </button>
+                @if (Session["UsuarioGestor"].ToString() == "True")
+                {
+                    <button class="btn btn-success" type="submit" name="submit" value="SalvarChamado">
+                        Salvar
+                    </button>
+                }
                 <button id="cancelar" class="btn btn-warning" type="submit" name="submit" value="Cancelar">
                     Cancelar
                 </button>

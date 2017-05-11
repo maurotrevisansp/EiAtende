@@ -58,7 +58,7 @@ namespace EiAtende.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TipoChamadoID,TipoChamadoNome,EmpID")] PortalTipoChamados portalTipoChamados)
+        public ActionResult Create([Bind(Include = "TipoChamadoID,TipoChamadoNome,EmpID,Ativo")] PortalTipoChamados portalTipoChamados)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace EiAtende.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TipoChamadoID,TipoChamadoNome,EmpID")] PortalTipoChamados portalTipoChamados)
+        public ActionResult Edit([Bind(Include = "TipoChamadoID,TipoChamadoNome,EmpID,Ativo")] PortalTipoChamados portalTipoChamados)
         {
             if (ModelState.IsValid)
             {

@@ -19,6 +19,9 @@ namespace EiAtende
         [Required]
         public int EmpID { get; set; }
 
+        [Required]
+        public bool Ativo { get; set; }
+
         public virtual PortalEmpresa PortalEmpresa { get; set; }
 
     }

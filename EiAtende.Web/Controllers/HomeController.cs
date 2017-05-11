@@ -22,19 +22,24 @@ namespace EiAtende.Web.Controllers
 
         // GET: PortalChamados
         [HttpGet]
-        public ActionResult Index(PortalUsuario portalUsuario, string submit, ViewModels.VwChamados model, string AtenderEmpID, string DeUsrID, 
+        public ActionResult Index(PortalUsuario portalUsuario, FormCollection formColletion, string submit, ViewModels.VwChamados model, string AtenderEmpID, string DeUsrID, 
             string ParaUsrID, string TipoChamadoID, string AtividadeChamadoID, string Status, string atenderEmpresa,
-            string idChamadoHist, string empresa, string tipochamado, string atividadechamado, string Historico,
+            string idChamadoHist, string empresa, string tipochamado, string atividadechamado, string Historico, string msg,
             string idchamado, string StatusPesq, string StatusHist, string deStatus, string Descricao, string dtAdiar, string paraStatus,
             string filtroempresa, string filtrotipochamado, string filtroatividadechamado, string filtroidchamado, string filtroStatusPesq, 
-            string filtroempresa1, string filtrotipochamado1, string filtroatividadechamado1, string filtroidchamado1, string filtroStatusPesq1)
+            string filtroempresa1, string Acao, string filtrotipochamado1, string manterStatus, string filtroatividadechamado1, string filtroidchamado1, string filtroStatusPesq1, string Aprovar)
         {
             if (Request.QueryString["idDoChamado"] != null)
             {
                 idchamado = Request.QueryString["idDoChamado"];
                 submit = "PesquisarGeral";
             }
-            TempData["msg"] = "Lista de Chamados";
+          
+            if (msg != null)
+            {
+                ViewData["msg"] = msg;
+            }
+
 
             var portalChamados = db.PortalChamados.Include(p => p.PortalAtividadeChamados).Include(p => p.PortalTipoChamados);
             ViewModels.VwChamados _vwChamados = new ViewModels.VwChamados();
@@ -49,7 +54,7 @@ namespace EiAtende.Web.Controllers
             {
                 _vwChamados = PesquisaGeral(empresa, tipochamado, atividadechamado, idchamado, StatusPesq);
                 this.ExportChamadosToExcel(_vwChamados);
-                TempData["msg"] = "Arquivo Excell Gerado com Sucesso";
+                ViewData["msg"] = "Arquivo Excell Gerado com Sucesso";
                 _vwChamados = PesquisaGeral(empresa, tipochamado, atividadechamado, idchamado, StatusPesq);
                 return View(_vwChamados);
             }
@@ -59,7 +64,10 @@ namespace EiAtende.Web.Controllers
                 _vwChamados = PesquisaGeral(empresa, tipochamado, atividadechamado, idchamado, StatusPesq);
                 TempData["titulo"] = "Chamados";
                 TempData["titulo1"] = "Cadastrados";
-                TempData["msg"] = "Pesquisa Efetuada com Sucesso";
+                if (ViewData["msg"] == null)
+                {
+                    ViewData["msg"] = "Pesquisa Efetuada com Sucesso";
+                }
 
                 return View(_vwChamados);
 
@@ -68,73 +76,37 @@ namespace EiAtende.Web.Controllers
             var _PortalUsuario = db.PortalUsuario.Find(Convert.ToInt32(Session["IdUsuario"]));
             _PortalUsuario.PortalUsuarioGrupo = db.PortalUsuarioGrupo.Find(_PortalUsuario.UsrGrpID);
 
-            if (submit == "SalvarChamado")
-            {
-                PortalChamados _PortalChamados = new PortalChamados();
-                _Atividades = db.PortalAtividadeChamados.Find(Convert.ToInt32(AtividadeChamadoID));
-
-                _PortalChamados.AtenderEmpID = Convert.ToInt32(atenderEmpresa);
-                _PortalChamados.AtividadeChamadoID = Convert.ToInt32(AtividadeChamadoID);
-                _PortalChamados.Avaliacao = string.Empty;
-                _PortalChamados.ChamadoConhecimento = string.Empty;
-                _PortalChamados.ChamadoDtAbertura = DateTime.Now;
-                _PortalChamados.ChamadoDtPrevista = DateTime.Now.AddDays(_Atividades.PrevisaoDias);
-                _PortalChamados.ChamadoDtPrevista = _PortalChamados.ChamadoDtPrevista.AddHours(_Atividades.PrevisaoHoras);
-                _PortalChamados.ChamadoHistorico = model.PortalChamado.ChamadoHistorico;
-                if (model.PortalChamado.ChamadoTitulo == string.Empty)
-                {
-                    model.PortalChamado.ChamadoTitulo = "Titulo";
-                }
-
-                _PortalChamados.ChamadoTitulo = model.PortalChamado.ChamadoTitulo;
-                DeUsrID = Session["IdUsuario"].ToString();
-                _PortalChamados.DeUsrID = Convert.ToInt32(DeUsrID);
-                if (ParaUsrID == null)
-                {
-                    ParaUsrID = "0";
-                }
-                _PortalChamados.ParaUsrID = Convert.ToInt32(ParaUsrID);
-                _PortalChamados.TipoChamadoID = Convert.ToInt32(TipoChamadoID);
-                _PortalChamados.Status = "Postado";
-
-                db.PortalChamados.Add(_PortalChamados);
-                db.SaveChanges();
-                
-                TempData["msg"] = "Chamado Incluido com Sucesso";
-
-                
-                _vwChamados = PesquisaGeral(filtroempresa, filtrotipochamado, filtroatividadechamado, filtroidchamado, filtroStatusPesq);
-                return View(_vwChamados);
-
-
-            }
             if (submit == "NovoHistorico")
             {
                 PortalChamadosHistorico _PortalChamadosHistorico = new PortalChamadosHistorico();
                 _PortalChamadosHistorico.ChamadoID = Convert.ToInt32(idChamadoHist);
-                _PortalChamadosHistorico.Descricao = Descricao;
+                _PortalChamadosHistorico.Descricao = Descricao + " - Usuário: " + Session["NomeUsuario"];
                 _PortalChamadosHistorico.DeStatus = deStatus;
-                _PortalChamadosHistorico.ParaStatus = paraStatus;
                 _PortalChamadosHistorico.DtIncl = DateTime.Now;
-                if (dtAdiar != string.Empty)
+                if (manterStatus != null)
                 {
-                    _PortalChamadosHistorico.DtAdiar = Convert.ToDateTime(dtAdiar, culture);
+                    _PortalChamadosHistorico.ParaStatus = paraStatus;
+                }
+                else
+                {
+                    _PortalChamadosHistorico.ParaStatus = deStatus;
                 }
                 db.PortalChamadosHistorico.Add(_PortalChamadosHistorico);
                 db.SaveChanges();
-                PortalChamados _portalChamados = db.PortalChamados.Find(Convert.ToInt32(idChamadoHist));
-                _portalChamados.Status = paraStatus;
-                if (StatusHist == "Finalizado")
+
+                if (manterStatus != null)
                 {
-                    _portalChamados.ChamadoDtTermino = DateTime.Now;
+                    PortalChamados _portalChamados = db.PortalChamados.Find(Convert.ToInt32(idChamadoHist));
+                    _portalChamados.Status = paraStatus;
+                    if (StatusHist == "Finalizado")
+                    {
+                        _portalChamados.ChamadoDtTermino = DateTime.Now;
+                    }
+                    db.Entry(_portalChamados).State = EntityState.Modified;
+                    db.SaveChanges();
                 }
-                if (dtAdiar != string.Empty)
-                {
-                    _portalChamados.ChamadoDtAdiada = Convert.ToDateTime(dtAdiar, culture);
-                }
-                db.Entry(_portalChamados).State = EntityState.Modified;
-                db.SaveChanges();
-                TempData["msg"] = "Histórico para o Chamado " + idChamadoHist +  " Incluido com Sucesso";
+                ViewData["msg"] = "Histórico para o Chamado " + idChamadoHist + " Incluido com Sucesso";
+
                 _vwChamados = PesquisaGeral(filtroempresa1, filtrotipochamado1, filtroatividadechamado1, filtroidchamado1, filtroStatusPesq1);
                 return View(_vwChamados);
 
@@ -143,6 +115,179 @@ namespace EiAtende.Web.Controllers
             _vwChamados = PesquisaGeral(filtroempresa1, filtrotipochamado1, filtroatividadechamado1, filtroidchamado1, filtroStatusPesq1);
             return View(_vwChamados);
 
+        }
+
+        [HttpPost]
+        public ActionResult Index(FormCollection formColletion, string idChamadoAdiar, string idChamadoEmail, string Mensagem, string idChamado, string Historico, string dtAdiar, string submit, string btnAprovar, string btnReprovar, string AtividadeChamadoID, string atenderEmpresa, ViewModels.VwChamados model, string DeUsrID, string ParaUsrID, string TipoChamadoID)
+        {
+            ViewData["msg"] = "Lista de Chamados";
+            var idHistoricoAprovar = string.Empty;
+            var idHistoricoReprovar = string.Empty;
+            var portalChamados = db.PortalChamados.Include(p => p.PortalAtividadeChamados).Include(p => p.PortalTipoChamados);
+            ViewModels.VwChamados _vwChamados = new ViewModels.VwChamados();
+            PortalAtividadeChamados _Atividades = new PortalAtividadeChamados();
+            PortalChamadosHistorico _HistoricoAR = new PortalChamadosHistorico();
+
+            if (Session["LoginUsuario"] == null)
+            {
+                return RedirectToAction("", "Login");
+            }
+
+            var _PortalUsuario = db.PortalUsuario.Find(Convert.ToInt32(Session["IdUsuario"]));
+            _PortalUsuario.PortalUsuarioGrupo = db.PortalUsuarioGrupo.Find(_PortalUsuario.UsrGrpID);
+            if (idChamadoAdiar == null)
+            {
+                idChamadoAdiar = "0";
+            }
+            var _chamado = db.PortalChamados.Find(Convert.ToInt32(idChamadoAdiar));
+            PortalChamadosHistorico _hist = new PortalChamadosHistorico();
+            if (btnAprovar != null)
+            {
+                idHistoricoAprovar = btnAprovar;
+                submit = "Aprovar";
+            }
+            if (btnReprovar != null)
+            {
+                idHistoricoReprovar = btnReprovar;
+                submit = "Reprovar";
+            }
+            switch (submit)
+            {
+
+                case "Adiar":
+                    _chamado = db.PortalChamados.Find(Convert.ToInt32(idChamadoAdiar));
+                    _hist.ChamadoID = Convert.ToInt32(idChamadoAdiar);
+                    _hist.Descricao = Historico + " - Solicitado por: " + Session["NomeUsuario"].ToString();
+                    _hist.DeStatus = _chamado.Status;
+                    _hist.ParaStatus = "Pendente Aprovar";
+                    _hist.DtAdiar = Convert.ToDateTime(dtAdiar, culture.DateTimeFormat);
+                    _hist.DtAdiar = _hist.DtAdiar.Value.AddHours(DateTime.Now.Hour).AddMinutes(DateTime.Now.Minute);
+                    
+                    _hist.DtIncl = DateTime.Now;
+                    db.PortalChamadosHistorico.Add(_hist);
+                    db.SaveChanges();
+
+                    _chamado.Status = "Pendente Aprovar";
+                    db.Entry(_chamado).State = EntityState.Modified;
+                    db.SaveChanges();
+                    ViewData["msg"] = "Solicitação para Adiar Incluida com Sucesso";
+
+                    break;
+
+                case "Aprovar":
+
+                    _HistoricoAR = db.PortalChamadosHistorico.Find(Convert.ToInt32(idHistoricoAprovar));
+                    _HistoricoAR.Descricao = _HistoricoAR.Descricao + " - " + Historico + " - Aprovado por: " + Session["NomeUsuario"].ToString();
+                    _HistoricoAR.ParaStatus = "Aprovado";
+                    db.Entry(_HistoricoAR).State = EntityState.Modified;
+                    db.SaveChanges();
+
+                    _chamado.Status = _HistoricoAR.DeStatus;
+                    _chamado.ChamadoDtAdiada = _HistoricoAR.DtAdiar;
+                    db.Entry(_chamado).State = EntityState.Modified;
+                    db.SaveChanges();
+                    ViewData["msg"] = "Solicitação Aprovada";
+
+                    break;
+
+                case "Reprovar":
+
+                    _HistoricoAR = db.PortalChamadosHistorico.Find(Convert.ToInt32(idHistoricoReprovar));
+                    _HistoricoAR.Descricao = _HistoricoAR.Descricao + " - " + Historico + " - REPROVADO por: " + Session["NomeUsuario"].ToString();
+                    _HistoricoAR.ParaStatus = "Reprovado";
+                    db.Entry(_HistoricoAR).State = EntityState.Modified;
+                    db.SaveChanges();
+
+                    _chamado.Status = _HistoricoAR.DeStatus;
+                    db.Entry(_chamado).State = EntityState.Modified;
+                    db.SaveChanges();
+                    ViewData["msg"] = "Solicitação Reprovada";
+
+                    break;
+
+                case "SalvarChamado":
+
+                    PortalChamados _PortalChamados = new PortalChamados();
+                    _Atividades = db.PortalAtividadeChamados.Find(Convert.ToInt32(AtividadeChamadoID));
+
+                    _PortalChamados.AtenderEmpID = Convert.ToInt32(atenderEmpresa);
+                    _PortalChamados.AtividadeChamadoID = Convert.ToInt32(AtividadeChamadoID);
+                    _PortalChamados.Avaliacao = string.Empty;
+                    _PortalChamados.ChamadoConhecimento = string.Empty;
+                    _PortalChamados.ChamadoDtAbertura = DateTime.Now; 
+                    _PortalChamados.ChamadoDtPrevista = DateTime.Now.AddDays(_Atividades.PrevisaoDias).AddHours(_Atividades.PrevisaoHoras).AddMinutes(_Atividades.PrevisaoMinutos);
+                    _PortalChamados.ChamadoHistorico = Historico;
+                    if (model.PortalChamado.ChamadoTitulo == string.Empty)
+                    {
+                        model.PortalChamado.ChamadoTitulo = "Titulo";
+                    }
+
+                    _PortalChamados.ChamadoTitulo = model.PortalChamado.ChamadoTitulo;
+                    DeUsrID = Session["IdUsuario"].ToString();
+                    _PortalChamados.DeUsrID = Convert.ToInt32(DeUsrID);
+                    if (ParaUsrID == null)
+                    {
+                        ParaUsrID = "0";
+                    }
+                    _PortalChamados.ParaUsrID = Convert.ToInt32(ParaUsrID);
+                    _PortalChamados.TipoChamadoID = Convert.ToInt32(TipoChamadoID);
+                    _PortalChamados.Status = "Postado";
+
+                    db.PortalChamados.Add(_PortalChamados);
+                    db.SaveChanges();
+                    var ultimochamado = db.PortalChamados.ToList().Last();
+
+                    this.ImportarImagens(formColletion, ultimochamado.ChamadoID);
+
+                    _hist.ChamadoID = Convert.ToInt32(ultimochamado.ChamadoID);
+                    _hist.Descricao = Historico + " - Aberto pelo usuário: " + Session["NomeUsuario"]; 
+                    _hist.DeStatus = _PortalChamados.Status;
+                    _hist.ParaStatus = _PortalChamados.Status;
+                    _hist.DtIncl = DateTime.Now;
+                    db.PortalChamadosHistorico.Add(_hist);
+                    db.SaveChanges();
+
+                    ViewData["msg"] = "Chamado Incluido com Sucesso";
+                    break;
+
+                case "ColetarAnexos":
+
+                    this.ImportarImagens(formColletion, Convert.ToInt32(idChamado));
+                    ViewData["msg"] = "Anexos Coletados com Sucesso";
+
+                    break;
+
+                case "EnviarEmail":
+
+                    this.EnviarEmail(Convert.ToInt32(idChamadoEmail), Mensagem);
+                    ViewData["msg"] = "Email Enviado com Sucesso";
+
+                    break;
+
+                default:
+                    break;
+            }
+
+            return RedirectToAction("Index", "Home", new { msg = ViewData["msg"] });
+
+        }
+
+        public ActionResult EnviarEmail(int? IdChamado, string Mensagem)
+        {
+
+            var IportalChamados = db.PortalChamados.Include(p => p.PortalAtividadeChamados).Include(p => p.PortalTipoChamados);
+            var portalChamados = IportalChamados.ToList().Where(e => e.ChamadoID == Convert.ToInt32(IdChamado)).First();
+            portalChamados.PortalChamadosHistorico =  db.PortalChamadosHistorico.ToList().Where(e => e.ChamadoID.Equals(portalChamados.ChamadoID)).ToList();
+            var usr = db.PortalUsuario.Find(Convert.ToInt32(portalChamados.ParaUsrID));
+            string body = "Olá, " + usr.UsrNome + "<br>Segue Histórico de Chamado sob sua responsabilidade <br><br>";
+            foreach (var item in portalChamados.PortalChamadosHistorico)
+            {
+                body = body + item.DtIncl.ToShortDateString() + " " + item.Descricao + "<br />";
+            }
+            body = body + "<br />" + Mensagem;
+            TempData["msg"] = _enviarEmail.EnviarEmail(ConfigurationManager.AppSettings["smtpDominio"], ConfigurationManager.AppSettings["smtpUsuario"], ConfigurationManager.AppSettings["smtpSenha"], ConfigurationManager.AppSettings["smtpPorta"], usr.UsrEmail, "Chamado " + portalChamados.ChamadoID + " - " + portalChamados.ChamadoTitulo, body, string.Empty, string.Empty);
+            var msg = "Email Enviado com Sucesso";
+            return RedirectToAction("Index", "Home", new { msg = msg });
         }
 
         private ViewModels.VwChamados PesquisaGeral(string empresa, string tipochamado, string atividadechamado, string idchamado, string StatusPesq)
@@ -273,19 +418,19 @@ namespace EiAtende.Web.Controllers
                 }
                 pertence = false;
             }
-           
-            _vwChamados.PortalTipoChamados = db.PortalTipoChamados.ToList();
+
+            _vwChamados.PortalTipoChamados = db.PortalTipoChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList();
 
             _vwChamados.PortalEmpresa = _PortalEmpresas;
-            _vwChamados.PortalAtividadeChamados = db.PortalAtividadeChamados.ToList();
+            _vwChamados.PortalAtividadeChamados = db.PortalAtividadeChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList();
             _vwChamados.DeUsuario = db.PortalUsuario.ToList();
             _vwChamados.ParaUsuario = db.PortalUsuario.ToList();
             _vwChamados.AtenderEmpresa = _PortalEmpresas;
             ViewBag.DeUsrID = new SelectList(db.PortalUsuario.ToList().Where(e => e.UsrID == Convert.ToInt32(Session["IdUsuario"])), "UsrID", "UsrNome");
             ViewBag.ParaUsrID = new SelectList(_PortalUsuariosDasEmpresas, "UsrID", "UsrNome");
             ViewBag.AtenderEmpID = new SelectList(_PortalEmpresas, "EmpID", "EmpNomeFantasia");
-            ViewBag.TipoChamadoID = new SelectList(db.PortalTipoChamados, "TipoChamadoID", "TipoChamadoNome");
-            ViewBag.AtividadeChamadoID = new SelectList(db.PortalAtividadeChamados, "AtividadeChamadoID", "AtividadeChamadoNome");
+            ViewBag.TipoChamadoID = new SelectList(db.PortalTipoChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList(), "TipoChamadoID", "TipoChamadoNome");
+            ViewBag.AtividadeChamadoID = new SelectList(db.PortalAtividadeChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList(), "AtividadeChamadoID", "AtividadeChamadoNome");
 
             return _vwChamados;
         }
@@ -347,8 +492,8 @@ namespace EiAtende.Web.Controllers
                         ViewBag.DeUsrID = new SelectList(db.PortalUsuario.ToList().Where(e => e.UsrID == Convert.ToInt32(Session["IdUsuario"])), "UsrID", "UsrNome");
                         ViewBag.ParaUsrID = new SelectList(_PortalUsuariosDasEmpresas, "UsrID", "UsrNome", _vwChamado.ParaUsrID);
                         ViewBag.AtenderEmpID = new SelectList(_PortalEmpresas, "EmpID", "EmpNomeFantasia");
-                        ViewBag.TipoChamadoID = new SelectList(db.PortalTipoChamados, "TipoChamadoID", "TipoChamadoNome", _vwChamado.TipoChamadoID);
-                        ViewBag.AtividadeChamadoID = new SelectList(db.PortalAtividadeChamados, "AtividadeChamadoID", "AtividadeChamadoNome", _vwChamado.AtividadeChamadoID);
+                        ViewBag.TipoChamadoID = new SelectList(db.PortalTipoChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList(), "TipoChamadoID", "TipoChamadoNome", _vwChamado.TipoChamadoID);
+                        ViewBag.AtividadeChamadoID = new SelectList(db.PortalAtividadeChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList(), "AtividadeChamadoID", "AtividadeChamadoNome", _vwChamado.AtividadeChamadoID);
                         TempData["titulo"] = "Chamados";
                         TempData["titulo1"] = "Cadastrados";
 
@@ -364,7 +509,7 @@ namespace EiAtende.Web.Controllers
                 }
                 else
                 {
-                    TempData["msg"] = "Usuário sem permissão para Tratar Chamados";
+                    ViewData["msg"] = "Usuário sem permissão para Tratar Chamados";
                     return RedirectToAction("Index", "Home", (PortalUsuario)Session["PortalUsuarioessao"]);
                 }
 
@@ -376,7 +521,7 @@ namespace EiAtende.Web.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            TempData["msg"] = "Usuário sem permissão de Abrir Chamados";
+            ViewData["msg"] = "Usuário sem permissão de Abrir Chamados";
             return RedirectToAction("Index", "Home", (PortalUsuario)Session["PortalUsuarioessao"]);
 
 
@@ -409,9 +554,9 @@ namespace EiAtende.Web.Controllers
         {
 
 
-            _vwChamados.PortalTipoChamados = db.PortalTipoChamados.ToList();
+            _vwChamados.PortalTipoChamados = db.PortalTipoChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList();
             _vwChamados.PortalEmpresa = db.PortalEmpresa.ToList();
-            _vwChamados.PortalAtividadeChamados = db.PortalAtividadeChamados.ToList();
+            _vwChamados.PortalAtividadeChamados = db.PortalAtividadeChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList();
             _vwChamados.DeUsuario = db.PortalUsuario.ToList();
             _vwChamados.ParaUsuario = db.PortalUsuario.ToList();
             _vwChamados.AtenderEmpresa = db.PortalEmpresa.ToList();
@@ -513,44 +658,82 @@ namespace EiAtende.Web.Controllers
             return View(_VwImagens);
         }
 
-        [HttpPost]
-        public ActionResult Anexos(string submit, FormCollection formCollection)
-        {
-
-            switch (submit)
-            {
-                case "submitTable":
-                    break;
-
-                case "ENVIAR A IMAGEM":
-                    this.ImportarImagens(formCollection);
-                    break;
-
-                default:
-                    break;
-            }
-            return RedirectToAction("Index", "Home");
-        }
-
-        public void ImportarImagens(FormCollection formCollection)
+        public void ImportarImagens(FormCollection formCollection, int idChamado)
         {
             string caminhoArquivo = string.Empty;
-
-            if (Request != null)
+            var seq = "0";
+            for (int i = 0; i < Request.Files.Count; i++)
             {
-                HttpPostedFileBase file = Request.Files["submitFile"];
-                System.Text.Encoding encoding = System.Text.Encoding.Unicode;
-
-                if ((file != null) && (file.ContentLength > 0) && !string.IsNullOrEmpty(file.FileName))
+                HttpPostedFileBase hpf = Request.Files[i] as HttpPostedFileBase;
+                if (hpf.ContentLength > 0)
                 {
-                    string fileName = file.FileName;
-                    string fileContentType = file.ContentType;
-                    byte[] fileBytes = new byte[file.ContentLength];
-                    file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
-                    caminhoArquivo = Server.MapPath("/Anexos/" + formCollection["ChamadoTitulo"] + "/" + file.FileName);
-                    file.SaveAs(caminhoArquivo);
+                    string fileName = hpf.FileName;
+                    string fileContentType = hpf.ContentType;
+                    byte[] fileBytes = new byte[hpf.ContentLength];
+                    hpf.InputStream.Read(fileBytes, 0, Convert.ToInt32(hpf.ContentLength));
+                    caminhoArquivo = Server.MapPath("/Anexos/" + idChamado.ToString());// + "/" + hpf.FileName);
+                    if (!Directory.Exists(caminhoArquivo))
+                    {
+                        Directory.CreateDirectory(caminhoArquivo);
+                    }
+                    caminhoArquivo = caminhoArquivo + "/" + hpf.FileName;
+                    seq = "0";
+                    while (true)
+                    {
+                        if (System.IO.File.Exists(caminhoArquivo))
+                        {
+                            seq = (Convert.ToInt32(seq) + 1).ToString("000");
+                            fileName = fileName.Substring(0, fileName.IndexOf(".")) + "_" + seq + fileName.Substring(fileName.IndexOf("."), fileName.Length - fileName.IndexOf("."));
+                            fileName = fileName.Replace("_" + (Convert.ToInt32(seq) - 1).ToString("000"), "");
+                            caminhoArquivo = Server.MapPath("/Anexos/" + idChamado.ToString() + "/" + fileName);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    hpf.SaveAs(caminhoArquivo);
+
+                    ChamadoAnexos Anexos = new ChamadoAnexos();
+                    Anexos.Ds_Anexo = formCollection["dsAnexo"];
+                    Anexos.Dt_Incl_Anexo = DateTime.Now;
+                    Anexos.ChamadoID = idChamado;
+                    Anexos.Nome_Arquivo_Anexo = fileName;
+                    Anexos.Patch_Anexo = idChamado.ToString() + "/" + fileName;
+                    var chamado = db.PortalChamados.Find(Anexos.ChamadoID);
+                    Anexos.PortalChamados = chamado;
+                    db.ChamadoAnexos.Add(Anexos);
+                    db.SaveChanges();
                 }
             }
+
+            //foreach (string file in Request.Files)
+            //{
+            //    HttpPostedFileBase hpf = Request.Files[file] as HttpPostedFileBase;
+            //    if (hpf.ContentLength == 0)
+            //        continue;
+            //    string fileName = hpf.FileName;
+            //    string fileContentType = hpf.ContentType;
+            //    byte[] fileBytes = new byte[hpf.ContentLength];
+            //    hpf.InputStream.Read(fileBytes, 0, Convert.ToInt32(hpf.ContentLength));
+            //    caminhoArquivo = Server.MapPath("/Anexos/" + formCollection["ChamadoTitulo"] + "/" + hpf.FileName);
+            //    hpf.SaveAs(caminhoArquivo);
+
+            //    ChamadoAnexos Anexos = new ChamadoAnexos();
+            //    Anexos.Ds_Anexo = formCollection["dsAnexo"];
+            //    Anexos.Dt_Incl_Anexo = DateTime.Now;
+            //    Anexos.ChamadoID = idChamado;
+            //    Anexos.Nome_Arquivo_Anexo = fileName;
+            //    Anexos.Patch_Anexo = formCollection["ChamadoTitulo"] + "/" + hpf.FileName;
+            //    var chamado = db.PortalChamados.Find(Anexos.ChamadoID);
+            //    Anexos.PortalChamados = chamado;
+            //    db.ChamadoAnexos.Add(Anexos);
+            //    db.SaveChanges();
+            //    ifile++;
+
+            //    //do something with file
+            //}
+
         }
 
 
@@ -617,7 +800,7 @@ namespace EiAtende.Web.Controllers
 
                 return View(_vw_Usuario_Usuarios);
             }
-            TempData["msg"] = "´Somente Usuário Gestor tem Acesso a Contas de Usuário";
+            ViewData["msg"] = "´Somente Usuário Gestor tem Acesso a Contas de Usuário";
             return RedirectToAction("Index", "Home", lUsuario.First());
 
         }
@@ -666,12 +849,12 @@ namespace EiAtende.Web.Controllers
                 case "SalvarNovaSenha":
                     if (senha_nova != senha_nova2)
                     {
-                        TempData["msg"] = "Senhas não conferem !";
+                        ViewData["msg"] = "Senhas não conferem !";
                         return RedirectToAction("Index", "Home");
                     }
                     if (senha_atual != System.Web.HttpContext.Current.Session["UsuarioSenha"].ToString())
                     {
-                        TempData["msg"] = "Senha Atual não Confere !";
+                        ViewData["msg"] = "Senha Atual não Confere !";
                         return RedirectToAction("Index", "Home");
                     }
 
@@ -680,7 +863,7 @@ namespace EiAtende.Web.Controllers
                     db.Entry(lUsuarios.First()).State = EntityState.Modified;
                     db.SaveChanges();
 
-                    TempData["msg"] = "Senha alterada com Sucesso !";
+                    ViewData["msg"] = "Senha alterada com Sucesso !";
                     TempData["idUsuario"] = selecUsuarios;
                     return RedirectToAction("ContaUsuario");
             }

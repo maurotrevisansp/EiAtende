@@ -14,38 +14,47 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.AtividadeChamadoID)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AtividadeChamadoNome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AtividadeChamadoNome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AtividadeChamadoNome, "", new { @class = "text-danger" })
-            </div>
+        <div class="col-md-6">
+            <small>Nome da Atividade</small><br />
+            @Html.EditorFor(model => model.AtividadeChamadoNome, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AtividadeChamadoNome, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            <small>Empresa</small><br />
+            @Html.DropDownList("EmpID", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.EmpID, "", new { @class = "text-danger" })
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmpID, "EmpID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EmpID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.EmpID, "", new { @class = "text-danger" })
-            </div>
+        <div class="col-md-2">
+            <small>Previsão em Dias</small><br />
+            @Html.EditorFor(model => model.PrevisaoDias, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PrevisaoDias, "", new { @class = "text-danger" })
+
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrevisaoDias, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PrevisaoDias, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PrevisaoDias, "", new { @class = "text-danger" })
-            </div>
+        <div class="col-md-2">
+            <small>Previsão em Horas</small><br />
+            @Html.EditorFor(model => model.PrevisaoHoras, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PrevisaoHoras, "", new { @class = "text-danger" })
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-default" />
+        <div class="col-md-2">
+            <small>Previsão em Minutos</small><br />
+            @Html.EditorFor(model => model.PrevisaoMinutos, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PrevisaoMinutos, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-2">
+            <small>Ativo</small><br />
+            @Html.CheckBoxFor(model => model.Ativo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Ativo, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-3">
+            <div class="tools">
+                <br />
+                @Html.ActionLink("Retornar a Lista", "Index")
+                <input type="submit" value="Salvar" class="btn btn-default pull-right" />
             </div>
+
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Retornar a Lista", "Index")
-</div>

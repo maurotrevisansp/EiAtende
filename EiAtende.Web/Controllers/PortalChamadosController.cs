@@ -189,8 +189,18 @@ namespace EiAtende.Controllers
                     if (Acao == "Adiar")
                     {
                         var Chamado = db.PortalChamados.Find(Convert.ToInt32(id));
+                        var deStatus = Chamado.Status;
                         Chamado.Status = "Pendente Aprovar";
                         db.Entry(Chamado).State = EntityState.Modified;
+                        db.SaveChanges();
+                        PortalChamadosHistorico _hist = new PortalChamadosHistorico();
+                        _hist.ChamadoID = Convert.ToInt32(id);
+                        _hist.Descricao = "Pedido para Adiar Chamado feito pelo usuário: " + Session["NomeUsuario"];
+                        _hist.DeStatus = deStatus;
+                        _hist.ParaStatus = "Pendente Aprovar";
+                        _hist.DtIncl = DateTime.Now;
+
+                        db.PortalChamadosHistorico.Add(_hist);
                         db.SaveChanges();
                         return RedirectToAction("Index", "Home", new { idDoChamado = Chamado.ChamadoID });
 
@@ -359,7 +369,7 @@ namespace EiAtende.Controllers
             string patch = string.Empty;
             ViewModels.VwImagens _VwImagens = new ViewModels.VwImagens();
             var _portalChamados = db.PortalChamados.Find(id);
-            patch = Server.MapPath("/Anexos/" + _portalChamados.ChamadoTitulo);
+            patch = Server.MapPath("/Anexos/" + _portalChamados.ChamadoID);
 
             if (!Directory.Exists(patch))
             {
@@ -402,7 +412,7 @@ namespace EiAtende.Controllers
                     break;
 
                 case "ENVIAR A IMAGEM":
-                    this.ImportarImagens(formCollection);
+                    this.ImportarImagens(formCollection, Convert.ToInt32(formCollection["idChamado"]));
                     break;
 
                 default:
@@ -411,37 +421,77 @@ namespace EiAtende.Controllers
             return RedirectToAction("Index", "Home", new { idDoChamado = formCollection["idChamado"] });
         }
 
-        public void ImportarImagens(FormCollection formCollection)
+        public void ImportarImagens(FormCollection formCollection, int idChamado)
         {
             string caminhoArquivo = string.Empty;
-
-            if (Request != null)
+            var seq = "0";
+            for (int i = 0; i < Request.Files.Count; i++)
             {
-                HttpPostedFileBase file = Request.Files["submitFile"];
-                System.Text.Encoding encoding = System.Text.Encoding.Unicode;
-
-                if ((file != null) && (file.ContentLength > 0) && !string.IsNullOrEmpty(file.FileName))
+                HttpPostedFileBase hpf = Request.Files[i] as HttpPostedFileBase;
+                if (hpf.ContentLength > 0)
                 {
-                    string fileName = file.FileName;
-                    string fileContentType = file.ContentType;
-                    byte[] fileBytes = new byte[file.ContentLength];
-                    file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
-                    caminhoArquivo = Server.MapPath("/Anexos/" + formCollection["ChamadoTitulo"] + "/" + file.FileName);
-                    file.SaveAs(caminhoArquivo);
+                    string fileName = hpf.FileName;
+                    string fileContentType = hpf.ContentType;
+                    byte[] fileBytes = new byte[hpf.ContentLength];
+                    hpf.InputStream.Read(fileBytes, 0, Convert.ToInt32(hpf.ContentLength));
+                    caminhoArquivo = Server.MapPath("/Anexos/" + idChamado.ToString() + "/" + hpf.FileName);
+                    seq = "0";
+                    while (true)
+                    {
+                        if (System.IO.File.Exists(caminhoArquivo))
+                        {
+                            seq = (Convert.ToInt32(seq) + 1).ToString("000");
+                            fileName = fileName.Substring(0, fileName.IndexOf(".")) + "_" + seq + fileName.Substring(fileName.IndexOf("."), fileName.Length - fileName.IndexOf("."));
+                            fileName = fileName.Replace("_" + (Convert.ToInt32(seq) - 1).ToString("000"), "");
+                            caminhoArquivo = Server.MapPath("/Anexos/" + idChamado.ToString() + "/" + fileName);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    hpf.SaveAs(caminhoArquivo);
 
                     ChamadoAnexos Anexos = new ChamadoAnexos();
                     Anexos.Ds_Anexo = formCollection["dsAnexo"];
                     Anexos.Dt_Incl_Anexo = DateTime.Now;
-                    Anexos.ChamadoID = Convert.ToInt32(formCollection["idChamado"]);
+                    Anexos.ChamadoID = idChamado;
                     Anexos.Nome_Arquivo_Anexo = fileName;
-                    Anexos.Patch_Anexo = formCollection["ChamadoTitulo"] + "/" + file.FileName;
+                    Anexos.Patch_Anexo = idChamado.ToString() + "/" + fileName;
                     var chamado = db.PortalChamados.Find(Anexos.ChamadoID);
                     Anexos.PortalChamados = chamado;
                     db.ChamadoAnexos.Add(Anexos);
                     db.SaveChanges();
-
                 }
             }
+
+            //foreach (string file in Request.Files)
+            //{
+            //    HttpPostedFileBase hpf = Request.Files[file] as HttpPostedFileBase;
+            //    if (hpf.ContentLength == 0)
+            //        continue;
+            //    string fileName = hpf.FileName;
+            //    string fileContentType = hpf.ContentType;
+            //    byte[] fileBytes = new byte[hpf.ContentLength];
+            //    hpf.InputStream.Read(fileBytes, 0, Convert.ToInt32(hpf.ContentLength));
+            //    caminhoArquivo = Server.MapPath("/Anexos/" + formCollection["ChamadoTitulo"] + "/" + hpf.FileName);
+            //    hpf.SaveAs(caminhoArquivo);
+
+            //    ChamadoAnexos Anexos = new ChamadoAnexos();
+            //    Anexos.Ds_Anexo = formCollection["dsAnexo"];
+            //    Anexos.Dt_Incl_Anexo = DateTime.Now;
+            //    Anexos.ChamadoID = idChamado;
+            //    Anexos.Nome_Arquivo_Anexo = fileName;
+            //    Anexos.Patch_Anexo = formCollection["ChamadoTitulo"] + "/" + hpf.FileName;
+            //    var chamado = db.PortalChamados.Find(Anexos.ChamadoID);
+            //    Anexos.PortalChamados = chamado;
+            //    db.ChamadoAnexos.Add(Anexos);
+            //    db.SaveChanges();
+            //    ifile++;
+
+            //    //do something with file
+            //}
+
         }
 
 

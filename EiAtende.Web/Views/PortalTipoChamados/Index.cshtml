@@ -46,6 +46,7 @@
                                 <th>#</th>
                                 <th>Empresa</th>
                                 <th>Nome do Tipo</th>
+                                <th>Ativo</th>
                                 <th width="10%"></th>
                             </tr>
                         </thead>
@@ -56,22 +57,10 @@
                                     <td>@item.TipoChamadoID</td>
                                     <td>@item.PortalEmpresa.EmpNomeFantasia</td>
                                     <td>@item.TipoChamadoNome</td>
+                                    <td>@item.Ativo.ToString().Replace("False", "Nâo").Replace("True", "Sim")</td>
 
                                     <td>
-                                        <div class="btn-group">
-                                            <button data-toggle="dropdown" class="btn btn-warning btn-xs dropdown-toggle">
-                                                Ação
-                                                <span class="ace-icon fa fa-caret-down icon-on-right"></span>
-                                            </button>
-                                            <ul class="dropdown-menu dropdown-inverse">
-                                                <li>
-                                                    <a href="~/PortalTipoChamados/Edit?Id=@item.TipoChamadoID&Acao=Editar">Editar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="~/PortalTipoChamados/Delete?Id=@item.TipoChamadoID&Acao=Desativar">Desativar</a>
-                                                </li>
-                                            </ul>
-                                        </div><!-- /.btn-group -->
+                                        <a class="btn btn-gray fa fa-edit" href="~/PortalTipoChamados/Edit?Id=@item.TipoChamadoID"></a>
                                     </td>
                                 </tr>
                             }

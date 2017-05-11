@@ -9,293 +9,354 @@
     var filtroStatus = ViewBag.filtroStatus;
     var filtroTitulo = ViewBag.filtroTitulo;
     var filtroIdChamado = Convert.ToInt32(ViewBag.filtroIdChamado);
-    var nrItens = 0;
+    var nrItens1 = 0;
+    var nrItens2 = 0;
+
+}
+
+@if (ViewData["msg"] != null)
+{
+    if (ViewData["msg"].ToString().Length > 0)
+    {
+        if (ViewData["msg"].ToString().Contains("erro"))
+        {
+            ViewData["msg"] = "Ocorreu um erro Inexperado de Sistema, não conseguimos completar a Operação<br /> Favor entrar em Contato com o Administrador do Sistema";
+            ViewData["msg"] = ViewData["msg"] + "<br/><br><a href='mailto:eiadvanced@eiadvanced.com.br'>Email para Suporte Ei Advanced</a>";
+        }
+        if (Model.PortalChamados.Count() == 0)
+        {
+            if (!ViewData["msg"].ToString().ToUpper().Contains("LOGIN"))
+            {
+                ViewData["msg"] = "Alerta: Nenhum Chamado a Ser Exibido";
+            }
+            else
+            {
+                ViewData["msg"] = "Alerta: " + ViewData["msg"];
+
+            }
+        }
+        ViewData["cabecalerta"] = "Mensagem";
+    }
+}
+else
+{
+    ViewData["msg"] = "Pesquisa Efetuada com Sucesso";
+    ViewData["cabecalerta"] = " ";
 
 }
 
 
-        <div class="table-header">
-            <div class="row">
-                <br />
-                <button type="button" class="btn btn-circle green btn-outline" title="Adiciona um Novo Chamado" data-toggle="modal" onclick="CarregaFiltros()" data-target="#NovoChamado"><i class="fa fa-file-o"></i> Novo Chamado</button>
-                <hr />
-            </div>
-            <div class="form-group">
-                <form>
-                    Filtros:
-                    <input name="idchamado" id="idchamado" type="text" style="width:60px;height:25px;margin-left:5px" placeholder="Numero" />
-                    <select id="empresa" name="empresa" style="width:200px;height:25px;margin-left:5px">
-                        <option value="99999">Todas Empresas</option>
-                        @foreach (var item in Model.PortalEmpresa)
-                        {
-                            if (filtroEmpresa == item.EmpID)
-                            {
-                                <option selected value="@item.EmpID">@item.EmpRazao</option>
-                            }
-                            else
-                            {
-                                <option value="@item.EmpID">@item.EmpRazao</option>
-                            }
-                        }
-                    </select>
-                    <select id="tipochamado" name="tipochamado" style="width:140px;height:25px;margin-left:5px">
-                        <option value="0">Todos Tipos</option>
-                        @foreach (var item in Model.PortalTipoChamados)
-                        {
-                            if (filtroTipos == item.TipoChamadoID)
-                            {
-                                <option selected value="@item.TipoChamadoID">@item.TipoChamadoNome</option>
-                            }
-                            else
-                            {
-                                <option value="@item.TipoChamadoID">@item.TipoChamadoNome</option>
-                            }
-                        }
-                    </select>
-                    <select id="atividadechamado" name="atividadechamado" style="width:140px;height:25px;margin-left:5px">
-                        <option value="0">Todas Atividades</option>
-                        @foreach (var item in Model.PortalAtividadeChamados)
-                        {
-                            if (filtroAtividade == item.AtividadeChamadoID)
-                            {
-                                <option selected value="@item.AtividadeChamadoID">@item.AtividadeChamadoNome</option>
-                            }
-                            else
-                            {
-                                <option value="@item.AtividadeChamadoID">@item.AtividadeChamadoNome</option>
-                            }
-                        }
-                    </select>
-                    <select id="StatusPesq" name="StatusPesq" style="width:140px;height:25px;margin-left:5px">
-                        <option value="Todos Status">Todos Status</option>
-                        @if (filtroStatus == "Cancelado")
-                        {
-                            <option selected value="Cancelado">Cancelado</option>
-                        }
-                        else
-                        {
-                            <option value="Cancelado">Cancelado</option>
-                        }
-                        @if (filtroStatus == "Postado")
-                        {
-                            <option selected value="Postado">Postado</option>
-                        }
-                        else
-                        {
-                            <option value="Postado">Postado</option>
-                        }
-                        @if (filtroStatus == "Em Análise")
-                        {
-                            <option selected value="Em Análise">Em Análise</option>
-                        }
-                        else
-                        {
-                            <option value="Em Análise">Em Análise</option>
-                        }
-                        @if (filtroStatus == "Em Desenvolvimento")
-                        {
-                            <option selected value="Em Desenvolvimento">Em Desenvolvimento</option>
-                        }
-                        else
-                        {
-                            <option value="Em Desenvolvimento">Em Desenvolvimento</option>
-                        }
-                        @if (filtroStatus == "Desenvolvido")
-                        {
-                            <option selected value="Desenvolvido">Desenvolvido</option>
-                        }
-                        else
-                        {
-                            <option value="Desenvolvido">Desenvolvido</option>
-                        }
-                        @if (filtroStatus == "Pré Finalizado")
-                        {
-                            <option selected value="Pré Finalizado">Pré Finalizado</option>
-                        }
-                        else
-                        {
-                            <option value="Pré Finalizado">Pré Finalizado</option>
-                        }
-                        @if (filtroStatus == "Finalizado")
-                        {
-                            <option selected value="Finalizado">Finalizado</option>
-                        }
-                        else
-                        {
-                            <option value="Finalizado">Finalizado</option>
-                        }
-                        @if (filtroStatus == "Pendente Aprovar")
-                        {
-                            <option selected value="Pendente Aprovar">Pendente Aprovar</option>
-                        }
-                        else
-                        {
-                            <option value="Pendente Aprovar">Pendente Aprovar</option>
-                        }
-                    </select>
-                    <input type="text" name="txtNome" id="txtNome" style="width:200px;height:25px" hidden placeholder="Titulo ..." />
-                    &nbsp;&nbsp;
-                    <button type="submit" name="submit" id="submit" title="Pesquisa e Aplica os Filtros" value="PesquisarGeral" class="btn btn-xs btn-circle green btn-outline">
-                        <i class="ace-icon fa fa-search icon-only bigger-110"></i>
-                        Atualizar
-                    </button>
-                    <button type="submit" name="submit" value="Excell" title="Gerar Planilha Excell" class="btn btn-xs btn-circle green btn-outline pull-right">
-                        <i class="ace-icon fa fa-floppy-o bigger-120 blue"></i>
-                    </button>
-                    <button title="Imprimir Pagina" onclick="window.print()" class="btn btn-xs btn-circle green btn-outline pull-right">
-                        <i class="ace-icon fa fa-print bigger-120 blue"></i>
-                    </button>
+<head>
+    <style>
+        .nopadding {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    </style>
 
-                </form>
+    <script>
+    $('form .submit-link').on({
+        click: function (event) {
+            event.preventDefault();
+            $(this).closest('form').submit();
+        }
+    });
+    </script>
 
-            </div>
+</head>
+
+<body onload="$('#showtoast').button().click();">
+    <div class="table-header">
+        <div class="row">
+            <br />
+            <button type="button" class="btn btn-circle green btn-outline" title="Adiciona um Novo Chamado" style="margin-left:50px" data-toggle="modal" onclick="CarregaFiltros()" data-target="#NovoChamado"><i class="fa fa-file-o"></i> Novo Chamado</button>
+            <hr />
         </div>
-        <!-- div.table-responsive -->
-        <!-- div.dataTables_borderWrap -->
+        <div class="form-group">
+            <form>
+                <input name="idchamado" id="idchamado" type="text" hidden placeholder="Numero" />
+                <div class="col-md-12 nopadding">
+                    <div class="col-md-3 nopadding">
+                        <select class="form-control" id="empresa" name="empresa">
+                            <option value="99999">Todas Empresas</option>
+                            @foreach (var item in Model.PortalEmpresa)
+                            {
+                                if (filtroEmpresa == item.EmpID)
+                                {
+                                    <option selected value="@item.EmpID">@item.EmpRazao</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.EmpID">@item.EmpRazao</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 nopadding">
+                        <select class="form-control" id="tipochamado" name="tipochamado">
+                            <option value="0">Todos Tipos</option>
+                            @foreach (var item in Model.PortalTipoChamados)
+                            {
+                                if (filtroTipos == item.TipoChamadoID)
+                                {
+                                    <option selected value="@item.TipoChamadoID">@item.TipoChamadoNome</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.TipoChamadoID">@item.TipoChamadoNome</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 nopadding">
+                        <select class="form-control" id="atividadechamado" name="atividadechamado">
+                            <option value="0">Todas Atividades</option>
+                            @foreach (var item in Model.PortalAtividadeChamados)
+                            {
+                                if (filtroAtividade == item.AtividadeChamadoID)
+                                {
+                                    <option selected value="@item.AtividadeChamadoID">@item.AtividadeChamadoNome</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.AtividadeChamadoID">@item.AtividadeChamadoNome</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 nopadding">
+                        <select class="form-control" id="StatusPesq" name="StatusPesq">
+                            <option value="Todos Status">Todos Status</option>
+                            @if (filtroStatus == "Cancelado")
+                            {
+                                <option selected value="Cancelado">Cancelado</option>
+                            }
+                            else
+                            {
+                                <option value="Cancelado">Cancelado</option>
+                            }
+                            @if (filtroStatus == "Postado")
+                            {
+                                <option selected value="Postado">Postado</option>
+                            }
+                            else
+                            {
+                                <option value="Postado">Postado</option>
+                            }
+                            @if (filtroStatus == "Em Análise")
+                            {
+                                <option selected value="Em Análise">Em Análise</option>
+                            }
+                            else
+                            {
+                                <option value="Em Análise">Em Análise</option>
+                            }
+                            @if (filtroStatus == "Em Desenvolvimento")
+                            {
+                                <option selected value="Em Desenvolvimento">Em Desenvolvimento</option>
+                            }
+                            else
+                            {
+                                <option value="Em Desenvolvimento">Em Desenvolvimento</option>
+                            }
+                            @if (filtroStatus == "Pré Finalizado")
+                            {
+                                <option selected value="Pré Finalizado">Pré Finalizado</option>
+                            }
+                            else
+                            {
+                                <option value="Pré Finalizado">Pré Finalizado</option>
+                            }
+                            @if (filtroStatus == "Finalizado")
+                            {
+                                <option selected value="Finalizado">Finalizado</option>
+                            }
+                            else
+                            {
+                                <option value="Finalizado">Finalizado</option>
+                            }
+                            @if (filtroStatus == "Pendente Aprovar")
+                            {
+                                <option selected value="Pendente Aprovar">Pendente Aprovar</option>
+                            }
+                            else
+                            {
+                                <option value="Pendente Aprovar">Pendente Aprovar</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-3 nopadding">
+                        <input type="text" name="txtNome" id="txtNome" hidden placeholder="Titulo ..." />
+                        <button type="submit" name="submit" value="Excell" title="Gerar Planilha Excell" class="btn btn-xs btn-circle green btn-outline pull-right">
+                            <i class="ace-icon fa fa-floppy-o bigger-120 blue"></i>
+                        </button>
+                        <button title="Imprimir Pagina" onclick="window.print()" class="btn btn-xs btn-circle green btn-outline pull-right">
+                            <i class="ace-icon fa fa-print bigger-120 blue"></i>
+                        </button>
+                        <button type="submit" name="submit" id="submit" title="Pesquisa e Aplica os Filtros" value="PesquisarGeral" class="btn btn-xs btn-circle green btn-outline pull-right">
+                            <i class="ace-icon fa fa-search icon-only bigger-110"></i>
+                            Pesquizar
+                        </button>
+                    </div>
 
-<div class="portlet-body">
-    <table class="table table-striped table-bordered table-hover order-column" id="sample_3" name="sample_3">
-        <thead>
-            <tr>
-                <th>Hist</th>
-                <th>An</th>
-                <th>#</th>
-                <th>Atender <br />Empresa</th>
-                <th>Titulo<br />do Chamado</th>
-                <th>De Usuário</th>
-                <th>P/ Usuário</th>
-                <th>Dt.Abertura</th>
-                <th>Dt.Previsão</th>
-                <th>Status</th>
-                <th width="12%">Ação</th>
-            </tr>
-        </thead>
-        <tbody>
+                </div>
 
-            @foreach (var item in Model.PortalChamados)
+            </form>
+
+        </div>
+    </div>
+    <!-- div.table-responsive -->
+    <!-- div.dataTables_borderWrap -->
+
+    <div class="portlet-body">
+        <table class="table table-striped table-bordered table-hover order-column" id="sample_3" name="sample_3">
+            <thead>
+                <tr>
+                    <th style="width:20%">Ações</th>
+                    <th>#</th>
+                    <th>Atender <br />Empresa</th>
+                    <th>Titulo<br />do Chamado</th>
+                    <th>De Usuário</th>
+                    <th>P/ Usuário</th>
+                    <th>Dt.Abertura</th>
+                    <th>Dt.Previsão</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model.PortalChamados)
             {
 
-                <tr>
-                    <td>
-                        <button class="btn btn-gray btn-xs fa fa-search" title="Modal da Lista de Históricos" data-toggle="modal" data-target="#ListaDeHistorico_@item.ChamadoID"><small style="color:red">(@item.PortalChamadosHistorico.Count())</small></button>
-
-                    </td>
-                    <td>
-                        <button class="btn btn-gray btn-xs fa fa-file-o" title="Modal da Lista de Anexos" data-toggle="modal" data-target="#ListaDeAnexos_@item.ChamadoID"><small style="color:red">(@item.ChamadoAnexos.Count())</small></button>
-                    </td>
-                    <td>@item.ChamadoID</td>
-                    @foreach (var itemAt in Model.AtenderEmpresa)
-                    {
-                        if (itemAt.EmpID == item.AtenderEmpID)
-                        {
-                            <td>@itemAt.EmpNomeFantasia</td>
-                        }
-                    }
-                    <td>@item.ChamadoTitulo</td>
-                    @foreach (var itemDeUsr in Model.DeUsuario)
-                    {
-                        if (itemDeUsr.UsrID == item.DeUsrID)
-                        {
-                            <td>@itemDeUsr.UsrNome</td>
-                        }
-                    }
-                    @foreach (var itemParaUsr in Model.ParaUsuario)
-                    {
-                        if (itemParaUsr.UsrID == item.ParaUsrID)
-                        {
-                            <td>@itemParaUsr.UsrNome</td>
-                        }
-                    }
-                    <td>@item.ChamadoDtAbertura.ToString("dd/MM/yyyy")</td>
-                    @if (item.ChamadoDtAdiada == null)
-                    {
-                        if (item.ChamadoDtPrevista < DateTime.Now)
-                        {
-                            if (item.Status == "Pendente Aprovar")
+                    <tr>
+                        <td style="width:15%">
+                            <a class="btn btn-xs fa fa-search" title="Modal da Lista de Históricos" data-toggle="modal" data-target="#ListaDeHistorico_@item.ChamadoID"><small style="color:red">(@item.PortalChamadosHistorico.ToList().Where(e => e.ParaStatus != "Pendente Aprovar" && e.ParaStatus != "Aprovado" && e.ParaStatus != "Reprovado").ToList().Count())</small></a>
+                            @if ((@item.PortalChamadosHistorico.ToList().Where(e => e.ParaStatus == "Pendente Aprovar" || e.ParaStatus == "Aprovado" || e.ParaStatus == "Reprovado").ToList().Count()) > 0)
                             {
-                                <td style="color:darkorange;font-weight:bold" title="Pendente Aprovação">@item.ChamadoDtPrevista.ToString("dd/MM/yyyy hh:mm:ss")</td>
+                                <a class="btn btn-xs btn-gray fa fa-calendar" style="color:darkorange" onclick="CarregaIdChamado('@item.ChamadoID', '@item.Status', '@item.paraStatus')" title="Modal da Lista de Controle de Datas" data-toggle="modal" data-target="#ListaDeHistoricoDatas_@item.ChamadoID"><small style="color:red">(@item.PortalChamadosHistorico.ToList().Where(e => e.ParaStatus == "Pendente Aprovar" || e.ParaStatus == "Aprovado" || e.ParaStatus == "Reprovado").ToList().Count())</small></a>
                             }
                             else
                             {
-                                <td style="color:darkred;font-weight:bold" title="Atrasada">@item.ChamadoDtPrevista.ToString("dd/MM/yyyy hh:mm:ss")</td>
+                                <a class="btn btn-xs fa fa-calendar" onclick="CarregaIdChamado('@item.ChamadoID', '@item.Status', '@item.paraStatus')" title="Modal da Lista de Controle de Datas" data-toggle="modal" data-target="#ListaDeHistoricoDatas_@item.ChamadoID"><small style="color:red">(@item.PortalChamadosHistorico.ToList().Where(e => e.ParaStatus == "Pendente Aprovar" || e.ParaStatus == "Aprovado" || e.ParaStatus == "Reprovado").ToList().Count())</small></a>
                             }
-                        }
-                        else
-                        {
-                            if (item.Status == "Pendente Aprovar")
+                            <a class="btn btn-xs fa fa-file-o" title="Modal da Lista de Anexos" data-toggle="modal" data-target="#ListaDeAnexos_@item.ChamadoID"><small style="color:red">(@item.ChamadoAnexos.Count())</small></a>
+                            @if (Session["UsuarioGestor"].ToString() == "True")
                             {
-                                <td style="color:yellow;font-weight:bold" title="Pendente Aprovação">@item.ChamadoDtPrevista.ToString("dd/MM/yyyy hh:mm:ss")</td>
+                                <a class="btn btn-xs fa fa-edit" title="Editar Chamado" href="~/PortalChamados/EditarChamados?Id=@item.ChamadoID&Acao=Editar"></a>
+                            }
+                            <a class="btn btn-xs fa fa-envelope-o" title="Enviar Email" href="~/Home/EnviarEmail?IdChamado=@item.ChamadoID&Mensagem=Chamado requer Analise"></a>
+                            @if (item.Status == "Cancelado")
+                            {
+                                item.paraStatus = "Postado";
+                            }
+                            @if (item.Status == "Postado")
+                            {
+                                item.paraStatus = "Em Análise";
+                            }
+                            @if (item.Status == "Em Análise")
+                            {
+                                item.paraStatus = "Em Desenvolvimento";
+                            }
+                            @if (item.Status == "Em Desenvolvimento")
+                            {
+                                item.paraStatus = "Pré Finalizado";
+                            }
+                            @if (item.Status == "Pré Finalizado")
+                            {
+                                item.paraStatus = "Finalizado";
+                            }
+                            @if (item.Status == "Finalizado")
+                            {
+                                item.paraStatus = "Finalizado";
+                            }
+                            @if (item.Status == "Pendente Aprovar")
+                            {
+                                item.paraStatus = "Pendente Aprovar";
+                            }
+                            @if (item.paraStatus == "Finalizado" || item.Status == "Finalizado")
+                            {
+                                if (Session["UsuarioGestor"].ToString() == "True")
+                                {
+                                    <button class="btn btn-gray btn-xs fa fa-plus" title="Novo Histórico" onclick="CarregaIdChamado('@item.ChamadoID', '@item.Status', '@item.paraStatus')" data-toggle="modal" data-target="#NovoHistorico"></button>
+                                }
                             }
                             else
-                            {
-                                <td style="color:green;font-weight:bold" title="Em Andamento">@item.ChamadoDtPrevista.ToString("dd/MM/yyyy hh:mm:ss")</td>
-                            }
-
-                        }
-                    }
-                    else
-                    {
-                        <td style="color:red;font-weight:bold" title="Adiada para @Convert.ToDateTime(item.ChamadoDtAdiada).ToString("dd/MM/yyyy hh:mm:ss")">@item.ChamadoDtPrevista.ToString("dd/MM/yyyy hh:mm:ss")</td>
-                    }
-                    <td>@item.Status</td>
-                    <td width="10%">
-                        @if (Session["UsuarioGestor"].ToString() == "True")
-                        {
-                            <a class="btn btn-xs fa fa-edit" title="Editar Chamado" href="~/PortalChamados/EditarChamados?Id=@item.ChamadoID&Acao=Editar"></a>
-                        }
-                        <a class="btn btn-xs fa fa-save" title="Solicitar para Extender o Prazo do Chamado" href="~/PortalChamados/EditarChamados?Id=@item.ChamadoID&Acao=Adiar"></a>
-                        @if (item.Status == "Cancelado")
-                        {
-                            item.paraStatus = "Postado";
-                        }
-                        @if (item.Status == "Postado")
-                        {
-                            item.paraStatus = "Em Análise";
-                        }
-                        @if (item.Status == "Em Análise")
-                        {
-                            item.paraStatus = "Em Desenvolvimento";
-                        }
-                        @if (item.Status == "Em Desenvolvimento")
-                        {
-                            item.paraStatus = "Desenvolvido";
-                        }
-                        @if (item.Status == "Desenvolvido")
-                        {
-                            item.paraStatus = "Pré Finalizado";
-                        }
-                        @if (item.Status == "Pré Finalizado")
-                        {
-                            item.paraStatus = "Finalizado";
-                        }
-                        @if (item.Status == "Finalizado")
-                        {
-                            item.paraStatus = "Finalizado";
-                        }
-                        @if (item.Status == "Pendente Aprovar")
-                        {
-                            item.paraStatus = "Em Desenvolvimento";
-                        }
-                        @if (item.paraStatus == "Finalizado" || item.Status == "Finalizado")
-                        {
-                            if (Session["UsuarioGestor"].ToString() == "True")
                             {
                                 <button class="btn btn-gray btn-xs fa fa-plus" title="Novo Histórico" onclick="CarregaIdChamado('@item.ChamadoID', '@item.Status', '@item.paraStatus')" data-toggle="modal" data-target="#NovoHistorico"></button>
                             }
+                        </td>
+                        <td>@item.ChamadoID</td>
+                        @foreach (var itemAt in Model.AtenderEmpresa)
+                        {
+                            if (itemAt.EmpID == item.AtenderEmpID)
+                            {
+                                <td>@itemAt.EmpNomeFantasia</td>
+                            }
+                        }
+                        <td>@item.ChamadoTitulo</td>
+                        @foreach (var itemDeUsr in Model.DeUsuario)
+                        {
+                            if (itemDeUsr.UsrID == item.DeUsrID)
+                            {
+                                <td>@itemDeUsr.UsrNome</td>
+                            }
+                        }
+                        @foreach (var itemParaUsr in Model.ParaUsuario)
+                        {
+                            if (itemParaUsr.UsrID == item.ParaUsrID)
+                            {
+                                <td>@itemParaUsr.UsrNome</td>
+                            }
+                        }
+                        <td>@item.ChamadoDtAbertura.ToString("dd/MM/yyyy")</td>
+                        @if (item.ChamadoDtAdiada == null)
+                        {
+                            if (item.ChamadoDtPrevista < DateTime.Now)
+                            {
+                                if (item.Status == "Pendente Aprovar")
+                                {
+                                    <td style="color:darkorange;font-weight:bold" title="Pendente Aprovação">@item.ChamadoDtPrevista.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                }
+                                else
+                                {
+                                    <td style="color:darkred;font-weight:bold" title="Atrasada">@item.ChamadoDtPrevista.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                }
+                            }
+                            else
+                            {
+                                if (item.Status == "Pendente Aprovar")
+                                {
+                                    <td style="color:darkorange;font-weight:bold" title="Pendente Aprovação">@item.ChamadoDtPrevista.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                }
+                                else
+                                {
+                                    <td style="color:green;font-weight:bold" title="Em dia">@item.ChamadoDtPrevista.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                }
+
+                            }
                         }
                         else
                         {
-                            <button class="btn btn-gray btn-xs fa fa-plus" title="Novo Histórico" onclick="CarregaIdChamado('@item.ChamadoID', '@item.Status', '@item.paraStatus')" data-toggle="modal" data-target="#NovoHistorico"></button>
+                            if (item.ChamadoDtAdiada < DateTime.Now)
+                            {
+                                <td style="color:red;font-weight:bold" title="Data Original Prevista @Convert.ToDateTime(item.ChamadoDtPrevista).ToString("dd/MM/yyyy HH:mm:ss")">@Convert.ToDateTime(item.ChamadoDtAdiada).ToString("dd/MM/yyyy HH:mm:ss")</td>
+                            }
+                            else
+                            {
+                                <td style="color:green;font-weight:bold" title="Data Original Prevista @Convert.ToDateTime(item.ChamadoDtPrevista).ToString("dd/MM/yyyy HH:mm:ss")">@Convert.ToDateTime(item.ChamadoDtAdiada).ToString("dd/MM/yyyy HH:mm:ss")</td>
+                            }
+
                         }
-                    </td>
-                </tr>
-            }
+                        <td>@item.Status</td>
+
+                    </tr>
+                }
 
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-</div>
+    </div>
 
     @foreach (var item in Model.PortalChamados)
     {
@@ -315,51 +376,33 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Data Inclusão</th>
-                                        <th>Data Prevista</th>
-                                        <th>Data Adiada</th>
-                                        <th>De Status</th>
-                                        <th>Para Status</th>
+                                        <th>Status</th>
                                         <th>Descrição</th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (item.PortalChamadosHistorico.Count == 0)
+                                    @if (item.PortalChamadosHistorico.ToList().Where(e => e.ParaStatus != "Pendente Aprovar" && e.ParaStatus != "Aprovado" && e.ParaStatus != "Reprovado").ToList().Count() == 0)
                                     {
                                         <tr>
                                             <td>Nenhum Histórico para Exibir</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                         </tr>
 
                                     }
-                                    @foreach (var item2 in item.PortalChamadosHistorico)
+                                    @foreach (var item2 in item.PortalChamadosHistorico.ToList().Where(e => e.ParaStatus != "Pendente Aprovar" && e.ParaStatus != "Aprovado" && e.ParaStatus != "Reprovado").ToList())
                                     {
-                                        nrItens++;
+                                        nrItens1++;
                                         <tr>
                                             <td>
-                                                @nrItens
+                                                @nrItens1
                                             </td>
-                                            <td>
+                                            <td style="width:20%">
                                                 @item2.DtIncl.ToString("dd/MM/yyyy")
                                             </td>
-                                            <td>
-                                                @item.ChamadoDtPrevista.ToString("dd/MM/yyyy")
-                                            </td>
-                                            <td>
-                                                @if (item2.DtAdiar != null)
-                                                {
-                                                    @Convert.ToDateTime(item2.DtAdiar).ToString("dd/MM/yyyy")
-                                                }
-                                            </td>
-                                            <td>
-                                                @item2.DeStatus
-                                            </td>
-                                            <td>
+                                            <td style="width:20%">
                                                 @item2.ParaStatus
                                             </td>
                                             <td>
@@ -368,19 +411,239 @@
                                         </tr>
 
                                     }
+                                    @{
+                                        nrItens1 = 0;
+                                        nrItens2 = 0;
+                                    }
                                 </tbody>
 
                             </table>
 
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-gray" data-dismiss="modal">Retornar</button>
-                        </div>
+                        <form method="post">
+                            <div class="modal-footer">
+                                <div class="col-sm-12 pull-left">
+                                    <input id="idChamadoEmail" value="@item.ChamadoID" name="idChamadoEmail" class="hidden" />
+
+                                    <small class="pull-left">Mensagem do Email</small><br />
+                                    <textarea id="Mensagem" name="Mensagem" style="width:100%;resize:none" required rows="3"></textarea>
+                                    <hr />
+                                </div>
+                                <button type="submit" id="submit" name="submit" value="EnviarEmail" class="btn btn-circle btn-gray pull-left">Enviar Email</button>
+                                <button type="button" class="btn btn-circle btn-gray" data-dismiss="modal">Retornar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    }
+
+        <div class="portlet-body">
+            <!-- Modal -->
+            <div id="ListaDeHistoricoDatas_@item.ChamadoID" class="modal fade success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <form method="post">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <i class="icon-bar font-green"></i>
+                                <span class="caption-subject font-green sbold uppercase">Modal de Históricos de Datas</span>
+                            </div>
+                            <div class="col-sm-12">
+                                <table class="table table-striped table-bordered table-hover order-column" id="Table_@item.ChamadoID" name="Table_@item.ChamadoID">
+
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Data Inclusão</th>
+                                            <th>Data Prevista</th>
+                                            <th>Adiar Para</th>
+                                            <th class="hidden">De Status</th>
+                                            <th>Status</th>
+                                            <th>Descrição</th>
+                                            <th>Ação</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (item.PortalChamadosHistorico.ToList().Where(e => e.ParaStatus == "Pendente Aprovar" || e.ParaStatus == "Aprovado" || e.ParaStatus == "Reprovado").ToList().Count() == 0)
+                                        {
+                                            <tr>
+                                                <td>Nenhum Histórico para Exibir</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                        }
+                                        @foreach (var item2 in item.PortalChamadosHistorico.ToList().Where(e => e.ParaStatus == "Pendente Aprovar" || e.ParaStatus == "Aprovado" || e.ParaStatus == "Reprovado").ToList())
+                                        {
+                                            nrItens2++;
+                                            <tr>
+                                                <td>
+                                                    @nrItens2
+                                                </td>
+                                                <td>
+                                                    @item2.DtIncl.ToString("dd/MM/yyyy")
+                                                </td>
+                                                <td>
+                                                    @item.ChamadoDtPrevista.ToString("dd/MM/yyyy")
+                                                </td>
+                                                <td>
+                                                    @if (item2.DtAdiar != null)
+                                                    {
+                                                        @Convert.ToDateTime(item2.DtAdiar).ToString("dd/MM/yyyy")
+                                                    }
+                                                </td>
+                                                <td class="hidden">
+                                                    @item2.DeStatus
+                                                </td>
+                                                <td>
+                                                    @item2.ParaStatus
+                                                </td>
+                                                <td>
+                                                    @item2.Descricao
+                                                </td>
+                                                <td width="10%">
+                                                    @if (item.Status == "Cancelado")
+                                                    {
+                                                        item.paraStatus = "Postado";
+                                                    }
+                                                    @if (item.Status == "Postado")
+                                                    {
+                                                        item.paraStatus = "Em Análise";
+                                                    }
+                                                    @if (item.Status == "Em Análise")
+                                                    {
+                                                        item.paraStatus = "Em Desenvolvimento";
+                                                    }
+                                                    @if (item.Status == "Em Desenvolvimento")
+                                                    {
+                                                        item.paraStatus = "Pré Finalizado";
+                                                    }
+                                                    @if (item.Status == "Pré Finalizado")
+                                                    {
+                                                        item.paraStatus = "Finalizado";
+                                                    }
+                                                    @if (item.Status == "Finalizado")
+                                                    {
+                                                        item.paraStatus = "Finalizado";
+                                                    }
+                                                    @if (item.Status == "Pendente Aprovar")
+                                                    {
+                                                        item.paraStatus = "Em Desenvolvimento";
+                                                    }
+                                                    @if (Session["UsuarioGestor"].ToString() == "True")
+                                                    {
+                                                        if (item2.ParaStatus == "Pendente Aprovar")
+                                                        {
+                                                            <button class="btn btn-danger btn-xs fa fa-thumbs-o-down" title="Reprovar" id="btnReprovar" name="btnReprovar" value="@item2.ChamadoHistID" type="submit"></button>
+                                                            <button class="btn btn-success btn-xs fa fa fa-thumbs-o-up" title="Aprovar" id="btnAprovar" name="btnAprovar" value="@item2.ChamadoHistID" type="submit"></button>
+                                                        }
+                                                    }
+
+                                                </td>
+                                            </tr>
+
+                                        }
+                                        @{
+                                            nrItens1 = 0;
+                                            nrItens2 = 0;
+                                        }
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+                            <div class="modal-footer">
+                                <div class="col-sm-12 pull-left">
+                                    <small class="pull-left">Descrição do Histórico</small><br />
+                                    <textarea id="Historico" style="width:100%;resize:none" required name="Historico" rows="3"></textarea>
+                                    <hr />
+                                </div>
+                                <input id="idChamadoAdiar" value="@item.ChamadoID" name="idChamadoAdiar" class="hidden" />
+                                <button type="submit" id="submit" name="submit" value="Adiar" class="btn btn-circle pull-left" title="Solicitar para Extender o Prazo do Chamado">Solicitar Adiar Para: </button>
+                                <div class="col-sm-6">
+                                    <div class="input-group input-medium date date-picker" data-date-format="dd/mm/yyyy" data-date-start-date="+0d">
+                                        <input type="text" id="dtAdiar" name="dtAdiar" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn default" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                                <button type="button" class="btn btn-circle btn-gray" data-dismiss="modal">Retornar</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+                                            }
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="NovoHistorico" class="modal modal-lg fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <i class="icon-bar font-green"></i>
+                            <span class="caption-subject font-green sbold uppercase">Incluir Histórico</span>
+
+                        </div>
+                        <form>
+                            <input id="idChamadoHist" name="idChamadoHist" hidden type="text" />
+                            <input id="filtroempresa1" name="filtroempresa1" hidden type="text" />
+                            <input id="filtrotipochamado1" name="filtrotipochamado1" type="text" hidden />
+                            <input id="filtroatividadechamado1" name="filtroatividadechamado1" type="text" hidden />
+                            <input id="filtroidchamado1" name="filtroidchamado1" type="text" hidden />
+                            <input id="filtroStatusPesq1" name="filtroStatusPesq1" type="text" hidden />
+
+                            <div class="modal-body bg-gray-lighter">
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <small>Status Atual: </small><br />
+                                            <input style="color:blue;font-weight:bold" name="deStatus" id="deStatus" type="text" readonly />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <small> Novo Status: </small><br />
+                                            <input style="color:blue;font-weight:bold" name="paraStatus" id="paraStatus" readonly />
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <small> Atualizar Status ? </small><br />
+                                            <input type="checkbox" name="manterStatus" checked />
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12">
+                                        <br />
+                                        <span class="caption-subject font-green sbold uppercase">Descrição</span>
+                                        <br />
+                                        <textarea id="Descricao" style="width:100%;resize:none" name="Descricao" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-gray" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" id="submit" name="submit" value="NovoHistorico" class="btn btn-success">Salvar</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     @foreach (var item in Model.PortalChamados)
     {
         <div class="portlet-body">
@@ -391,10 +654,10 @@
                         <div class="modal-header">
                             <i class="icon-bar font-green"></i>
                             <span class="caption-subject font-green sbold uppercase">Modal de Anexos</span>
-                            <a class="btn btn-xs btn-circle green btn-outline pull-right" title="Novo Anexos do Chamado" href="~/PortalChamados/Anexos?Id=@item.ChamadoID">Novo Anexo</a>
+                            <button type="button" class="bbtn btn-xs btn-circle green btn-outline pull-right" data-dismiss="modal">Retornar</button>
+                            <a class="btn btn-xs btn-circle btn-gray btn-outline pull-right" title="Acessar Lista de Anexos modo Galeria" href="~/PortalChamados/Anexos?Id=@item.ChamadoID">Galeria de Anexos</a>
                         </div>
                         <div class="col-sm-12">
-                            <input id="idChmado" name="idChamado" value="@item.ChamadoID" hidden />
                             <table class="table table-striped table-bordered table-hover order-column" id="Table_@item.ChamadoID" name="Table_@item.ChamadoID">
                                 <thead>
                                     <tr>
@@ -414,20 +677,18 @@
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
                                         </tr>
 
                                     }
                                     @{
-                                        nrItens = 0;
+                                        nrItens1 = 0;
                                     }
                                     @foreach (var item2 in item.ChamadoAnexos)
                                     {
-                                        nrItens++;
+                                        nrItens1++;
                                         <tr>
                                             <td>
-                                                @nrItens
+                                                @nrItens1
                                             </td>
                                             <td>
                                                 @item2.Dt_Incl_Anexo.ToString("dd/MM/yyyy")
@@ -439,7 +700,7 @@
                                                 @item2.Nome_Arquivo_Anexo
                                             </td>
                                             <td>
-                                                <a href="..//Anexos//@item2.Patch_Anexo" target="_blank" class="btn btn-xs fa fa-file-o"></a>
+                                                <a href="..//Anexos//@item2.Patch_Anexo" target="_blank" class="btn btn-xs fa fa-cloud-download"></a>
                                             </td>
                                         </tr>
 
@@ -447,180 +708,356 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-gray" data-dismiss="modal">Retornar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-                                        }
-
-    <div class="portlet-body">
-        <div id="NovoChamado" class="modal fade success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-xl-center fw-bold mt" id="myModalLabel18">Incluir Chamado</h5>
-                    </div>
-                    <form>
-                        <input id="filtroempresa" name="filtroempresa" hidden type="text" />
-                        <input id="filtrotipochamado" name="filtrotipochamado" type="text" hidden />
-                        <input id="filtroatividadechamado" name="filtroatividadechamado" type="text" hidden />
-                        <input id="filtroidchamado" name="filtroidchamado" type="text" hidden />
-                        <input id="filtroStatusPesq" name="filtroStatusPesq" type="text" hidden />
-
-                        <div class="modal-body bg-gray-lighter">
-                            <div class="form-group row">
-                                <div class="col-sm-8">
-                                    <small>Atender Empresa</small><br />
-                                    <select id="atenderEmpresa" name="atenderEmpresa" style="width:200px;height:25px;margin-left:5px">
-                                        @foreach (var item in Model.PortalEmpresa)
-                                        {
-                                            if (filtroEmpresa == item.EmpID)
-                                            {
-                                                <option selected value="@item.EmpID">@item.EmpRazao</option>
-                                            }
-                                            else
-                                            {
-                                                <option value="@item.EmpID">@item.EmpRazao</option>
-                                            }
-                                        }
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6">
-                                    <small>De Usuário</small><br />
-                                    @Html.DropDownList("DeUsrID", null, htmlAttributes: new { @class = "form-control", @name = "DeUsrID", disabled = "disabled" })
-                                </div>
-                                @if (Session["UsuarioGestor"].ToString() == "True")
-                                {
-                                    <div class="col-sm-6">
-                                        <small>Para Usuário</small><br />
-                                        @Html.DropDownList("ParaUsrID", null, htmlAttributes: new { @class = "form-control", @name = "ParaUsrID" })
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="col-sm-6">
-                                        <small>Para Usuário</small><br />
-                                        Postado
-                                    </div>
-                                }
-                            </div>
-                            <div class="form-group row">
+                        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <div class="modal-footer">
+                                <input id="idChmado" name="idChamado" value="@item.ChamadoID" hidden />
                                 <div class="col-sm-12">
-                                    <small>Titulo do Chamado</small><br />
-                                    @Html.EditorFor(model => model.PortalChamado.ChamadoTitulo, new { htmlAttributes = new { @class = "form-control", @placeholder = "Titulo do Chamado" } })
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                @*<div class="col-sm-4">
-                                        <small>Data Prevista</small><br />
-                                        @Html.TextBoxFor(model => model.PortalChamado.ChamadoDtPrevista, new { @type = "date", @Value = Model.PortalChamado.ChamadoDtPrevista.ToString("yyyy-MM-dd") })
-                                    </div>*@
-                                @*<div class="col-sm-4">
-                                        <small>Status</small><br />
-                                        <select id="Status" name="Status" disabled>
-                                            <option selected>Postado</option>
-                                        </select>
-                                    </div>*@
-                                <div class="col-sm-6">
-                                    <small>Tipo do Chamado</small><br />
-                                    @Html.DropDownList("TipoChamadoID", null, htmlAttributes: new { @class = "form-control", @name = "TipoChamadoID" })
+                                    <small>Descrição dos Anexos</small><br />
+                                    <textarea id="dsAnexo" style="width:100%;resize:none" name="dsAnexo" rows="2"></textarea>
                                 </div>
                                 <div class="col-sm-6">
-                                    <small>Atividade</small><br />
-                                    @Html.DropDownList("AtividadeChamadoID", null, htmlAttributes: new { @class = "form-control", @name = "AtividadeChamadoID" })
+                                    <hr />
+                                    <span class="btn green fileinput-button">
+                                        <i class="fa fa-plus"></i>
+                                        <span> Adicionar Anexos </span>
+                                        <input class="input-lg" type="file" style="width:100%" id="file" name="file[]" multiple="">
+                                    </span>
+                                    <br />
                                 </div>
-                                <div class="col-sm-12">
-                                    <small>Anotações do Chamado</small><br />
-                                    <textarea id="Historico" style="width:100%;resize:none" name="Historico" rows="5"></textarea>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-gray" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" id="submit" name="submit" value="SalvarChamado" class="btn btn-success">Salvar</button>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="portlet-body">
-        <!-- Modal -->
-        <div id="NovoHistorico" class="modal fade success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <i class="icon-bar font-green"></i>
-                        <span class="caption-subject font-green sbold uppercase">Incluir Histórico</span>
-
-                    </div>
-                    <form>
-                        <input id="idChamadoHist" name="idChamadoHist" hidden type="text" />
-                        <input id="filtroempresa1" name="filtroempresa1" hidden type="text" />
-                        <input id="filtrotipochamado1" name="filtrotipochamado1" type="text" hidden />
-                        <input id="filtroatividadechamado1" name="filtroatividadechamado1" type="text" hidden />
-                        <input id="filtroidchamado1" name="filtroidchamado1" type="text" hidden />
-                        <input id="filtroStatusPesq1" name="filtroStatusPesq1" type="text" hidden />
-
-                        <div class="modal-body bg-gray-lighter">
-                            <div class="form-group row">
                                 <div class="col-md-6">
-                                    <small hidden>De Status </small><br />
-                                    <input name="deStatus" id="deStatus" type="text" hidden />
-                                    <small>Novo Status: </small>
-                                    <input style="color:blue;font-weight:bold" name="paraStatus" id="paraStatus" readonly />
+                                    <button type="submit" name="submit" value="ColetarAnexos" class="btn btn-xs btn-primary btn-circle green btn-outline pull-right" title="Enviar Anexos Selecionados">Enviar Selecionados</button>
+                                </div>
+                            </div>
 
-                                </div>
-                                <div class="col-md-12">
-                                    <br />
-                                    <span class="caption-subject font-green sbold uppercase">Descrição</span>
-                                    <br />
-                                    <textarea id="Descricao" style="width:100%;resize:none" name="Descricao" rows="5"></textarea>
-                                </div>
-                                @if (Session["UsuarioGestor"].ToString() == "True")
-                                {
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                                        }
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="portlet-body">
+            <div id="NovoChamado" class="modal fade success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <i class="icon-bar font-green"></i>
+                            <span class="caption-subject font-green sbold uppercase">Incluir Chamado</span>
+                        </div>
+                        <form>
+                            <input id="filtroempresa" name="filtroempresa" hidden type="text" />
+                            <input id="filtrotipochamado" name="filtrotipochamado" type="text" hidden />
+                            <input id="filtroatividadechamado" name="filtroatividadechamado" type="text" hidden />
+                            <input id="filtroidchamado" name="filtroidchamado" type="text" hidden />
+                            <input id="filtroStatusPesq" name="filtroStatusPesq" type="text" hidden />
+
+                            <div class="modal-body bg-gray-lighter">
+                                <div class="form-group row">
                                     <div class="col-sm-6">
-                                        <small>Adiar Para <label style="color:red">(Sómente Gestor)</label></small><br />
-                                        <div class="input-group input-medium date date-picker" data-date-format="dd/mm/yyyy" data-date-start-date="+0d">
-                                            <input type="text" id="dtAdiar" name="dtAdiar" class="form-control" readonly>
-                                            <span class="input-group-btn">
-                                                <button class="btn default" type="button">
-                                                    <i class="fa fa-calendar"></i>
-                                                </button>
-                                            </span>
-                                        </div>
+                                        <small>Atender Empresa</small><br />
+                                        <select id="atenderEmpresa" name="atenderEmpresa" style="width:100%;height:25px;margin-left:5px">
+                                            @foreach (var item in Model.PortalEmpresa)
+                                            {
+                                                if (filtroEmpresa == item.EmpID)
+                                                {
+                                                    <option selected value="@item.EmpID">@item.EmpRazao</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@item.EmpID">@item.EmpRazao</option>
+                                                }
+                                            }
+                                        </select>
                                     </div>
-                                }
+                                    <div class="col-sm-6">
+                                        @if (Session["UsuarioGestor"].ToString() == "True")
+                                        {
+                                            <div class="col-sm-6">
+                                                <small>Para Usuário</small><br />
+                                                @Html.DropDownList("ParaUsrID", null, htmlAttributes: new { @class = "form-control", @name = "ParaUsrID" })
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col-sm-6">
+                                                <small>Para Usuário</small><br />
+                                                Postado
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+                                <div class="form-group row hidden">
+                                    <div class="col-sm-6 hidden">
+                                        <small>De Usuário</small><br />
+                                        @Html.DropDownList("DeUsrID", null, htmlAttributes: new { @class = "form-control", @name = "DeUsrID", disabled = "disabled" })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <small>Titulo do Chamado</small><br />
+                                        @Html.EditorFor(model => model.PortalChamado.ChamadoTitulo, new { htmlAttributes = new { @class = "form-control", @placeholder = "Titulo do Chamado" } })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    @*<div class="col-sm-4">
+                                            <small>Data Prevista</small><br />
+                                            @Html.TextBoxFor(model => model.PortalChamado.ChamadoDtPrevista, new { @type = "date", @Value = Model.PortalChamado.ChamadoDtPrevista.ToString("yyyy-MM-dd") })
+                                        </div>*@
+                                    @*<div class="col-sm-4">
+                                            <small>Status</small><br />
+                                            <select id="Status" name="Status" disabled>
+                                                <option selected>Postado</option>
+                                            </select>
+                                        </div>*@
+                                    <div class="col-sm-6">
+                                        <small>Tipo do Chamado</small><br />
+                                        @Html.DropDownList("TipoChamadoID", null, htmlAttributes: new { @class = "form-control", @name = "TipoChamadoID" })
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <small>Atividade</small><br />
+                                        @Html.DropDownList("AtividadeChamadoID", null, htmlAttributes: new { @class = "form-control", @name = "AtividadeChamadoID" })
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <small>Anotações do Chamado</small><br />
+                                        <textarea id="Historico" style="width:100%;resize:none" name="Historico" rows="3"></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <small>Descrição dos Anexos</small><br />
+                                        <textarea id="dsAnexo" style="width:100%;resize:none" name="dsAnexo" rows="2"></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <hr />
+                                        <span class="btn green fileinput-button">
+                                            <i class="fa fa-plus"></i>
+                                            <span> Adicionar Anexos </span>
+                                            <input class="input-lg" type="file" style="width:100%" id="file" name="file[]" multiple="">
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-gray" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" id="submit" name="submit" value="SalvarChamado" class="btn btn-success">Salvar</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+
+    <div class="row hidden">
+        <div class="col-md-12">
+            <div class="portlet light ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-bubble font-green-sharp"></i>
+                        <span class="caption-subject font-green-sharp sbold">@ViewData["cabecalerta"]</span>
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group">
+                            <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                Actions
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li>
+                                    <a href="javascript:;"> Option 1</a>
+                                </li>
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="javascript:;">Option 2</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">Option 3</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">Option 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label" for="title">Title</label>
+                                <input id="title" type="text" class="form-control" value="@ViewData["cabecalerta"]" placeholder="Enter a title ..." />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="message">Message</label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Enter a message ...">@ViewData["msg"]</textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="mt-checkbox-list">
+                                    <label class="mt-checkbox mt-checkbox-outline" for="closeButton">
+                                        <input id="closeButton" type="checkbox" value="checked" checked class="input-small" />Close Button
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox mt-checkbox-outline" for="addBehaviorOnToastClick">
+                                        <input id="addBehaviorOnToastClick" type="checkbox" value="checked" class="input-small" />Add behavior on toast click
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox mt-checkbox-outline" for="debugInfo">
+                                        <input id="debugInfo" type="checkbox" value="checked" class="input-small" />Debug
+                                        <span></span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-gray" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" id="submit" name="submit" value="NovoHistorico" class="btn btn-success">Salvar</button>
+                        <div class="col-md-3">
+                            <div class="form-group" id="toastTypeGroup">
+                                <label>Toast Type</label>
+                                <div class="mt-radio-list">
+                                    <label class="mt-radio mt-radio-outline">
+                                        @if (ViewData["msg"].ToString().Contains("erro"))
+                                        {
+                                            <input type="radio" name="toasts" value="success" />
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" name="toasts" value="success" checked />
+                                        }
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline">
+                                        <input type="radio" name="toasts" value="info" />Info
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline">
+                                        @if (ViewData["msg"].ToString().Contains("Alerta"))
+                                        {
+                                            <input type="radio" name="toasts" value="warning" checked />
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" name="toasts" value="warning" />
+                                        }
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline">
+                                        @if (ViewData["msg"].ToString().Contains("erro"))
+                                        {
+                                            <input type="radio" name="toasts" value="error" checked />
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" name="toasts" value="error" />
+                                        }
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group" id="positionGroup">
+                                <label>Position</label>
+                                <div class="mt-radio-list">
+                                    <label class="mt-radio mt-radio-outline">
+                                        <input type="radio" name="positions" value="toast-top-right" checked />Top Right
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline">
+                                        <input type="radio" name="positions" value="toast-bottom-right" />Bottom Right
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline">
+                                        <input type="radio" name="positions" value="toast-bottom-left"  />Bottom Left
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline">
+                                        <input type="radio" name="positions" value="toast-top-left" />Top Left
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline">
+                                        <input type="radio" name="positions" value="toast-top-center" />Top Center
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline">
+                                        <input type="radio" name="positions" value="toast-bottom-center" />Bottom Center
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline" l>
+                                        <input type="radio" name="positions" value="toast-top-full-width" />Top Full Width
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline">
+                                        <input type="radio" name="positions" value="toast-bottom-full-width" />Bottom Full Width
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-
-                    </form>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="controls">
+                                    <label class="control-label" for="showEasing">Show Easing</label>
+                                    <input id="showEasing" type="text" placeholder="swing, linear" class="form-control input-small" value="swing" />
+                                    <label class="control-label" for="hideEasing">Hide Easing</label>
+                                    <input id="hideEasing" type="text" placeholder="swing, linear" class="form-control input-small" value="linear" />
+                                    <label class="control-label" for="showMethod">Show Method</label>
+                                    <input id="showMethod" type="text" placeholder="show, fadeIn, slideDown" class="form-control input-small" value="fadeIn" />
+                                    <label class="control-label" for="hideMethod">Hide Method</label>
+                                    <input id="hideMethod" type="text" placeholder="hide, fadeOut, slideUp" class="form-control input-small" value="fadeOut" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="controls">
+                                    @if (ViewData["msg"].ToString().Contains("erro"))
+                                    {
+                                        <label class="control-label" for="showDuration">Show Duration</label>
+                                        <input id="showDuration" type="text" placeholder="ms" class="form-control input-small" value="100000" />
+                                        <label class="control-label" for="hideDuration">Hide Duration</label>
+                                        <input id="hideDuration" type="text" placeholder="ms" class="form-control input-small" value="100000" />
+                                        <label class="control-label" for="timeOut">Time out</label>
+                                        <input id="timeOut" type="text" placeholder="ms" class="form-control input-small" value="500000" />
+                                        <label class="control-label" for="timeOut">Extended time out</label>
+                                        <input id="extendedTimeOut" type="text" placeholder="ms" class="form-control input-small" value="100000" />
+                                    }
+                                    else
+                                    {
+                                        <label class="control-label" for="showDuration">Show Duration</label>
+                                        <input id="showDuration" type="text" placeholder="ms" class="form-control input-small" value="1000" />
+                                        <label class="control-label" for="hideDuration">Hide Duration</label>
+                                        <input id="hideDuration" type="text" placeholder="ms" class="form-control input-small" value="1000" />
+                                        <label class="control-label" for="timeOut">Time out</label>
+                                        <input id="timeOut" type="text" placeholder="ms" class="form-control input-small" value="5000" />
+                                        <label class="control-label" for="timeOut">Extended time out</label>
+                                        <input id="extendedTimeOut" type="text" placeholder="ms" class="form-control input-small" value="1000" />
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" class="btn green" id="showtoast">Show Toast</button>
+                            <button type="button" class="btn btn-outline dark" id="cleartoasts">Clear Toasts</button>
+                            <button type="button" class="btn btn-outline dark" id="clearlasttoast">Clear Last Toast</button>
+                        </div>
+                    </div>
+                    <div class="row margin-top-30">
+                        <div class="col-md-12">
+                            <pre id='toastrOptions' class="well">Settings...
+						</pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-
-
-
-
-
-
-
+</body>
 
 
 
