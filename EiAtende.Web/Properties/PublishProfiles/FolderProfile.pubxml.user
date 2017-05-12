@@ -17198,46 +17198,46 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>04/24/2017 13:00:50</publishTime>
     </File>
     <File Include="bin/EiAtende.Entity.dll">
-      <publishTime>03/05/2017 15:34:45</publishTime>
+      <publishTime>05/03/2017 15:34:45</publishTime>
     </File>
     <File Include="bin/EiAtende.Entity.dll.config">
       <publishTime>04/24/2017 13:00:48</publishTime>
     </File>
     <File Include="bin/EiAtende.Model.dll">
-      <publishTime>03/05/2017 15:34:44</publishTime>
+      <publishTime>05/03/2017 15:34:44</publishTime>
     </File>
     <File Include="bin/EiAtende.Model.dll.config">
       <publishTime>04/24/2017 13:00:49</publishTime>
     </File>
     <File Include="bin/EiAtende.Web.dll">
-      <publishTime>05/10/2017 14:36:35</publishTime>
+      <publishTime>05/12/2017 10:17:05</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>02/03/2015 09:32:26</publishTime>
+      <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>02/03/2015 09:32:26</publishTime>
+      <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>11/30/2016 16:07:42</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>07/12/2016 11:45:42</publishTime>
+      <publishTime>12/07/2016 11:45:42</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>07/12/2016 11:50:34</publishTime>
+      <publishTime>12/07/2016 11:50:34</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>06/12/2016 15:15:48</publishTime>
+      <publishTime>12/06/2016 15:15:48</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>07/12/2016 11:49:10</publishTime>
+      <publishTime>12/07/2016 11:49:10</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>07/12/2016 11:50:34</publishTime>
+      <publishTime>12/07/2016 11:50:34</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>06/12/2016 15:09:52</publishTime>
+      <publishTime>12/06/2016 15:09:52</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>12/13/2016 03:10:32</publishTime>
@@ -17246,7 +17246,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>03/08/2014 20:33:56</publishTime>
+      <publishTime>08/03/2014 20:33:56</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Helpers.resources.dll">
       <publishTime>01/28/2015 04:04:40</publishTime>
@@ -17255,7 +17255,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>01/28/2015 04:02:28</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Optimization.resources.dll">
-      <publishTime>11/02/2014 15:28:42</publishTime>
+      <publishTime>02/11/2014 15:28:42</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Razor.resources.dll">
       <publishTime>01/28/2015 04:02:40</publishTime>
@@ -17354,7 +17354,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>01/28/2015 04:02:18</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>11/02/2014 15:26:04</publishTime>
+      <publishTime>02/11/2014 15:26:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
       <publishTime>01/28/2015 04:02:32</publishTime>
@@ -18914,7 +18914,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>04/24/2017 13:01:19</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>05/10/2017 14:34:07</publishTime>
+      <publishTime>05/10/2017 14:57:22</publishTime>
     </File>
     <File Include="Views/Login/Index - Copia.cshtml">
       <publishTime>04/24/2017 13:01:19</publishTime>
@@ -18926,7 +18926,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalAtividadeChamados/Create.cshtml">
-      <publishTime>03/05/2017 14:08:29</publishTime>
+      <publishTime>05/03/2017 14:08:29</publishTime>
     </File>
     <File Include="Views/PortalAtividadeChamados/Delete.cshtml">
       <publishTime>04/24/2017 13:01:20</publishTime>
@@ -18935,10 +18935,10 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>04/24/2017 13:01:20</publishTime>
     </File>
     <File Include="Views/PortalAtividadeChamados/Edit.cshtml">
-      <publishTime>03/05/2017 14:25:32</publishTime>
+      <publishTime>05/03/2017 14:25:32</publishTime>
     </File>
     <File Include="Views/PortalAtividadeChamados/Index.cshtml">
-      <publishTime>03/05/2017 14:17:10</publishTime>
+      <publishTime>05/03/2017 14:17:10</publishTime>
     </File>
     <File Include="Views/PortalChamadoHistoricos/Create.cshtml">
       <publishTime>04/24/2017 13:01:20</publishTime>
@@ -18977,7 +18977,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalTipoChamados/Create.cshtml">
-      <publishTime>03/05/2017 14:40:42</publishTime>
+      <publishTime>05/03/2017 14:40:42</publishTime>
     </File>
     <File Include="Views/PortalTipoChamados/Delete.cshtml">
       <publishTime>04/26/2017 18:19:40</publishTime>
@@ -18986,10 +18986,10 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Views/PortalTipoChamados/Edit.cshtml">
-      <publishTime>03/05/2017 14:38:27</publishTime>
+      <publishTime>05/03/2017 14:38:27</publishTime>
     </File>
     <File Include="Views/PortalTipoChamados/Index.cshtml">
-      <publishTime>03/05/2017 14:36:51</publishTime>
+      <publishTime>05/03/2017 14:36:51</publishTime>
     </File>
     <File Include="Views/PortalUsuarios/Create.cshtml">
       <publishTime>04/24/2017 13:01:21</publishTime>
@@ -19025,7 +19025,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>04/24/2017 13:01:21</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/10/2017 13:09:55</publishTime>
+      <publishTime>05/12/2017 10:17:22</publishTime>
     </File>
   </ItemGroup>
 </Project>

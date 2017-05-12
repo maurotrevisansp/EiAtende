@@ -315,7 +315,13 @@ namespace EiAtende.Web.Controllers
             {
                 _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID)).ToList();
             }
-
+            var lEmp = new int[_PortalEmpresas.Count()];
+            int i = 0;
+            foreach (var item in _PortalEmpresas)
+            {
+                lEmp[i] = item.EmpID;
+                i++;
+            }
 
             if (empresa == null)
             {
@@ -345,7 +351,7 @@ namespace EiAtende.Web.Controllers
             if (Gestor == "True")
             {
                 _vwChamados.PortalChamados = portalChamados.ToList()
-                    .OrderByDescending(e => e.ChamadoID).ToList();
+                    .Where(e => lEmp.Contains(e.AtenderEmpID)).ToList();
             }
             else
             {
@@ -419,18 +425,18 @@ namespace EiAtende.Web.Controllers
                 pertence = false;
             }
 
-            _vwChamados.PortalTipoChamados = db.PortalTipoChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList();
+            _vwChamados.PortalTipoChamados = db.PortalTipoChamados.ToList().Where(e => e.Ativo.Equals(true) && e.EmpID == _PortalUsuario.UsrEmpID).ToList();
 
             _vwChamados.PortalEmpresa = _PortalEmpresas;
-            _vwChamados.PortalAtividadeChamados = db.PortalAtividadeChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList();
+            _vwChamados.PortalAtividadeChamados = db.PortalAtividadeChamados.ToList().Where(e => e.Ativo.Equals(true) && e.EmpID == _PortalUsuario.UsrEmpID).ToList();
             _vwChamados.DeUsuario = db.PortalUsuario.ToList();
             _vwChamados.ParaUsuario = db.PortalUsuario.ToList();
             _vwChamados.AtenderEmpresa = _PortalEmpresas;
             ViewBag.DeUsrID = new SelectList(db.PortalUsuario.ToList().Where(e => e.UsrID == Convert.ToInt32(Session["IdUsuario"])), "UsrID", "UsrNome");
             ViewBag.ParaUsrID = new SelectList(_PortalUsuariosDasEmpresas, "UsrID", "UsrNome");
             ViewBag.AtenderEmpID = new SelectList(_PortalEmpresas, "EmpID", "EmpNomeFantasia");
-            ViewBag.TipoChamadoID = new SelectList(db.PortalTipoChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList(), "TipoChamadoID", "TipoChamadoNome");
-            ViewBag.AtividadeChamadoID = new SelectList(db.PortalAtividadeChamados.ToList().Where(e => e.Ativo.Equals(true)).ToList(), "AtividadeChamadoID", "AtividadeChamadoNome");
+            ViewBag.TipoChamadoID = new SelectList(db.PortalTipoChamados.ToList().Where(e => e.Ativo.Equals(true) && e.EmpID == _PortalUsuario.UsrEmpID).ToList(), "TipoChamadoID", "TipoChamadoNome");
+            ViewBag.AtividadeChamadoID = new SelectList(db.PortalAtividadeChamados.ToList().Where(e => e.Ativo.Equals(true) && e.EmpID == _PortalUsuario.UsrEmpID).ToList(), "AtividadeChamadoID", "AtividadeChamadoNome");
 
             return _vwChamados;
         }
