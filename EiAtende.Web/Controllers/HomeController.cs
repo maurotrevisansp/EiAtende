@@ -878,6 +878,11 @@ namespace EiAtende.Web.Controllers
 
         }
 
+        public ActionResult PagSeguro()
+        {
+            return View();
+        }
+
 
     }
 }

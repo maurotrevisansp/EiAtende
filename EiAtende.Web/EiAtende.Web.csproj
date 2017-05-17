@@ -743,6 +743,7 @@
     <Content Include="Views\Shared\TopBar.cshtml" />
     <Content Include="Views\Home\ContaUsuario.cshtml" />
     <Content Include="Views\Home\Galeria.cshtml" />
+    <Content Include="Views\Home\PagSeguro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
