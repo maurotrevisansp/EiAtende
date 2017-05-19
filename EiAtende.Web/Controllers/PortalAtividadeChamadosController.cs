@@ -20,7 +20,7 @@ namespace EiAtende.Controllers
         {
             var portalAtividadeChamados = db.PortalAtividadeChamados.Include(p => p.PortalEmpresa);
             TempData["msg"] = "Lista de Atividades de Chamado";
-            var _portalAtividadeChamados = portalAtividadeChamados.ToList();
+            var _portalAtividadeChamados = portalAtividadeChamados.ToList().Where(e => e.EmpID == Convert.ToInt32(Session["UsrEmpID"])).ToList();
             var _portalEmpresas = db.PortalEmpresa.ToList();
             ViewModels.VwAtividadesChamado _vwAtividadesChamados = new ViewModels.VwAtividadesChamado();
             _vwAtividadesChamados.PortalAtividadeChamados = _portalAtividadeChamados;

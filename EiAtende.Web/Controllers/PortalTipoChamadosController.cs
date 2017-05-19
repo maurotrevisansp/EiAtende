@@ -20,7 +20,7 @@ namespace EiAtende.Controllers
         {
             var portalTipoChamados = db.PortalTipoChamados.Include(p => p.PortalEmpresa);
             TempData["msg"] = "Lista de Tipos de Chamado";
-            var _portalTipoChamados = portalTipoChamados.ToList();
+            var _portalTipoChamados = portalTipoChamados.ToList().Where(e => e.EmpID == Convert.ToInt32(Session["UsrEmpID"])).ToList(); 
             var _portalEmpresas = db.PortalEmpresa.ToList();
             ViewModels.VwTiposChamados _vwTiposChamados = new ViewModels.VwTiposChamados();
             _vwTiposChamados.PortalTipoChamados = _portalTipoChamados;

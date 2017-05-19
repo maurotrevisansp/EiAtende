@@ -814,6 +814,24 @@ else
                                                 <option selected>Postado</option>
                                             </select>
                                         </div>*@
+                                    @if (Session["UsuarioGestor"].ToString() == "True")
+                                    {
+                                        <div class="col-sm-3">
+                                            <small>Dt.Previsão</small><br />
+                                            <input type="text" class="form-control"
+                                                   name="dtAdiar2"
+                                                   placeholder="dd/mm/yyyy"
+                                                   onkeyup="
+                                                var v = this.value;
+                                                if (v.match(/^\d{2}$/) !== null) {
+                                                    this.value = v + '/';
+                                                    } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
+                                                    this.value = v + '/';
+                                                    }" maxlength="10">
+                                        </div>
+                                    }
+
+
                                     <div class="col-sm-6">
                                         <small>Tipo do Chamado</small><br />
                                         @Html.DropDownList("TipoChamadoID", null, htmlAttributes: new { @class = "form-control", @name = "TipoChamadoID" })

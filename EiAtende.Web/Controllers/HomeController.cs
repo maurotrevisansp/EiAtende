@@ -118,7 +118,7 @@ namespace EiAtende.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(FormCollection formColletion, string idChamadoAdiar, string idChamadoEmail, string Mensagem, string idChamado, string Historico, string dtAdiar, string submit, string btnAprovar, string btnReprovar, string AtividadeChamadoID, string atenderEmpresa, ViewModels.VwChamados model, string DeUsrID, string ParaUsrID, string TipoChamadoID)
+        public ActionResult Index(FormCollection formColletion, string idChamadoAdiar, string idChamadoEmail, string Mensagem, string idChamado, string Historico, string dtAdiar, string dtAdiar2, string submit, string btnAprovar, string btnReprovar, string AtividadeChamadoID, string atenderEmpresa, ViewModels.VwChamados model, string DeUsrID, string ParaUsrID, string TipoChamadoID)
         {
             ViewData["msg"] = "Lista de Chamados";
             var idHistoricoAprovar = string.Empty;
@@ -215,7 +215,14 @@ namespace EiAtende.Web.Controllers
                     _PortalChamados.Avaliacao = string.Empty;
                     _PortalChamados.ChamadoConhecimento = string.Empty;
                     _PortalChamados.ChamadoDtAbertura = DateTime.Now; 
-                    _PortalChamados.ChamadoDtPrevista = DateTime.Now.AddDays(_Atividades.PrevisaoDias).AddHours(_Atividades.PrevisaoHoras).AddMinutes(_Atividades.PrevisaoMinutos);
+                    if (dtAdiar2 != string.Empty)
+                    {
+                        _PortalChamados.ChamadoDtPrevista = Convert.ToDateTime(dtAdiar2);
+                    }
+                    else
+                    {
+                        _PortalChamados.ChamadoDtPrevista = DateTime.Now.AddDays(_Atividades.PrevisaoDias).AddHours(_Atividades.PrevisaoHoras).AddMinutes(_Atividades.PrevisaoMinutos);
+                    }
                     _PortalChamados.ChamadoHistorico = Historico;
                     if (model.PortalChamado.ChamadoTitulo == string.Empty)
                     {
