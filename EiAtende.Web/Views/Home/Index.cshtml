@@ -816,18 +816,18 @@ else
                                         </div>*@
                                     @if (Session["UsuarioGestor"].ToString() == "True")
                                     {
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <small>Dt.Previsão</small><br />
                                             <input type="text" class="form-control"
                                                    name="dtAdiar2"
-                                                   placeholder="dd/mm/yyyy"
+                                                   placeholder="dd/mm/yyyy HH:mm"
                                                    onkeyup="
                                                 var v = this.value;
                                                 if (v.match(/^\d{2}$/) !== null) {
                                                     this.value = v + '/';
                                                     } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
                                                     this.value = v + '/';
-                                                    }" maxlength="10">
+                                                    }" maxlength="16">
                                         </div>
                                     }
 
