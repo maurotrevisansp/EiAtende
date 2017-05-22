@@ -18,15 +18,58 @@ namespace EiAtende.Controllers
         // GET: PortalAtividadeChamados
         public ActionResult Index()
         {
+
             var portalAtividadeChamados = db.PortalAtividadeChamados.Include(p => p.PortalEmpresa);
             TempData["msg"] = "Lista de Atividades de Chamado";
             var _portalAtividadeChamados = portalAtividadeChamados.ToList().Where(e => e.EmpID == Convert.ToInt32(Session["UsrEmpID"])).ToList();
-            var _portalEmpresas = db.PortalEmpresa.ToList();
+
+
+            IList<PortalEmpresa> _PortalEmpresas = new List<PortalEmpresa>();
+            PortalEmpresa _PortalEmpresa = new PortalEmpresa();
+            var _PortalUsuario = db.PortalUsuario.Find(Convert.ToInt32(Session["IdUsuario"]));
+            _PortalUsuario.PortalUsuarioGrupo = db.PortalUsuarioGrupo.Find(_PortalUsuario.UsrGrpID);
+            _PortalEmpresa = db.PortalEmpresa.Find(_PortalUsuario.UsrEmpID);
+
+            if (_PortalEmpresa.EmpID == 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(0) || e.EmpEmpID.Equals(0)).ToList();
+            }
+            if (_PortalEmpresa.EmpID != 0 && _PortalEmpresa.EmpEmpID == 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID) || e.EmpEmpID.Equals(_PortalEmpresa.EmpID)).ToList();
+            }
+            if (_PortalEmpresa.EmpID != 0 && _PortalEmpresa.EmpEmpID != 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID)).ToList();
+            }
             ViewModels.VwAtividadesChamado _vwAtividadesChamados = new ViewModels.VwAtividadesChamado();
             _vwAtividadesChamados.PortalAtividadeChamados = _portalAtividadeChamados;
-            _vwAtividadesChamados.PortalEmpresa = _portalEmpresas;
+            _vwAtividadesChamados.PortalEmpresa = _PortalEmpresas;
             TempData["titulo"] = "Atividades de Chamados";
             TempData["titulo1"] = "Cadastrados";
+
+            var lEmp = new int[_PortalEmpresas.Count()];
+            int i = 0;
+            foreach (var item in _PortalEmpresas)
+            {
+                lEmp[i] = item.EmpID;
+                i++;
+            }
+            var IdUsuario = Convert.ToInt32((Session["IdUsuario"]));
+
+            var Gestor = Session["UsuarioGestor"].ToString();
+            if (Gestor == "True")
+            {
+                _vwAtividadesChamados.PortalAtividadeChamados = portalAtividadeChamados.ToList()
+                    .Where(e => lEmp.Contains(e.EmpID)).ToList();
+            }
+            else
+            {
+                _vwAtividadesChamados.PortalAtividadeChamados = portalAtividadeChamados.ToList()
+                    .Where(e => e.EmpID == IdUsuario || e.EmpID == IdUsuario)
+                    .OrderByDescending(e => e.AtividadeChamadoID).ToList();
+            }
+
 
             return View(_vwAtividadesChamados);
         }
@@ -49,7 +92,25 @@ namespace EiAtende.Controllers
         // GET: PortalAtividadeChamados/Create
         public ActionResult Create()
         {
-            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpRazao");
+            IList<PortalEmpresa> _PortalEmpresas = new List<PortalEmpresa>();
+            PortalEmpresa _PortalEmpresa = new PortalEmpresa();
+            var _PortalUsuario = db.PortalUsuario.Find(Convert.ToInt32(Session["IdUsuario"]));
+            _PortalUsuario.PortalUsuarioGrupo = db.PortalUsuarioGrupo.Find(_PortalUsuario.UsrGrpID);
+            _PortalEmpresa = db.PortalEmpresa.Find(_PortalUsuario.UsrEmpID);
+
+            if (_PortalEmpresa.EmpID == 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(0) || e.EmpEmpID.Equals(0)).ToList();
+            }
+            if (_PortalEmpresa.EmpID != 0 && _PortalEmpresa.EmpEmpID == 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID) || e.EmpEmpID.Equals(_PortalEmpresa.EmpID)).ToList();
+            }
+            if (_PortalEmpresa.EmpID != 0 && _PortalEmpresa.EmpEmpID != 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID)).ToList();
+            }
+            ViewBag.EmpID = new SelectList(_PortalEmpresas, "EmpID", "EmpRazao");
             return View();
         }
 
@@ -67,7 +128,25 @@ namespace EiAtende.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpRazao", portalAtividadeChamados.EmpID);
+            IList<PortalEmpresa> _PortalEmpresas = new List<PortalEmpresa>();
+            PortalEmpresa _PortalEmpresa = new PortalEmpresa();
+            var _PortalUsuario = db.PortalUsuario.Find(Convert.ToInt32(Session["IdUsuario"]));
+            _PortalUsuario.PortalUsuarioGrupo = db.PortalUsuarioGrupo.Find(_PortalUsuario.UsrGrpID);
+            _PortalEmpresa = db.PortalEmpresa.Find(_PortalUsuario.UsrEmpID);
+
+            if (_PortalEmpresa.EmpID == 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(0) || e.EmpEmpID.Equals(0)).ToList();
+            }
+            if (_PortalEmpresa.EmpID != 0 && _PortalEmpresa.EmpEmpID == 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID) || e.EmpEmpID.Equals(_PortalEmpresa.EmpID)).ToList();
+            }
+            if (_PortalEmpresa.EmpID != 0 && _PortalEmpresa.EmpEmpID != 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID)).ToList();
+            }
+            ViewBag.EmpID = new SelectList(_PortalEmpresas, "EmpID", "EmpRazao");
             return View(portalAtividadeChamados);
         }
 
@@ -83,7 +162,25 @@ namespace EiAtende.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpRazao", portalAtividadeChamados.EmpID);
+            IList<PortalEmpresa> _PortalEmpresas = new List<PortalEmpresa>();
+            PortalEmpresa _PortalEmpresa = new PortalEmpresa();
+            var _PortalUsuario = db.PortalUsuario.Find(Convert.ToInt32(Session["IdUsuario"]));
+            _PortalUsuario.PortalUsuarioGrupo = db.PortalUsuarioGrupo.Find(_PortalUsuario.UsrGrpID);
+            _PortalEmpresa = db.PortalEmpresa.Find(_PortalUsuario.UsrEmpID);
+
+            if (_PortalEmpresa.EmpID == 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(0) || e.EmpEmpID.Equals(0)).ToList();
+            }
+            if (_PortalEmpresa.EmpID != 0 && _PortalEmpresa.EmpEmpID == 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID) || e.EmpEmpID.Equals(_PortalEmpresa.EmpID)).ToList();
+            }
+            if (_PortalEmpresa.EmpID != 0 && _PortalEmpresa.EmpEmpID != 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID)).ToList();
+            }
+            ViewBag.EmpID = new SelectList(_PortalEmpresas, "EmpID", "EmpRazao");
             return View(portalAtividadeChamados);
         }
 
@@ -100,7 +197,25 @@ namespace EiAtende.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.EmpID = new SelectList(db.PortalEmpresa, "EmpID", "EmpRazao", portalAtividadeChamados.EmpID);
+            IList<PortalEmpresa> _PortalEmpresas = new List<PortalEmpresa>();
+            PortalEmpresa _PortalEmpresa = new PortalEmpresa();
+            var _PortalUsuario = db.PortalUsuario.Find(Convert.ToInt32(Session["IdUsuario"]));
+            _PortalUsuario.PortalUsuarioGrupo = db.PortalUsuarioGrupo.Find(_PortalUsuario.UsrGrpID);
+            _PortalEmpresa = db.PortalEmpresa.Find(_PortalUsuario.UsrEmpID);
+
+            if (_PortalEmpresa.EmpID == 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(0) || e.EmpEmpID.Equals(0)).ToList();
+            }
+            if (_PortalEmpresa.EmpID != 0 && _PortalEmpresa.EmpEmpID == 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID) || e.EmpEmpID.Equals(_PortalEmpresa.EmpID)).ToList();
+            }
+            if (_PortalEmpresa.EmpID != 0 && _PortalEmpresa.EmpEmpID != 0)
+            {
+                _PortalEmpresas = db.PortalEmpresa.ToList().Where(e => e.EmpID.Equals(_PortalEmpresa.EmpID)).ToList();
+            }
+            ViewBag.EmpID = new SelectList(_PortalEmpresas, "EmpID", "EmpRazao");
             return View(portalAtividadeChamados);
         }
 
